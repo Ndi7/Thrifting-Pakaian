@@ -6,8 +6,8 @@
   <link href="./output.css" rel="stylesheet">
 </head>
 <body>
-    <div class="flex -gray-400 items-center">
-        <div class="flex block px-10 py-5">
+    <div class="flex justify-center w-full text-sm items-center px-10 py-2">
+        <div class="flex flex-wrap px-10 py-5">
         <a href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,1043.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
@@ -26,9 +26,9 @@
         <div class="flex justify-center h-10 w-full">
             <nav class="flex font-semibold">
                 <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Home</a>
-                <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Category</a>
-                <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">About</a>
-                <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Contact</a>
+                <a href="katalog.html" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Katalog</a>
+                <a href="cart.html" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Keranjang</a>
+                <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Kontak</a>
                 <div class="flex items-center mx-1">
                     <label class="relative block">
                         <span class="sr-only">Search</span>
@@ -46,120 +46,144 @@
         </div>
     </div>   
 
-    
-        <div class="container mx-auto px-60 my-20 justify-center">
-            <div class="px-2 py-3">
-                <p class="font-bold text-xl my-0">SECOND HAND</p>
-                <p>Tetaplah cerdas dengan pilihan Thrift mu</p>
-            </div>       
-            <div class="flex flex-wrap text-center mx-2 shadow-lg">
-                <div class="flex bg-red-100 w-2/3">
-                    <img class="auto-cols-max" src="../public/contoh.jpg" alt="">
-                </div>
+        <div class="container mx-auto px-5 my-10 justify-center">
+            <div class="container mx-auto px-60 my-10 justify-center">
+                <div class="py-3">
+                    <p class="font-bold text-xl my-0">SECOND HAND</p>
+                    <p>Tetaplah cerdas dengan pilihan Thrift mu</p>
+                    <div class="flex container">
+                        <div class="flex flex-wrap gap-4 w-2/3 justify-between bg-black">
+                         
+                        </div>
 
-                <div class="flex-1 bg-slate-300 w-1/3">
+
+                        <div class="w-1/3 bg-slate-200 h-72">
+                             <div class="m-4 font-semibold">
+                             <div class="mb-3">
+                                <h2>Ukuran</h2>
+                             <div class="flex gap-4 font-normal">
+                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>S</h2></button>
+                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>M</h2></button>
+                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>L</h2></button>
+                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>XL</h2></button>
+                             <button class="bg-transparent hover:bg-white rounded-md w-8 transition duration-300 hover:duration-500"><h2>XXL</h2></button>
+                             </div>
+                             </div>
+                             <div class="mb-3">
+                                <h2>Warna</h2>
+                                <div class="flex col columns-6 font-normal">
+                                    <table>
+                                        <button class="mr-2"><h2>Hitam</h2></button>
+                                        <button class="mr-2"><h2>Putih</h2></button>
+                                        <button><h2>Random</h2></button>
+                                    </table>
+                                </div>
+                             </div>
+                             <div class="mb-3">
+                                <h2>Harga</h2>
+                             <table>
+                               <h2 class="font-normal">xxx.xxx.xx</h2>
+                            </table>
+                             </div>
+                             </div>
+                             <div class="flex justify-center h-10 mt-12 gap-10 font-semibold text-xl">
+                                 <button class="bg-black text-white w-32 rounded-full">Add to Cart</button>
+                                 <button class="bg-white w-32 rounded-full">CHECKOUT</button>
+                             </div>
+                        </div>
+                     </div>
+                  
+    
+                <!-- Katalog Produk Promo -->
+                <div class="pt-20 px-1">
+                    <p class="font-bold text-lg my-0">Produk Promo.</p>
+                    <p>promosi produk yang menarik untuk Style Kamu</p>
+                </div>
+                <div class="sm:flex flex-wrap container sm:justify-center gap-2 text-left shadow-lg m-auto">
+                    <div class=" w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    <div class="w-48 bg-slate-300">
+                        <img src="../public/contoh.jpg" alt=""><br>
+                        <div class="mx-1">
+                            <h2 class="text-base font-bold">Nama pakaian</h2>
+                            <h4 class="text-xs">Deskripsi singkat</h4>
+                            <h3 class="text-sm my-1">Harga</h3>
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>
-              
-
-            <!-- Katalog Produk Promo -->
-            <div class="px-2 py-3">
-                <p class="font-bold text-lg my-0">Produk Promo.</p>
-                <p>promosi produk yang menarik untuk Style Kamu</p>
-            </div>
-            <div class="flex flex-wrap text-left">
-                <div class="flex-1 min-h-72 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="mx-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm my-1">Harga</h3>
-                    </div>
-                </div>
-
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm">Harga</h3>
-                    </div>
-                </div>
-
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm">Harga</h3>
-                    </div>
-                </div>
-
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm">Harga</h3>
-                    </div>
-                </div>
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm">Harga</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap text-left my-4">
-                <div class="flex-1 min-h-72 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm my-1">Harga</h3>
-                    </div>
-                </div>
-
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm my-1">Harga</h3>
-                    </div>
-                </div>
-
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm my-1">Harga</h3>
-                    </div>
-                </div>
-
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm my-1">Harga</h3>
-                    </div>
-                </div>
-                <div class="flex-1 bg-slate-300 mx-2 w-full sm:w-1/2 lg:w-1/2">
-                    <img src="../public/contoh.jpg" alt=""><br>
-                    <div class="px-1 -my-5">
-                        <h2 class="text-base font-bold">Nama pakaian</h2>
-                        <h4 class="text-xs">Deskripsi singkat</h4>
-                        <h3 class="text-sm my-1">Harga</h3>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 

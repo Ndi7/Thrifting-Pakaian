@@ -14,6 +14,14 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
+=======
+//Route::get('/listbarang/{id}/{nama}', function($id,$nama){
+//    return view('list_barangthrift', compact('id', 'nama'));
+//});
+
+Route::get('/Listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+>>>>>>> 1ea2125bac659ee4b41469778b8e90bd5ae81de6
 
 //
 //Route::get('/welcome', function () {
