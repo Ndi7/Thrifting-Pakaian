@@ -11,12 +11,27 @@
 </head>
 
 <body>
+
+    <!-- navbar start -->
     <div class="p-10">
         <div class="text-center">
             <h1 class="text-5xl font-bold">CRUD Create, Read, Update</h1>
         </div>
     </div>
-    @yield('content')
+    <!-- navbar end -->
+
+    
+    <!-- Sidebar -->
+    @extends('layout.sidebar')
+
+
+
+    <!-- content start -->
+
+    @yield('content')  <!-- Ke bagian Home.blade,php -->
+
+    <!-- content end -->
+
 </body>
 
 </html>
