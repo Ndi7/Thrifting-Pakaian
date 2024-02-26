@@ -18,9 +18,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+// Route dashboar
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// CRUD produk
+Route::get('/product', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('product');
+
+//  about
+Route::get('/about', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('about');
+
+//  contact
+Route::get('/contact', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('contact');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
