@@ -18,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route dashboar
 Route::get('/dashboard', function () {
