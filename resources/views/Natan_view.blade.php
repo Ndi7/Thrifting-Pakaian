@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <table>
+<html>
+    <table> 
         <thead>
             <tr>
                 <th>ID</th>
@@ -17,12 +10,11 @@
         <tbody>
             @foreach($data as $dataku)
                 <tr>
-                    <td>{{$dataku['id']}}</td>
-                    <td>{{$dataku['nama']}}</td>
-                    <td>{{$dataku['harga']}}</td>
+                    <td>{{ $dataku['id']}}</td>
+                    <td>{{ $dataku['nama'] }}</td>
+                    <td>{{ $dataku['harga'] }}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-</body>
 </html>

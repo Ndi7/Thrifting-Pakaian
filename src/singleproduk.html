@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./crslsingle.css">
   <title>detail produk</title>
 </head>
 <body>
@@ -53,8 +54,55 @@
                     <p class="font-bold text-xl my-0">SECOND HAND</p>
                     <p>Tetaplah cerdas dengan pilihan Thrift mu</p>
                     <div class="flex container">
-                        <div class="flex flex-wrap gap-4 w-2/3 justify-between bg-black">
-                         
+                        <div class="flex-wrap gap-4 w-2/3 justify-between">
+                            <div class="containercrslsingle">
+                                <div class="carouselsingle-container">
+                                    <div class="slider gallerycrslsingle">
+                                       <div class="slides">
+                                        <input type="radio" name="radio-btn" id="radio1">   
+                                        <input type="radio" name="radio-btn" id="radio2">   
+                                        <input type="radio" name="radio-btn" id="radio3">   
+                                        <input type="radio" name="radio-btn" id="radio4">   
+                                        <input type="radio" name="radio-btn" id="radio5">
+
+                                        <div class="slide first">
+                                            <img src="../public/crsl1.png" alt="">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="../public/crsl2.jpg" alt="">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="../public/crsl3.jpg" alt="">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="../public/crsl4.jpg" alt="">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="../public/crsl5.jpg" alt="">
+                                        </div>
+
+                                        <!--Carousel AUTO-->
+                                        <div class="navigation-auto">
+                                            <div class="auto-btn1"></div>
+                                            <div class="auto-btn2"></div>
+                                            <div class="auto-btn3"></div>
+                                            <div class="auto-btn4"></div>
+                                            <div class="auto-btn5"></div>
+                                        </div>
+                                       </div>
+                                       
+                                       <!--Carousel MANUAL-->
+                                       <div class="navigation-manual">
+                                            <label for="radio1" class="manual-btn"></label>
+                                            <label for="radio2" class="manual-btn"></label>
+                                            <label for="radio3" class="manual-btn"></label>
+                                            <label for="radio4" class="manual-btn"></label>
+                                            <label for="radio5" class="manual-btn"></label>
+                                       </div>
+                                    </div>
+                                </div>
+                                <script src="crslsingle.js"></script>
+                            </div>
                         </div>
 
 
@@ -87,9 +135,9 @@
                             </table>
                              </div>
                              </div>
-                             <div class="flex justify-center h-10 mt-12 gap-10 font-semibold text-xl">
-                                 <button class="bg-black text-white w-32 rounded-full">Add to Cart</button>
-                                 <button class="bg-white w-32 rounded-full">CHECKOUT</button>
+                             <div class="flex justify-center h-10 mt-12 gap-10 font-semibold text-lg">
+                                 <button class="bg-black text-white w-32 rounded-md">Add to Cart</button>
+                                 <button class="bg-white w-32 rounded-md">CHECKOUT</button>
                              </div>
                         </div>
                      </div>
