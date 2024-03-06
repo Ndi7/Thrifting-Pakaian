@@ -50,8 +50,8 @@
                         produk
                     </x-side-nav-link>
 
-                    <x-side-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
-                        about
+                    <x-side-nav-link href="{{ route('kategori') }}" :active="request()->routeIs('kategori')">
+                        kategori
                     </x-side-nav-link>
 
                     <x-side-nav-link href="{{ route('contact') }}" :active="request()->routeIs('contact')">

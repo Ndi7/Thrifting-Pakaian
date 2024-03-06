@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('product_code')->nullable();
+
+            $table->unsignedBigInteger('category_id'); // Kolom untuk foreign key
+
+            // Menambahkan foreign key constraint
+            $table->foreign('category_id')->references('id')->on('categories');
+
             $table->string('name')->nullable();
             $table->text('description')->nullable();
-            $table->string('category')->nullable();
-            $table->integer('quantity')->nullable();
+            $table->enum('stok', ['habis', 'tersedia']);
             $table->string('price')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
