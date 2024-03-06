@@ -30,10 +30,10 @@ Route::get('/product', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('product');
 
-//  about
-Route::get('/about', function () {
+//  kategori
+Route::get('/kategori', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('about');
+})->middleware(['auth', 'verified'])->name('kategori');
 
 //  contact
 Route::get('/contact', function () {
