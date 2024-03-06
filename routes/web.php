@@ -1,5 +1,6 @@
 <?php
 
+use app\Http\Controllers\NatanKontrol;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/dataBarang', [NatanKontrol::class, 'tampilkan']);
 
 // Route dashboar
 Route::get('/dashboard', function () {
@@ -30,10 +31,10 @@ Route::get('/product', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('product');
 
-//  kategori
-Route::get('/kategori', function () {
+//  about
+Route::get('/about', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('kategori');
+})->middleware(['auth', 'verified'])->name('about');
 
 //  contact
 Route::get('/contact', function () {
