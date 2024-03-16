@@ -1,6 +1,6 @@
 <?php
 
-use app\Http\Controllers\NatanKontrol;
+use App\Http\Controllers\DataBarang;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,41 +15,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dataBarang', [NatanKontrol::class, 'tampilkan']);
+Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 
-// Route dashboar
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// // Route dashboar
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-// CRUD produk
-Route::get('/product', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('product');
+// // CRUD produk
+// Route::get('/product', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('product');
 
-//  about
-Route::get('/about', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('about');
+// //  about
+// Route::get('/about', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('about');
 
-//  contact
-Route::get('/contact', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('contact');
+// //  contact
+// Route::get('/contact', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('contact');
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';
 
 //
 //Route::get('/user/{id}', function ($id) {
