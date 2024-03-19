@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataBarang;
+use App\Http\Controllers\layoutlist;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 
+Route::get('/listproduct', [layoutlist::class, 'index']);
 // // Route dashboar
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
