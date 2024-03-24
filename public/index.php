@@ -1,5 +1,5 @@
 <?php
-
+use app\Http\Controllers\DataBarang;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
