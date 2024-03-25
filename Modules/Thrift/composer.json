@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/thrift",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Thrift\\": "app/",
+            "Modules\\Thrift\\Database\\Factories\\": "database/factories/",
+            "Modules\\Thrift\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Thrift\\Tests\\": "tests/"
+        }
+    }
+}
