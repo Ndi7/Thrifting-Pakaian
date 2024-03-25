@@ -1,0 +1,11 @@
+{
+    "name": "Thrift",
+    "alias": "thrift",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Thrift\\Providers\\ThriftServiceProvider"
+    ],
+    "files": []
+}
