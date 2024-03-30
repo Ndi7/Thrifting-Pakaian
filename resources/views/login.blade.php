@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('styles/style.css') }}">
 @extends('layout.login')
 
-@section ('title', 'Login')
+@section ('title', 'Login.')
 @section('content')
 
 <!DOCTYPE html>
