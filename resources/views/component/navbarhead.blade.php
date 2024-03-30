@@ -1,4 +1,4 @@
-        <div class="flex justify-center w-full text-sm items-center px-10 py-2">
+<div class="flex justify-center w-full text-sm items-center px-10 py-2">
             <div class="flex flex-wrap px-10 py-5">
             <a href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
     
@@ -17,10 +17,10 @@
     
             <div class="flex justify-center h-10 w-full">
                 <nav class="flex font-semibold">
-                    <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Home</a>
-                    <a href="katalog.html" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Katalog</a>
-                    <a href="cart.html" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Keranjang</a>
-                    <a href="" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Kontak</a>
+                    <a href="#" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Home</a>
+                    <a href="katalog" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Katalog</a>
+                    <a href="keranjang" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Keranjang</a>
+                    <a href="#" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Kontak</a>
                     <div class="flex items-center mx-1">
                         <label class="relative block">
                             <span class="sr-only">Search</span>
