@@ -4,7 +4,7 @@
 
 @section ('title', 'Katalog')
 @section('content')
-<div class="container mx-auto px-5 my-10 justify-center">
+<div class="container mx-auto px-5 my-10 justify-center bg">
                 <div class="container mx-auto px-60 my-10 justify-center">
                     <div class="sm:flex flex-wrap container sm:justify-center text-center gap-3 text-left m-auto">
                         <div class="w-60 bg-slate-300 shadow-lg">

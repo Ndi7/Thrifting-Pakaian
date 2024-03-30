@@ -27,7 +27,9 @@ Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 Route::get('/listproduct', [layoutlist::class, 'index']);
 
 Route::get('/katalog', [katalog::class, 'index']);
+
 Route::get('/login', [login::class, 'index']);
+
 
 // // Route dashboar
 // Route::get('/dashboard', function () {
