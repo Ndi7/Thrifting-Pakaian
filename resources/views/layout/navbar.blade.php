@@ -7,13 +7,13 @@
 </head>
 <body>
     <header>
-        @include('component.navhead')
+        @include('component.navbarhead')
     </header>
     
             @yield('content')
     
     <footer>
-        @include('component.navfoot')
+        @include('component.navbarfoot')
     </footer>
 </body>
 </html>

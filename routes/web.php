@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\DataBarang;
 use App\Http\Controllers\layoutlist;
-use App\Http\Controllers\navigasi;
+use App\Http\Controllers\katalog;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +25,7 @@ Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 
 Route::get('/listproduct', [layoutlist::class, 'index']);
 
-Route::get('/navigasi', [navigasi::class, 'index']);
+Route::get('/katalog', [katalog::class, 'index']);
 // // Route dashboar
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

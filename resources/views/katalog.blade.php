@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
-@extends('layout.navigasilayout')
+@extends('layout.navbar')
 
 @section ('title', 'Katalog')
 @section('content')
