@@ -8,9 +8,11 @@ use App\Http\Controllers\katalog;
 use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
 
+use App\Http\Controllers\login;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +36,13 @@ Route::get('/login', [login::class, 'index']);
 Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);
+Route::get('/keranjang', [keranjang::class, 'index']);
+Route::get('/singleproduk', [singleproduk::class, 'index']);
 
-Route::get('/user', function () {
-    return view('userprofile_edit');
-});
+
+Route::get('/login', [login::class, 'index']);
+
+Route::get('/profile', [UserProfileController::class, 'index']);
 
 // // Route dashboar
 // Route::get('/dashboard', function () {
