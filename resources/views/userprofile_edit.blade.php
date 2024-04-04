@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
+  @extends('layout.navbar')
+
+@section ('title', 'Profil')
+@section('content')
 </head>
 <body>
 <form class="container mx-auto m-7">
@@ -196,3 +199,4 @@
   
 </body>
 </html>
+@endsection

@@ -8,7 +8,6 @@ use App\Http\Controllers\katalog;
 use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
 
-use App\Http\Controllers\login;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
@@ -36,11 +35,6 @@ Route::get('/login', [login::class, 'index']);
 Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);
-Route::get('/keranjang', [keranjang::class, 'index']);
-Route::get('/singleproduk', [singleproduk::class, 'index']);
-
-
-Route::get('/login', [login::class, 'index']);
 
 Route::get('/profile', [UserProfileController::class, 'index']);
 
