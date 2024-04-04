@@ -36,7 +36,7 @@ Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);
 
-Route::get('/profile', [UserProfileController::class, 'index']);
+Route::get('/user', [UserProfileController::class, 'index']);
 
 // // Route dashboar
 // Route::get('/dashboard', function () {
