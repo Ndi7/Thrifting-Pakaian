@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
+  <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 </head>
+@extends('layout.navbar')
+
+@section('content')
 <body>
 <form class="container mx-auto m-7">
     <div class="space-y-12">
@@ -196,3 +199,4 @@
   
 </body>
 </html>
+@endsection
