@@ -9,6 +9,7 @@ use App\Http\Controllers\login;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +37,7 @@ Route::get('/singleproduk', [singleproduk::class, 'index']);
 
 Route::get('/login', [login::class, 'index']);
 
-Route::get('/user', function () {
-    return view('userprofile_edit');
-});
+Route::get('/profile', [UserProfileController::class, 'index']);
 
 // // Route dashboar
 // Route::get('/dashboard', function () {

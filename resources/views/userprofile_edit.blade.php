@@ -1,11 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
-<body>
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+@extends('layout.navbar')
+
+@section ('title', 'profile')
+@section('content')
 <form class="container mx-auto m-7">
     <div class="space-y-12">
       <div class="border-b border-gray-900/10 pb-12">
@@ -194,5 +192,4 @@
     </div>
   </form>
   
-</body>
-</html>
+@endsection
