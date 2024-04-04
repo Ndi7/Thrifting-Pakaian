@@ -26,6 +26,11 @@ Route::get('/', function () {
 Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 
 Route::get('/listproduct', [layoutlist::class, 'index']);
+
+Route::get('/user', function () {
+    return view('userprofile_edit');
+});
+
 // // Route dashboar
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
