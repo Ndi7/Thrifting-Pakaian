@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DataBarang;
 use App\Http\Controllers\layoutlist;
+use App\Http\Controllers\katalog;
+use App\Http\Controllers\login;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
@@ -24,12 +26,6 @@ Route::get('/', function () {
 Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 
 Route::get('/listproduct', [layoutlist::class, 'index']);
-
-Route::get('/user', function () {
-    return view('userprofile_edit');
-});
-
-
 // // Route dashboar
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
