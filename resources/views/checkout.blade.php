@@ -13,7 +13,7 @@
     </div>
     <div>        
         <label for="email"></label>
-        <input class="w-96" type="email" id="email" name="email" placeholder="Alamat Email" required><br>
+        <input class="w-2/3 h-10" type="email" id="email" name="email" placeholder=" Alamat Email" required><br>
         <input type="checkbox" id="subscribe" name="subscribe" value="yes">
         <label for="subscribe">Saya ingin menerima informasi terbaru mengenai produk dan promosi.</label><br><br>
     </div>
@@ -23,21 +23,21 @@
     </div>
     <div>
         <label for="namadepan"></label>
-        <input type="text" id="namadepan" name="namadepan" placeholder="Nama Depan" required>
+        <input class="w-1/3 h-10" type="text" id="namadepan" name="namadepan" placeholder=" Nama Depan" required>
         <label for="namabelakang">&nbsp;</label>
-        <input type="text" id="namabelakang" name="namabelakang" placeholder="Nama Belakang" required>
+        <input class="w-1/3 h-10" type="text" id="namabelakang" name="namabelakang" placeholder=" Nama Belakang" required>
     </div><br>
     <div>
         <label for="alamat"></label>
-        <input class="w-96" type="text" id="alamat" name="alamat" placeholder="Alamat" required>
+        <input class="w-2/3 h-10" type="text" id="alamat" name="alamat" placeholder=" Alamat" required>
     </div><br>
     <div>
         <label for="opsional"></label>
-        <input class="w-96" type="text" id="opsional" name="opsional" placeholder="Apartement, kamar, dll. (opsional)">
+        <input class="w-2/3 h-10" type="text" id="opsional" name="opsional" placeholder=" Apartement, kamar, dll. (opsional)">
     </div><br>
     <div>
     <label for="provinsi"></label>
-        <select name="provinsi" id="provinsi" required>
+        <select class="w-1/3 h-10" name="provinsi" id="provinsi" required>
         <option value="provinsi">Provinsi</option>
         <option value="bali">Bali</option>
         <option value="bangka-belitung">Bangka Belitung</option>
@@ -79,13 +79,13 @@
         <option value="sumut">Sumatera Utara</option>
         </select>
         <label for="kota">&nbsp;</label>
-        <input class="w-40" type="text" id="kota" name="kota" placeholder="Kota" required>
+        <input class="w-1/3 h-10" type="text" id="kota" name="kota" placeholder=" Kota" required>
     </div><br>
     <div>
     <label for="kodepos"></label>
-        <input type="text" id="kodepos" name="kodepos" placeholder="Kode Pos" required>
+        <input class="w-1/3 h-10" type="text" id="kodepos" name="kodepos" placeholder=" Kode Pos" required>
         <label for="notelp">&nbsp;</label>
-        <input type="text" id="notelp" name="notelp" placeholder="Nomor Telephone" required>
+        <input class="w-1/3 h-10" type="text" id="notelp" name="notelp" placeholder=" Nomor Telephone" required>
     </div><br>
     <div>
         <input type="checkbox" id="subscribe" name="subscribe" value="yes">
@@ -96,7 +96,7 @@
     </div>
     <div>
     <label for="opsiPengiriman"></label>
-    <select id="opsiPengiriman" name="opsiPengiriman" required>
+    <select class="w-3/5" id="opsiPengiriman" name="opsiPengiriman" required>
         <option value="">Pilih Jasa Pengiriman</option>
         <option value="reguler">Pengiriman Reguler (Estimasi tiba: 3-5 hari kerja)</option>
         <option value="ekspres">Pengiriman Ekspres (Estimasi tiba: 1-2 hari kerja)</option>
@@ -108,7 +108,7 @@
     </div>
     <div>
     <label for="opsiPembayaran"></label>
-    <select id="opsiPembayaran" name="opsiPembayaran" required>
+    <select class="w-3/5" id="opsiPembayaran" name="opsiPembayaran" required>
         <option value="">Pilih Metode Pembayaran</option>
         <option value="transfer">Transfer Bank</option>
         <option value="COD">Cash on Delivery</option>
@@ -116,7 +116,7 @@
     </div><br>
     <div>
         <h2>Tambahkan catatan ke pesanan:</h2>
-        <textarea id="catatanPesanan" name="catatanPesanan" rows="4" cols="50" placeholder="Catatan tentang pesanan anda"></textarea>
+        <textarea id="catatanPesanan" name="catatanPesanan" rows="4" cols="50" placeholder=" Catatan tentang pesanan anda"></textarea>
     </div><br>
     <div>
         <h2>Dengan melanjutkan pembelian, artinya Anda menyetujui Syarat dan <br> Ketentuan dan Kebijakan Privasi kami.</h2>
@@ -127,11 +127,40 @@
 </div>
 
 </div>
-<div class="w-1/3">
-    <select name="ringkasanpemesanan" id="ringkasanpemesanan">
-        <option value="ringkasanpemesanan">Ringkasan Pemesanan</option>
-    </select>
- <script src="styles/style.js"></script>
+<div>
+<details>
+  <summary>Ringkasan Pesanan</summary><br>
+  1. <img class="w-12 h-12" src="{{ asset('images/kaos2.jpg') }}" alt=""><br>
+                            <div class="mx-1 -mt-5 ">
+                                <h2 class="text-base font-bold">Kaos Oversize Harley Davidson</h2>
+                                <h4 class="text-xs">Deskripsi singkat</h4>
+                                <h3 class="text-sm my-1">Rp. 75000</h3>
+                            </div><br>
+  2. <img class="w-10 h-10" src="{{ asset('images/kaos3.jpg') }}" alt=""><br>
+                            <div class="mx-1 -mt-5">
+                                <h2 class="text-base font-bold">T-Shirt Polo</h2>
+                                <h4 class="text-xs">Deskripsi singkat</h4>
+                                <h3 class="text-sm my-1">Rp. 55000</h3>
+                            </div>
+</details><br>
+<button onclick="tampilkanKotakKupon()">Tambah Kupon</button>
+
+<div id="kotakKupon" style="display: none;">
+  <form>
+    <label for="kodeKupon">Masukkan Kode Kupon:</label><br>
+    <input type="text" id="kodeKupon" name="kodeKupon"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+  function tampilkanKotakKupon() {
+    document.getElementById("kotakKupon").style.display = "block";
+  }
+</script>
+
+
+
 </div>
 </div>
 @endsection
