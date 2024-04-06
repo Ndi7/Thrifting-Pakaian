@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
-<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
 @extends('layout.navbar')
 
 @section ('title', 'checkout')
 @section('content')
 
-<div class="container mx-auto px-5 my-10 justify-center">
+<div class="container flex bg-yellow-400 mx-auto px-5 my-10 justify-center">
+<div class="w-2/3">
     <h2 class="font-bold text-xl">Checkout</h2><br>
     <div>
         <h2 class="font-bold">Informasi Kontak</h2>
@@ -13,7 +13,7 @@
     </div>
     <div>        
         <label for="email"></label>
-        <input type="email" id="email" name="email" placeholder="Alamat Email" required><br>
+        <input class="w-96" type="email" id="email" name="email" placeholder="Alamat Email" required><br>
         <input type="checkbox" id="subscribe" name="subscribe" value="yes">
         <label for="subscribe">Saya ingin menerima informasi terbaru mengenai produk dan promosi.</label><br><br>
     </div>
@@ -29,11 +29,11 @@
     </div><br>
     <div>
         <label for="alamat"></label>
-        <input type="text" id="alamat" name="alamat" placeholder="Alamat" required>
+        <input class="w-96" type="text" id="alamat" name="alamat" placeholder="Alamat" required>
     </div><br>
     <div>
         <label for="opsional"></label>
-        <input type="text" id="opsional" name="opsional" placeholder="Apartement, kamar, dll. (opsional)">
+        <input class="w-96" type="text" id="opsional" name="opsional" placeholder="Apartement, kamar, dll. (opsional)">
     </div><br>
     <div>
     <label for="provinsi"></label>
@@ -79,7 +79,7 @@
         <option value="sumut">Sumatera Utara</option>
         </select>
         <label for="kota">&nbsp;</label>
-        <input type="text" id="kota" name="kota" placeholder="Kota" required>
+        <input class="w-40" type="text" id="kota" name="kota" placeholder="Kota" required>
     </div><br>
     <div>
     <label for="kodepos"></label>
@@ -123,9 +123,15 @@
     </div><br>
         <div class="flex h-10 mt-7 gap-10 text-xl">
     <a href="keranjang" class="tombol-kembali">← Kembali ke Keranjang</a>
-    <a href="#" class="tombol-lanjutkan">Lakukan Pemesanan</a>
+    <a href="#" class="tombol-lanjutkan bg-fuchsia-400">Lakukan Pemesanan</a>
 </div>
 
 </div>
-
+<div class="w-1/3">
+    <select name="ringkasanpemesanan" id="ringkasanpemesanan">
+        <option value="ringkasanpemesanan">Ringkasan Pemesanan</option>
+    </select>
+ <script src="styles/style.js"></script>
+</div>
+</div>
 @endsection
