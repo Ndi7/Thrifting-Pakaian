@@ -99,10 +99,12 @@
                         <h2>Potongan harga</h2>
                         <input type="text" disabled>
                         </div>
+                        <form action="checkout">
                         <div class="flex justify-center h-10 mt-7 gap-10 font-semibold text-xl">
                             <button class="bg-white w-32 rounded-md">CHECKOUT</button>
                             <button class="bg-black text-white w-32 rounded-md">CANCEL</button>
                         </div>
+                        </form>
                    </div>
                 </div>
                   

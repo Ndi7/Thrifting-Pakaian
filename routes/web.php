@@ -7,6 +7,8 @@ use App\Http\Controllers\login;
 use App\Http\Controllers\katalog;
 use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
+use App\Http\Controllers\checkout;
+
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
@@ -35,6 +37,7 @@ Route::get('/login', [login::class, 'index']);
 Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);
+Route::get('/checkout', [checkout::class, 'index']);
 
 Route::get('/user', [UserProfileController::class, 'index']);
 
