@@ -6,48 +6,62 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Modern Login Page</title>
-<head>
-
-<body>
-    
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registeration</span>
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>Sign In</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email password</span>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <a href="#">Forget Your Password?</a>
-            <button>Sign In</button>
-            </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-gray-0">
+      <div class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
+        
+        <div class="flex flex-col justify-center p-8 md:p-14">
+          <span class="mb-3 text-4xl font-bold">Welcome back</span>
+          <span class="font-light text-gray-400 mb-8">
+            Welcom back! Please enter your details
+        </span>
+          <div class="py-4">
+            <span class="mb-2 text-md">Email</span>
+            <input
+              type="text"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div class="py-4">
+            <span class="mb-2 text-md">Password</span>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+          <div class="flex justify-between w-full py-4">
+            <div class="mr-24">
+              <input type="checkbox" name="ch" id="ch" class="mr-2" />
+              <span class="text-md">Remember for 30 days</span>
+            </div>
+            <span class="font-bold text-md">Forgot password</span>
+          </div>
+          <button
+            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
+          >
+            Sign in
+          </button>
+          <button
+            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
+          >
+            <img src="{{ asset('images/google1.png')}}" alt="img" class="w-6 h-6 inline mr-2" />
+            Sign in with Google
+          </button>
+          <div class="text-center text-gray-400">
+            Dont'have an account?
+            <span class="font-bold text-black">Sign up for free</span>
+          </div>
         </div>
         <!-- {/* right side */} -->
         <div class="relative">
@@ -65,9 +79,6 @@
         </div>
       </div>
     </div>
-
-   <script src="{{ asset('js/script.js') }}"></script>
-</body>
-
+  </body>
 </html>
 @endsection
