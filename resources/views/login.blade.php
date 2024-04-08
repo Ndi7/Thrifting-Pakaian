@@ -20,7 +20,7 @@
         <div class="flex flex-col justify-center p-8 md:p-14">
           <span class="mb-3 text-4xl font-bold">Welcome back</span>
           <span class="font-light text-gray-400 mb-8">
-            Welcom back Please enter your details1.
+            Welcom back! Please enter your details1.
         </span>
           <div class="py-4">
             <span class="mb-2 text-md">Email</span>
