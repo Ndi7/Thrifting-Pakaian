@@ -108,7 +108,11 @@
                         <div class="bg-lawngreen mt-5 m-auto text-center w-full font-semibold rounded-md cursor-pointer">
                             <button class="">Checkout</button>
                         </div>
+                        <div class="flex justify-center h-10 mt-7 gap-10 font-semibold text-xl">
+                            <button class="bg-white w-32 rounded-md">CHECKOUT</button>
+                            <button class="bg-black text-white w-32 rounded-md">CANCEL</button>
                         </div>
+                        </form>
                    </div>
                 </div>
             </div>
