@@ -158,9 +158,6 @@
     document.getElementById("kotakKupon").style.display = "block";
   }
 </script>
-
-
-
 </div>
 </div>
 @endsection
