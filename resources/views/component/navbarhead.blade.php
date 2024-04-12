@@ -17,10 +17,10 @@
     
             <div class="flex justify-center h-10 w-full">
                 <nav class="flex font-semibold">
-                    <a href="#" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Home</a>
-                    <a href="katalog" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Katalog</a>
-                    <a href="keranjang" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Keranjang</a>
-                    <a href="#" class="block px-3 py-2 bg-white hover:bg-slate-200 rounded-2xl transition duration-300 hover:duration-500">Kontak</a>
+                    <a href="#" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Home</a>
+                    <a href="katalog" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Katalog</a>
+                    <a href="keranjang" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Keranjang</a>
+                    <a href="#" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Kontak</a>
                     <div class="flex items-center mx-1">
                         <label class="relative block">
                             <span class="sr-only">Search</span>
