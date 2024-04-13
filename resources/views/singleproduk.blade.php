@@ -1,194 +1,285 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
-<link rel="stylesheet" href="{{ asset('styles/crslsingle.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
 @extends('layout.navbar')
 
-@section ('title', 'Single Produk')
+@section('title', 'Single Produk')
 @section('content')
-<div class="container mx-auto px-5 my-10 justify-center">
-            <div class="container mx-auto px-60 my-10 justify-center">
-                <div class="py-3">
-                    <p class="font-bold text-xl my-0">SECOND HAND</p>
-                    <p>Tetaplah cerdas dengan pilihan Thrift mu</p>
-                    <div class="flex container">
-                        <div class="flex-wrap gap-4 w-2/3 justify-between">
-                            <div class="containercrslsingle">
-                                <div class="carouselsingle-container">
-                                    <div class="slider gallerycrslsingle">
-                                       <div class="slides">
-                                        <input type="radio" name="radio-btn" id="radio1">   
-                                        <input type="radio" name="radio-btn" id="radio2">   
-                                        <input type="radio" name="radio-btn" id="radio3">   
-                                        <input type="radio" name="radio-btn" id="radio4">   
-                                        <input type="radio" name="radio-btn" id="radio5">
+<div class="bg-green-200 container mx-auto px-5 my-10 justify-center">
 
-                                        <div class="slide first">
-                                            <img src="{{ asset('images/crsl1.png') }}" alt="">
-                                        </div>
-                                        <div class="slide">
-                                            <img src="{{ asset('images/crsl2.jpg') }}" alt="">
-                                        </div>
-                                        <div class="slide">
-                                            <img src="{{ asset('images/crsl3.jpg') }}" alt="">
-                                        </div>
-                                        <div class="slide">
-                                            <img src="{{ asset('images/crsl4.jpg') }}" alt="">
-                                        </div>
-                                        <div class="slide">
-                                            <img src="{{ asset('images/crsl5.jpg') }}" alt="">
-                                        </div
+    <!--Layout Second Hand-->
+    <div class="bg-blue-100 container mx-auto px-20 my-10 justify-center">
+        <h2 class="font-bold mt-5">Second Hand</h2>
+        <p class="">Tetaplah cerdas dengan pilihan Thrift mu</p>
 
-                                        <!--Carousel AUTO-->
-                                        <div class="navigation-auto">
-                                            <div class="auto-btn1"></div>
-                                            <div class="auto-btn2"></div>
-                                            <div class="auto-btn3"></div>
-                                            <div class="auto-btn4"></div>
-                                            <div class="auto-btn5"></div>
-                                        </div>
-                                       </div>
-                                       
-                                       <!--Carousel MANUAL-->
-                                       <div class="navigation-manual">
-                                            <label for="radio1" class="manual-btn"></label>
-                                            <label for="radio2" class="manual-btn"></label>
-                                            <label for="radio3" class="manual-btn"></label>
-                                            <label for="radio4" class="manual-btn"></label>
-                                            <label for="radio5" class="manual-btn"></label>
-                                       </div>
-                                    </div>
+        <!--Carousel dan details-->
+        <div class="bg-red-100 flex max-h-96">
+            <!--Carousel-->
+            <div class="bg-green-400 flex-wrap w-2/5 justify-between">
+                <div class="container mx-auto">
+                    <div x-data="{ activeSlide: 0 }" class="relative">
+                        <!-- Carousel Slides -->
+                        <div class="carousel-container">
+                            <div x-show="activeSlide === 0" class="carousel-slide">
+                                <img src="{{ asset('images/crsl1.png') }}" alt="Slide 1">
+                            </div>
+                            <div x-show="activeSlide === 1" class="carousel-slide">
+                                <img src="{{ asset('images/crsl2.jpg') }}" alt="Slide 2">
+                            </div>
+                            <!-- Add more slides as needed -->
+
+                            <!-- Carousel Navigation -->
+                            <div class="carousel-navigation absolute inset-x-0 bottom-0 flex justify-center items-center">
+                                <!-- Auto Navigation Buttons -->
+                                <div class="auto-btn" x-data="carouselAutoNav">
+                                    <template x-for="(slide, index) in slides" :key="index">
+                                        <div :class="{ 'bg-blue-500': activeSlide === index }" class="w-3 h-3 rounded-full mx-1 cursor-pointer" @click="changeSlide(index)"></div>
+                                    </template>
                                 </div>
-                                <script src="{{ asset('js/crslsingle.js') }}"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Carousel-->
+
+            <!--Detail-->
+            <div class="w-2/3 bg-slate-100/80 ml-2 max-h-96">
+                <div class="m-4 font-semibold">
+                    <div class="mb-3">
+                        <h1 class="text-xl mb-3">Kaos Oversize Harley Davidson</h1>
+                        <div class="flex gap-4 font-normal">
+                            <h2 class="text-3xl font-bold mb-10">Rp. 75000</h2>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="flex flex-wrap mb-3">
+                            <div class="w-24 h-10 flex items-center">
+                                <h2>Warna</h2>
+                            </div>
+                            <div class="flex flex-wrap justify-center items-center">
+                                <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>Hitam</button>
+                                </div>
+                                <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>Putih</button>
+                                </div>
+                                <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>Random</button>
+                                </div>
                             </div>
                         </div>
 
-
-                        <div class="w-1/3 bg-slate-200 h-72">
-                             <div class="m-4 font-semibold">
-                             <div class="mb-3">
-                                <h2>Ukuran</h2>
-                             <div class="flex gap-4 font-normal">
-                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>S</h2></button>
-                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>M</h2></button>
-                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>L</h2></button>
-                             <button class="bg-transparent hover:bg-white rounded-md w-6 transition duration-300 hover:duration-500"><h2>XL</h2></button>
-                             <button class="bg-transparent hover:bg-white rounded-md w-8 transition duration-300 hover:duration-500"><h2>XXL</h2></button>
-                             </div>
-                             </div>
-                             <div class="mb-3">
-                                <h2>Warna</h2>
-                                <div class="flex col columns-6 font-normal">
-                                    <table>
-                                        <button class="mr-2"><h2>Hitam</h2></button>
-                                        <button class="mr-2"><h2>Putih</h2></button>
-                                        <button><h2>Random</h2></button>
-                                    </table>
+                        <div class="flex flex-wrap mb-3">
+                            <div class="w-24 h-10 flex items-center">
+                                <h2>Size</h2>
+                            </div>
+                            <div class="flex flex-wrap justify-center items-center">
+                                <div class="border border-2 border-black w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>M</button>
                                 </div>
-                             </div>
-                             <div class="mb-3">
-                                <h2>Harga</h2>
-                             <table>
-                               <h2 class="font-normal">xxx.xxx.xx</h2>
-                            </table>
-                             </div>
-                             </div>
-                             <div class="flex justify-center h-10 mt-12 gap-10 font-semibold text-lg">
-                                 <button class="bg-black text-white w-32 rounded-md">Add to Cart</button>
-                                 <button class="bg-white w-32 rounded-md">CHECKOUT</button>
-                             </div>
+                                <div class="border border-2 border-black w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>L</button>
+                                </div>
+                                <div class="border border-2 border-black w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>XL</button>
+                                </div>
+                                <div class="border border-2 border-black w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
+                                    <button>XXL</button>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  
-    
-                <!-- Katalog Produk Promo -->
-                <div class="pt-20 px-1">
-                    <p class="font-bold text-lg my-0">Produk Promo.</p>
-                    <p>promosi produk yang menarik untuk Style Kamu</p>
+
+                        <div class="flex flex-wrap mb-3">
+                            <div class="w-24 h-10 flex items-center">
+                                <h2>Kuantitas</h2>
+                            </div>
+                            <div class="flex flex-wrap justify-center items-center">
+                                <div class="">
+                                    <input class="h-10 w-16" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="sm:flex flex-wrap container sm:justify-center gap-2 text-left shadow-lg m-auto">
-                    <div class=" w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    <div class="w-48 bg-slate-300">
-                        <img src="{{ asset('images/contoh.jpg') }}" alt=""><br>
-                        <div class="mx-1">
-                            <h2 class="text-base font-bold">Nama pakaian</h2>
-                            <h4 class="text-xs">Deskripsi singkat</h4>
-                            <h3 class="text-sm my-1">Harga</h3>
-                        </div>
-                    </div>
-                    
+                <div class="flex justify-center m-auto">
+                    <button class="bg-black text-white rounded-md w-full m-1 font-semibold">Masukkan Keranjang</button>
+                    <button class="bg-lawngreen rounded-md w-full m-1 font-semibold">Checkout</button>
                 </div>
-                
             </div>
+            <!--Detail-->
+        </div>
+        <!--Carousel dan details-->    
+    </div>
+    <!--Layout Second Hand-->
+
+    <!-- Katalog Produk Promo -->
+    <div class="bg-green-100 py-3 px-20">
+        <p class="font-bold my-0">Produk Promo</p>
+        <p>promosi produk yang menarik untuk Style Kamu</p>
+    </div>
+
+    <div class="bg-blue-200 grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 px-20 text-left m-auto">
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos1.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/celana1.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos3.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/celana5.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/celana2.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos4.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos1.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
+        </div>
+
+        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+            <img class="w-full h-52" src="{{ asset('images/kaos3.jpg') }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-sm font-bold">Nama pakaian</h2>
+                    <h3 class="text-sm my-1">Harga</h3>
+                    <div class=" flex flex-wrap">
+                    <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Beli</span>
+                    </button>
+                    <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
+                    <span>Masukan Keranjang</span>
+                    </button>
+                </div>
+            </div>  
         </div>
     </div>
+    <!-- Katalog Produk Promo -->
+
+</div>
 @endsection
