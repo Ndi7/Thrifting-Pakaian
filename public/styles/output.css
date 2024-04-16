@@ -2897,3 +2897,8 @@ video {
     background-color: rgb(209 213 219 / var(--tw-bg-opacity));
   }
 }
+
+.animate-fade-out {
+  opacity: 0;
+  transition: opacity 0s;
+}
