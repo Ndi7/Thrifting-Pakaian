@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+<script src="{{ asset('js/crslsingle.js') }}"></script>
 @extends('layout.navbar')
 
 @section('title', 'Single Produk')
@@ -14,32 +15,21 @@
         <!--Carousel dan details-->
         <div class="bg-red-100 flex max-h-96">
             <!--Carousel-->
-            <div class="bg-green-400 flex-wrap w-2/5 justify-between">
-                <div class="container mx-auto">
-                    <div x-data="{ activeSlide: 0 }" class="relative">
-                        <!-- Carousel Slides -->
-                        <div class="carousel-container">
-                            <div x-show="activeSlide === 0" class="carousel-slide">
-                                <img src="{{ asset('images/crsl1.png') }}" alt="Slide 1">
-                            </div>
-                            <div x-show="activeSlide === 1" class="carousel-slide">
-                                <img src="{{ asset('images/crsl2.jpg') }}" alt="Slide 2">
-                            </div>
-                            <!-- Add more slides as needed -->
-
-                            <!-- Carousel Navigation -->
-                            <div class="carousel-navigation absolute inset-x-0 bottom-0 flex justify-center items-center">
-                                <!-- Auto Navigation Buttons -->
-                                <div class="auto-btn" x-data="carouselAutoNav">
-                                    <template x-for="(slide, index) in slides" :key="index">
-                                        <div :class="{ 'bg-blue-500': activeSlide === index }" class="w-3 h-3 rounded-full mx-1 cursor-pointer" @click="changeSlide(index)"></div>
-                                    </template>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="bg-green-400 flex-wrap w-2/5 justify-between overflow-hidden items-center">
+                <div class="main-pic bg-slate-400 container h-72 mx-auto overflow-hidden">
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos1.jpg') }}" alt="" id="mainPic1"></div>
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos2.jpg') }}" alt="" id="mainPic2"></div>
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos3.jpg') }}" alt="" id="mainPic3"></div>
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos4.jpg') }}" alt="" id="mainPic4"></div>
+                </div>
+                <div class="nav-pic bg-slate-100 h-24 mt-2 flex flex-wrap justify-between">
+                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos1.jpg') }}" alt="" data-target="mainPic1"></div>
+                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos2.jpg') }}" alt="" data-target="mainPic2"></div>
+                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos3.jpg') }}" alt="" data-target="mainPic3"></div>
+                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos4.jpg') }}" alt="" data-target="mainPic4"></div>
                 </div>
             </div>
+            
             <!--Carousel-->
 
             <!--Detail-->
@@ -58,13 +48,13 @@
                             </div>
                             <div class="flex flex-wrap justify-center items-center">
                                 <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
-                                    <button>Hitam</button>
+                                    <button class="no-underline hover:underline underline-offset-8 decoration-white">Hitam</button>
                                 </div>
                                 <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
-                                    <button>Putih</button>
+                                    <button class="no-underline hover:underline underline-offset-8 decoration-white">Putih</button>
                                 </div>
                                 <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
-                                    <button>Random</button>
+                                    <button class="no-underline hover:underline underline-offset-8 decoration-white">Random</button>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center m-auto">
+                <div class="flex justify-center m-auto mt-12">
                     <button class="bg-black text-white rounded-md w-full m-1 font-semibold">Masukkan Keranjang</button>
                     <button class="bg-lawngreen rounded-md w-full m-1 font-semibold">Checkout</button>
                 </div>
@@ -282,4 +272,5 @@
     <!-- Katalog Produk Promo -->
 
 </div>
+
 @endsection
