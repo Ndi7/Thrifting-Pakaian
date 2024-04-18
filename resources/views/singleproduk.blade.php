@@ -5,28 +5,28 @@
 
 @section('title', 'Single Produk')
 @section('content')
-<div class="bg-green-200 container mx-auto px-5 my-10 justify-center">
+<div class="container mx-auto px-5 my-10 justify-center">
 
     <!--Layout Second Hand-->
-    <div class="bg-blue-100 container mx-auto px-20 my-10 justify-center">
+    <div class="container mx-auto px-20 my-10 justify-center">
         <h2 class="font-bold mt-5">Second Hand</h2>
         <p class="">Tetaplah cerdas dengan pilihan Thrift mu</p>
 
         <!--Carousel dan details-->
-        <div class="bg-red-100 flex max-h-96">
+        <div class="flex max-h-96">
             <!--Carousel-->
-            <div class="bg-green-400 flex-wrap w-2/5 justify-between overflow-hidden items-center">
-                <div class="main-pic bg-slate-400 container h-72 mx-auto overflow-hidden">
+            <div class="flex-wrap w-2/5 justify-between overflow-visible items-center">
+                <div class="main-pic container h-72 mx-auto overflow-hidden">
                     <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos1.jpg') }}" alt="" id="mainPic1"></div>
                     <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos2.jpg') }}" alt="" id="mainPic2"></div>
                     <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos3.jpg') }}" alt="" id="mainPic3"></div>
                     <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos4.jpg') }}" alt="" id="mainPic4"></div>
                 </div>
-                <div class="nav-pic bg-slate-100 h-24 mt-2 flex flex-wrap justify-between">
-                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos1.jpg') }}" alt="" data-target="mainPic1"></div>
-                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos2.jpg') }}" alt="" data-target="mainPic2"></div>
-                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos3.jpg') }}" alt="" data-target="mainPic3"></div>
-                    <div class="navImage h-24 w-24 m-auto"><img src="{{ asset('images/kaos4.jpg') }}" alt="" data-target="mainPic4"></div>
+                <div class="nav-pic h-24 mt-2 flex flex-wrap justify-between">
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos1.jpg') }}" alt="" data-target="mainPic1"></div>
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos2.jpg') }}" alt="" data-target="mainPic2"></div>
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos3.jpg') }}" alt="" data-target="mainPic3"></div>
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos4.jpg') }}" alt="" data-target="mainPic4"></div>
                 </div>
             </div>
             
@@ -103,12 +103,12 @@
     <!--Layout Second Hand-->
 
     <!-- Katalog Produk Promo -->
-    <div class="bg-green-100 py-3 px-20">
+    <div class="py-3 px-20">
         <p class="font-bold my-0">Produk Promo</p>
         <p>promosi produk yang menarik untuk Style Kamu</p>
     </div>
 
-    <div class="bg-blue-200 grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 px-20 text-left m-auto">
+    <div class="grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 px-20 text-left m-auto">
         <div class=" w-48 h-fit bg-slate-200 shadow-md">
             <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
                 <div class="m-1 flex-wrap gap-2">

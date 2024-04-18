@@ -10,7 +10,7 @@ use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
 use App\Http\Controllers\checkout;
 
-
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +30,8 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 
 Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 Route::get('/listproduct', [layoutlist::class, 'index']);
