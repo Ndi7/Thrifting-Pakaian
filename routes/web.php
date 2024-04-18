@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\checkoutberhasil;
 use App\Http\Controllers\DataBarang;
 use App\Http\Controllers\layoutlist;
 
@@ -53,7 +54,7 @@ Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);
 Route::get('/checkout', [checkout::class, 'index']);
-
+Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
 Route::get('/user', [UserProfileController::class, 'index']);
 
 // // Route dashboar
