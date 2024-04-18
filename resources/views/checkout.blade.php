@@ -4,8 +4,8 @@
 @section ('title', 'checkout')
 @section('content')
 
-<div class="container flex bg-yellow-400 mx-auto px-5 my-10 justify-center">
-<div class="w-2/3">
+<div class="container flex bg-gray-400 mx-auto px-5 my-10 justify-center">
+    <div class="w-2/3">
     <h2 class="font-bold text-xl">Checkout</h2><br>
     <div>
         <h2 class="font-bold">Informasi Kontak</h2>
@@ -25,7 +25,7 @@
     </div>
     <div class="input-control">
         <label for="namadepan"></label>
-        <input class=" w-1/3 h-10 p-2 border-t border-b rounded-lg" type="text" id="namadepan" name="namadepan" placeholder="Nama Depan" required>
+        <input class=" w-1/3 h-10 p-2 border-t border-b border-black rounded-lg" type="text" id="namadepan" name="namadepan" placeholder="Nama Depan" required>
         <label for="namabelakang">&nbsp;</label>
         <input class="w-1/3 h-10 p-2 border-t border-b border-black rounded-lg" type="text" id="namabelakang" name="namabelakang" placeholder="Nama Belakang" required>
         <div class="error"></div>
@@ -93,9 +93,7 @@
         <label for="notelp">&nbsp;</label>
         <input class="w-1/3 h-10 p-2 border-t border-b border-black rounded-lg" type="text" id="notelp" name="notelp" placeholder="Nomor Telephone" required>
         <div class="error"></div>
-    </div><br>
-    <script src="{{ asset('js/styles.js') }}"></script>
-    </form>
+    </div>
     <div>
         <input type="checkbox" id="subscribe" name="subscribe" value="yes">
         <label for="subscribe">Gunakan alamat yang sama untuk penagihan.</label>
@@ -132,8 +130,10 @@
     </div><br>
         <div class="flex h-10 mt-7 gap-10 text-xl">
     <a href="keranjang" class="tombol-kembali">← Kembali ke Keranjang</a>
-    <a href="#" class="tombol-lanjutkan btn rounded-lg bg-fuchsia-400">Lakukan Pemesanan</a>
-</div>
+    <a href="checkoutberhasil" class="tombol-lanjutkan rounded-lg bg-fuchsia-400">Lakukan Pemesanan</a>
+    </div>
+<script src="{{ asset('js/styles.js') }}"></script>
+    </form>
 
 </div>
 <div class="mt-7">
@@ -169,7 +169,29 @@
     button.classList.add("animate-fade-out");
   }
 </script>
-<div>
+<div><br>
+<table>
+    <tr>
+        <td>Subtotal Pemesanan</td>
+        <td>&nbsp;</td>
+        <td>Rp130.000</td>
+    </tr>
+    <tr>
+        <td>Subtotal Pengiriman</td>
+        <td>&nbsp;</td>
+        <td>Rp20.000</td>
+    </tr>
+    <tr>
+        <td>Kupon Diskon</td>
+        <td>&nbsp;-</td>
+        <td>Rp10.000</td>
+    </tr>
+    <tr>
+        <th>Total Pembayaran</th>
+        <td>&nbsp;</td>
+        <td>Rp140.000</td>
+    </tr>
+</table>
 </div>
 </div>
 </div>
