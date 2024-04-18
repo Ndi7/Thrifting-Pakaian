@@ -1,45 +1,35 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+<script src="{{ asset('js/crslsingle.js') }}"></script>
 @extends('layout.navbar')
 
 @section('title', 'Single Produk')
 @section('content')
-<div class="bg-green-200 container mx-auto px-5 my-10 justify-center">
+<div class="container mx-auto px-5 my-10 justify-center">
 
     <!--Layout Second Hand-->
-    <div class="bg-blue-100 container mx-auto px-20 my-10 justify-center">
+    <div class="container mx-auto px-20 my-10 justify-center">
         <h2 class="font-bold mt-5">Second Hand</h2>
         <p class="">Tetaplah cerdas dengan pilihan Thrift mu</p>
 
         <!--Carousel dan details-->
-        <div class="bg-red-100 flex max-h-96">
+        <div class="flex max-h-96">
             <!--Carousel-->
-            <div class="bg-green-400 flex-wrap w-2/5 justify-between">
-                <div class="container mx-auto">
-                    <div x-data="{ activeSlide: 0 }" class="relative">
-                        <!-- Carousel Slides -->
-                        <div class="carousel-container">
-                            <div x-show="activeSlide === 0" class="carousel-slide">
-                                <img src="{{ asset('images/crsl1.png') }}" alt="Slide 1">
-                            </div>
-                            <div x-show="activeSlide === 1" class="carousel-slide">
-                                <img src="{{ asset('images/crsl2.jpg') }}" alt="Slide 2">
-                            </div>
-                            <!-- Add more slides as needed -->
-
-                            <!-- Carousel Navigation -->
-                            <div class="carousel-navigation absolute inset-x-0 bottom-0 flex justify-center items-center">
-                                <!-- Auto Navigation Buttons -->
-                                <div class="auto-btn" x-data="carouselAutoNav">
-                                    <template x-for="(slide, index) in slides" :key="index">
-                                        <div :class="{ 'bg-blue-500': activeSlide === index }" class="w-3 h-3 rounded-full mx-1 cursor-pointer" @click="changeSlide(index)"></div>
-                                    </template>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="flex-wrap w-2/5 justify-between overflow-visible items-center">
+                <div class="main-pic container h-72 mx-auto overflow-hidden">
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos1.jpg') }}" alt="" id="mainPic1"></div>
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos2.jpg') }}" alt="" id="mainPic2"></div>
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos3.jpg') }}" alt="" id="mainPic3"></div>
+                    <div class="h-auto w-auto m-auto"><img src="{{ asset('images/kaos4.jpg') }}" alt="" id="mainPic4"></div>
+                </div>
+                <div class="nav-pic h-24 mt-2 flex flex-wrap justify-between">
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos1.jpg') }}" alt="" data-target="mainPic1"></div>
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos2.jpg') }}" alt="" data-target="mainPic2"></div>
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos3.jpg') }}" alt="" data-target="mainPic3"></div>
+                    <div class="navImage h-24 w-24 m-auto border border-2 border-opacity-5 border-black"><img src="{{ asset('images/kaos4.jpg') }}" alt="" data-target="mainPic4"></div>
                 </div>
             </div>
+            
             <!--Carousel-->
 
             <!--Detail-->
@@ -58,13 +48,13 @@
                             </div>
                             <div class="flex flex-wrap justify-center items-center">
                                 <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
-                                    <button>Hitam</button>
+                                    <button class="no-underline hover:underline underline-offset-8 decoration-white">Hitam</button>
                                 </div>
                                 <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
-                                    <button>Putih</button>
+                                    <button class="no-underline hover:underline underline-offset-8 decoration-white">Putih</button>
                                 </div>
                                 <div class="w-16 h-10 mr-1 flex justify-center items-center cursor-pointer">
-                                    <button>Random</button>
+                                    <button class="no-underline hover:underline underline-offset-8 decoration-white">Random</button>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center m-auto">
+                <div class="flex justify-center m-auto mt-12">
                     <button class="bg-black text-white rounded-md w-full m-1 font-semibold">Masukkan Keranjang</button>
                     <button class="bg-lawngreen rounded-md w-full m-1 font-semibold">Checkout</button>
                 </div>
@@ -113,12 +103,12 @@
     <!--Layout Second Hand-->
 
     <!-- Katalog Produk Promo -->
-    <div class="bg-green-100 py-3 px-20">
+    <div class="py-3 px-20">
         <p class="font-bold my-0">Produk Promo</p>
         <p>promosi produk yang menarik untuk Style Kamu</p>
     </div>
 
-    <div class="bg-blue-200 grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 px-20 text-left m-auto">
+    <div class="grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 px-20 text-left m-auto">
         <div class=" w-48 h-fit bg-slate-200 shadow-md">
             <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
                 <div class="m-1 flex-wrap gap-2">
@@ -282,4 +272,5 @@
     <!-- Katalog Produk Promo -->
 
 </div>
+
 @endsection

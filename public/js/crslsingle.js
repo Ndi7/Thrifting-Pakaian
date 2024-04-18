@@ -1,7 +1,13 @@
-const carouselAutoNav = {
-    activeSlide: 0,
-    slides: Array.from({ length: 2 }, (_, index) => index), // Adjust the length according to the number of slides
-    changeSlide(index) {
-        this.activeSlide = index;
-    },
-};
+document.addEventListener('DOMContentLoaded', function () {
+    const navImages = document.querySelectorAll('.navImage');
+  
+    navImages.forEach(function (navImage) {
+      navImage.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-target');
+        const mainPic = document.getElementById(targetId);
+  
+        // Ubah atribut src dari gambar utama
+        mainPic.querySelector('img').src = this.querySelector('img').src;
+      });
+    });
+  });

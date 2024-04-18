@@ -7,7 +7,7 @@
 <div class="container mx-auto px-5 my-10 justify-center">
                 <div class="px-20 my-10 justify-center">
                     <div class="sm:flex flex-wrap text-center justify-center gap-4 pt-20 text-left m-auto">
-                        <div class="w-60 bg-slate-300 shadow-lg">
+                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/kaos1.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">T-Shirt Harley Davidson</h2>
@@ -15,7 +15,7 @@
                                 <h3 class="text-sm my-1">Rp. 50000</h3>
                             </div>
                         </div>
-                        <div class="w-60 bg-slate-300 shadow-lg">
+                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/kaos2.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">Kaos Oversize Harley Davidson</h2>
@@ -23,7 +23,7 @@
                                 <h3 class="text-sm my-1">Rp. 75000</h3>
                             </div>
                         </div>
-                        <div class="w-60 bg-slate-300 shadow-lg">
+                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/kaos3.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">T-Shirt Polo</h2>
@@ -31,7 +31,7 @@
                                 <h3 class="text-sm my-1">Rp. 55000</h3>
                             </div>
                         </div>
-                        <div class="w-60 bg-slate-300 shadow-lg">
+                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/celana1.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">Celana Jeans Modif</h2>
@@ -67,8 +67,8 @@
                         <p class="font-bold my-0">Produk Promo</p>
                         <p>promosi produk yang menarik untuk Style Kamu</p>
                     </div>
-                    <div class="grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 text-left m-auto">
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                    <div class="grid grid-cols-3 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -88,7 +88,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos1.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -108,7 +108,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/celana1.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -128,7 +128,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos3.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -148,7 +148,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/celana5.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -168,7 +168,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/celana2.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -188,7 +188,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -208,7 +208,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos4.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -228,7 +228,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos1.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
@@ -248,7 +248,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md">
+                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos3.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama pakaian</h2>
