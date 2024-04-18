@@ -22,36 +22,53 @@
           <span class="font-light text-gray-400 mb-8">
             Welcom back! Please enter your details1.
         </span>
+
+        
+
+
+        <form action=""{{ route('login') }}" method="POST">
+
+          @csrf 
+          <!-- pesan gagal berhasil -->
+        @if (isset($message) && $message === 'sukses')
+        <div class="alert alert-success">Login berhasil!</div>
+        @elseif (isset($message) && $message === 'gagal')
+        <div class="alert alert-danger">Login gagal!</div>
+        @endif
+
           <div class="py-4">
-            <span class="mb-2 text-md">Email</span>
+            <label for="email" class="form-label mb-2 text-md">Email</label>
             <input
-              type="text"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              type="email"
+              class="form-control w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
               name="email"
               id="email"
             />
           </div>
           <div class="py-4">
-            <span class="mb-2 text-md">Password</span>
+            <label for="password" class="form-label mb-2 text-md">Password</label>
             <input
               type="password"
               name="pass"
               id="pass"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              class="from-control w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
             />
           </div>
+          
           <div class="flex justify-between w-full py-4">
-            <div class="mr-24">
+            <!-- <div class="mr-24">
               <input type="checkbox" name="ch" id="ch" class="mr-2" />
               <span class="text-md">Remember for 30 days</span>
-            </div>
+            </div> -->
             <span class="font-bold text-md">Forgot password</span>
           </div>
+
           <button
-            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
+            name="login" type="submit" class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
           >
             Sign in
           </button>
+
           <button
             class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
           >
@@ -63,6 +80,7 @@
             <span class="font-bold text-black">Sign up for free</span>
           </div>
         </div>
+        </form>
         <!-- {/* right side */} -->
         <div class="relative">
           <img
