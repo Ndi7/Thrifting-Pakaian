@@ -3,15 +3,18 @@
 use App\Http\Controllers\DataBarang;
 use App\Http\Controllers\layoutlist;
 
-use App\Http\Controllers\login;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\katalog;
 use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
 use App\Http\Controllers\checkout;
 
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\registerController;
 use App\Http\Controllers\UserProfileController;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -30,12 +33,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
+Route::get('/landingpage', [LandingPageController::class, 'landingPage'])->Middleware('auth');
 
 Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 Route::get('/listproduct', [layoutlist::class, 'index']);
 
-Route::get('/login', [login::class, 'index']);
+//Logout Login register
+
+Route::post('/logout', [loginController::class, 'logout'])->name('logout');
+
+Route::get('/login', [loginController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.loginPost');
+
+Route::get('/register', [registerController::class, 'register'])->name('register');
+Route::post('/register/login', [registerController::class, 'registerPost'])->name('register.registerPost');
+
+
 Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);

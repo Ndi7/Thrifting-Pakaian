@@ -22,49 +22,53 @@
           <span class="font-light text-gray-400 mb-8">
             Welcom back! Please enter your details1.
         </span>
-
         
 
-
-        <form action=""{{ route('login') }}" method="POST">
+        <form action="{{ route('login.loginPost')}}" method="POST">
 
           @csrf 
-          <!-- pesan gagal berhasil -->
-        @if (isset($message) && $message === 'sukses')
-        <div class="alert alert-success">Login berhasil!</div>
-        @elseif (isset($message) && $message === 'gagal')
-        <div class="alert alert-danger">Login gagal!</div>
-        @endif
 
-          <div class="py-4">
-            <label for="email" class="form-label mb-2 text-md">Email</label>
-            <input
-              type="email"
-              class="form-control w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-              name="email"
-              id="email"
-            />
-          </div>
-          <div class="py-4">
-            <label for="password" class="form-label mb-2 text-md">Password</label>
-            <input
-              type="password"
-              name="pass"
-              id="pass"
-              class="from-control w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-            />
-          </div>
+          @if (session()->has('loginError'))
+          <span class="text-red-500">{{ session('loginError') }}</span>
+          @endif
+
+          <div class="py-1">
+              <label for="email" class="form-label mb-2 text-md">Email</label>
+              <input
+                type="email"
+                class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                name="email"
+                id="email"
+              />
+              @error('email')
+                  <span class="text-red-500">{{ $message }}</span>
+              @enderror
+        </div>
+
+        <div class="py-1 mb-5">
+          <label for="password" class="form-label mb-2 text-md">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+          />
+              @error('password')
+                  <span class="text-red-500">{{ $message }}</span>
+              @enderror
+
+        </div>
           
           <div class="flex justify-between w-full py-4">
             <!-- <div class="mr-24">
               <input type="checkbox" name="ch" id="ch" class="mr-2" />
               <span class="text-md">Remember for 30 days</span>
             </div> -->
-            <span class="font-bold text-md">Forgot password</span>
+            <span ><a class="font-bold text-md" href="#" >Forgot password</a></span>
           </div>
 
           <button
-            name="login" type="submit" class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
+            name="login" type="submit" class="btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
           >
             Sign in
           </button>
@@ -77,7 +81,7 @@
           </button>
           <div class="text-center text-gray-400">
             Dont'have an account?
-            <span class="font-bold text-black">Sign up for free</span>
+            <span > <a class="font-bold text-black" href="{{ route('register')}}">Sign up for free</a>  </span>
           </div>
         </div>
         </form>
