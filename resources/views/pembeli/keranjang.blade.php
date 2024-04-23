@@ -99,10 +99,10 @@
                             <h2>Code Voucher</h2>
                             <input class="mb-7 w-full h-6 rounded-md" type="text">
                             <h2>Opsi Pengiriman</h2>
-                            <form class="font-normal mb-5" name="formcek">
-                                <select class="w-full h-6 rounded-md" name="jurusan">
-                                 <option value="GoSend Instant">Via Transfer
-                                 <option value="Cash Of Delivery COD">Cash Of Delivery COD
+                            <form class="font-normal" name="formcek">
+                                <select class="w-full h-10 text-black rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" name="deliveryOption">
+                                    <option value="Via Transfer">Via Transfer</option>
+                                    <option value="Cash On Delivery (COD)">Cash On Delivery (COD)</option>
                                 </select>
                             </form>
                         </div>
