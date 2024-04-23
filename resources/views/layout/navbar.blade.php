@@ -11,7 +11,7 @@
     </header>
     
             @yield('content')
-    
+            
     <footer>
         @include('component.navbarfoot')
     </footer>
