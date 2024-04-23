@@ -1,5 +1,8 @@
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
+<script src="{{ asset('js/flowbite.min.js') }}"></script>
 <div class="flex justify-center w-full text-sm items-center px-10 py-2">
-            <div class="flex flex-wrap px-10 py-5">
+            <div class="flex flex-wrap px-10">
             <a href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
     
                 <g transform="translate(0.000000,1043.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
@@ -15,26 +18,31 @@
                 </svg></a>
             </div>
     
-            <div class="flex justify-center h-10 w-full">
-                <nav class="flex font-semibold">
-                    <a href="#" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Home</a>
-                    <a href="katalog" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Katalog</a>
-                    <a href="keranjang" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Keranjang</a>
-                    <a href="#" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Kontak</a>
-                    
-                    
+            <div class="flex justify-center items-center m-auto w-full">
+                <nav class="flex items-center font-semibold gap-2">
+                    <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-teal-500 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Home</button></a>
+                    <a href="katalog" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-teal-500 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Katalog</button></a>
+                    <a href="keranjang" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-teal-500 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Keranjang</button></a>
+                    <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-teal-500 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Kontak</button></a>
                    
-
-
-
-                    <div class="flex items-center mx-1">
-                        <label class="relative block">
+                    <div class="pt-3">
+                    <form class="flex">   
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2"/>
+                                </svg>
+                            </div>
+                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-lawngreen dark:focus:border-lawngreen" placeholder="Cari Pakaianmu..." required />
+                        </div>
+                        <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-black bg-lawngreen rounded-lg border border-lawngreen hover:bg-lawngreen focus:ring-4 focus:outline-none focus:ring-lawngreen dark:bg-lawngreen dark:hover:bg-lawngreen dark:focus:ring-lawngreen">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
                             <span class="sr-only">Search</span>
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                              <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"><!-- ... --></svg>
-                            </span>
-                            <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-full py-1 pl-9 pr-2 my-1 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search.." type="text" name="search"/>
-                          </label>
+                        </button>
+                    </form>
                     </div>
                 </nav>
             </div>

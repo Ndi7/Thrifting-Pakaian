@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
+<script src="{{ asset('js/flowbite.min.js') }}"></script>
 @extends('layout.navbar')
 
 @section ('title', 'keranjang')
@@ -16,7 +18,7 @@
                         <table class="w-full justify-center">
                         <thead class="bg-white h-14 sticky top-0 z-0">
                             <tr>
-                                <th><input type="checkbox" id="checkAll"></th>
+                                <th><input class="rounded-full" type="checkbox" id="checkAll"></th>
                                 <th colspan="2">Produk</th>
                                 <th>Harga Satuan</th>
                                 <th colspan="2">Aksi</th>
@@ -24,7 +26,7 @@
                         </thead>
                         <tbody id="productsTable">
                             <tr class="bg-slate-100/70 h-28 cursor-pointer">
-                                <td class="text-center"><input class="productCheckbox" type="checkbox"></td>
+                                <td class="text-center"><input class="productCheckbox rounded-full" type="checkbox"></td>
                                 <td class="w-28"><img class="size-fit" src="{{ asset('images/kaos2.jpg') }}" alt=""></td>
                                 <td class="ml-5">Nama Pakaian</td>
                                 <td class="text-center">Rp. xxx.xxx</td>
@@ -32,7 +34,7 @@
                                 <td class="w-16"><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="#f40b0b"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M14 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M4 7H20" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g></svg></td>
                             </tr>
                             <tr class="bg-white/70 h-28 cursor-pointer">
-                                <td class="text-center"><input class="productCheckbox" type="checkbox"></td>
+                                <td class="text-center"><input class="productCheckbox rounded-full" type="checkbox"></td>
                                 <td class="600 w-28"><img class="size-fit" src="{{ asset('images/kaos4.jpg') }}" alt=""></td>
                                 <td class="ml-5">Nama Pakaian</td>
                                 <td class="text-center">Rp. xxx.xxx</td>
@@ -48,7 +50,7 @@
                                 <td class="w-16"><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="#f40b0b"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M14 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M4 7H20" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g></svg></td>
                             </tr>
                             <tr class="bg-white/70 h-28 cursor-pointer">
-                                <td class="text-center"><input class="productCheckbox" type="checkbox"></td>
+                                <td class="text-center"><input class="productCheckbox rounded-full" type="checkbox"></td>
                                 <td class="600 w-28"><img class="size-fit" src="{{ asset('images/celana1.jpg') }}" alt=""></td>
                                 <td class="ml-5">Nama Pakaian</td>
                                 <td class="text-center">Rp. xxx.xxx</td>
@@ -56,7 +58,7 @@
                                 <td class="w-16"><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="#f40b0b"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M14 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M4 7H20" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g></svg></td>
                             </tr>
                             <tr class="bg-slate-100/70 h-28 cursor-pointer">
-                                <td class="text-center"><input class="productCheckbox" type="checkbox"></td>
+                                <td class="text-center"><input class="productCheckbox rounded-full" type="checkbox"></td>
                                 <td class="w-28"><img class="size-fit" src="{{ asset('images/celana4.jpg') }}" alt=""></td>
                                 <td class="ml-5">Nama Pakaian</td>
                                 <td class="text-center">Rp. xxx.xxx</td>
@@ -64,7 +66,7 @@
                                 <td class="w-16"><svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="#f40b0b"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M14 11V17" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M4 7H20" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#d1d1d1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g></svg></td>
                             </tr>
                             <tr class="bg-white/70 h-28 cursor-pointer">
-                                <td class="text-center"><input class="productCheckbox" type="checkbox"></td>
+                                <td class="text-center"><input class="productCheckbox rounded-full" type="checkbox"></td>
                                 <td class="600 w-28"><img class="size-fit" src="{{ asset('images/celana1.jpg') }}" alt=""></td>
                                 <td class="ml-5">Nama Pakaian</td>
                                 <td class="text-center">Rp. xxx.xxx</td>
@@ -82,18 +84,18 @@
                         <div class="m-4">
                         <h2>Alamat</h2>
                         <input class="w-full font-normal mb-7 h-6 rounded-md" type="text">
-                        <div class="flex flex-wrap gap-2">
+                        <div class="flex gap-2">
                         <div>
                             <h2>Item</h2>
                             <input class="mb-7 w-full h-6 rounded-md" type="text">
                             <h2>Potongan harga</h2>
-                            <input class="mb-7 w-full h-6 rounded-md" type="text" disabled>
+                            <input class="mb-7 w-full h-6 rounded-md bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" disabled>
                             <h2>Total Pesanan</h2>
-                            <input class="mb-7 w-full h-6 rounded-md" type="text" disabled>
+                            <input class="mb-7 w-full h-6 rounded-md bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" disabled>
                         </div>
                         <div>
                             <h2>Biaya Pengiriman</h2>
-                            <input class="mb-7 w-full h-6 rounded-md" type="text" disabled>
+                            <input class="mb-7 w-full h-6 rounded-md bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" disabled>
                             <h2>Code Voucher</h2>
                             <input class="mb-7 w-full h-6 rounded-md" type="text">
                             <h2>Opsi Pengiriman</h2>

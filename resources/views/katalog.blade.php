@@ -69,7 +69,7 @@
                         <p class="font-bold my-0">Produk Promo</p>
                         <p>promosi produk yang menarik untuk Style Kamu</p>
                     </div>
-                    <div class="grid grid-cols-3 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto">
+                    <div class="grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto">
                         <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
