@@ -1,3 +1,4 @@
+//PAKAIAN ATAS//
 document.addEventListener("DOMContentLoaded", function () {
     const showAllBtn = document.getElementById("showAllBtn");
     const hideAllBtn = document.getElementById("hideAllBtn");
@@ -42,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+//PAKAIAN BAWAH//
 document.addEventListener("DOMContentLoaded", function () {
     const showAllBtnbawah = document.getElementById("showAllBtnbawah");
     const hideAllBtnbawah = document.getElementById("hideAllBtnbawah");
@@ -83,5 +86,51 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener for "Sembunyikan" button
     hideAllBtnbawah.addEventListener("click", function () {
         hideAllExtraPakaianbawahItems();
+    });
+});
+
+
+//ALAS KAKI//
+document.addEventListener("DOMContentLoaded", function () {
+    const showAllBtnalaskaki = document.getElementById("showAllBtnalaskaki");
+    const hideAllBtnalaskaki = document.getElementById("hideAllBtnalaskaki");
+    const alaskakiItems = document.querySelectorAll(".alaskaki > div");
+
+    // Function to hide alaskaki items starting from index 5
+    function hideExtraAlaskakiItems() {
+        for (let i = 5; i < alaskakiItems.length; i++) {
+            alaskakiItems[i].style.display = "none";
+        }
+    }
+
+    // Function to show all alaskaki items
+    function showAllAlaskakiItems() {
+        alaskakiItems.forEach((item) => {
+            item.style.display = "block";
+        });
+        hideAllBtnalaskaki.style.display = "block"; // Show the "Sembunyikan" button
+        showAllBtnalaskaki.style.display = "none"; // Hide the "Tampilkan Semua" button
+    }
+
+    // Function to hide all extra alaskaki items
+    function hideAllExtraAlaskakiItems() {
+        for (let i = 5; i < alaskakiItems.length; i++) {
+            alaskakiItems[i].style.display = "none";
+        }
+        hideAllBtnalaskaki.style.display = "none"; // Hide the "Sembunyikan" button
+        showAllBtnalaskaki.style.display = "block"; // Show the "Tampilkan Semua" button
+    }
+
+    // Hide alaskaki items on page load
+    hideExtraAlaskakiItems();
+
+    // Event listener for "Tampilkan Semua" button
+    showAllBtnalaskaki.addEventListener("click", function () {
+        showAllAlaskakiItems();
+    });
+
+    // Event listener for "Sembunyikan" button
+    hideAllBtnalaskaki.addEventListener("click", function () {
+        hideAllExtraAlaskakiItems();
     });
 });

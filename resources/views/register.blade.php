@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('styles/style.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 @extends('layout.register')
 
 @section ('title', 'register')
@@ -70,19 +71,12 @@
           
           
           <button
-            name="register" type="submit" class="btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
-          >
-            Sign up
+            name="register" type="submit" class="btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-lawngreen hover:text-black">
+            Daftar
           </button>
 
-          <button
-            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-white hover:text-black"
-          >
-            <img src="{{ asset('images/google1.png')}}" alt="img" class="w-6 h-6 inline mr-2" />
-            Sign in with Google
-          </button>
           <div class="text-center text-gray-400">
-            have an account?
+            Sudah punya akun?
             <span > <a class="font-bold text-black" href="{{ route('login')}}">Log in</a>  </span>
           </div>
           
