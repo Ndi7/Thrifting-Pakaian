@@ -57,6 +57,9 @@ Route::get('/checkout', [checkout::class, 'index']);
 Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
 Route::get('/user', [UserProfileController::class, 'index']);
 
+Route::get('/userprofile', function () {
+    return view('user');
+});
 // // Route dashboar
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
