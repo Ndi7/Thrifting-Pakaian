@@ -30,12 +30,12 @@
 
             @csrf 
           <div class="py-1">
-            <label for="name" class="form-label mb-2 text-md">username</label>
+            <label for="name" class="form-label mb-2 text-md">Username</label>
             <input
               type="text"
               name="name"
               id="name"
-              class="form-control @error('name') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              class="form-control @error('name') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
             />
             @error('name')
                     <span class="text-red-500">{{ $message }}</span>
@@ -46,7 +46,7 @@
                 <label for="email" class="form-label mb-2 text-md">Email</label>
                 <input
                   type="email"
-                  class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
                   name="email"
                   id="email"
                 />
@@ -61,7 +61,7 @@
               type="password"
               name="password"
               id="password"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
             />
                 @error('password')
                     <span class="text-red-500">{{ $message }}</span>

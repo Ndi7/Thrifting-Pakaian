@@ -76,6 +76,7 @@
 
           <button name="login" type="submit" class="bg-gray-100 btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-lawngreen">
           Sign in</button>
+          
 
           <div class="text-center text-gray-400">Tidak punya akun?<span>
             <a class="font-bold text-black" href="{{ route('register')}}">Daftar Disini</a></span>
