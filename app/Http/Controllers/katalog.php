@@ -6,6 +6,6 @@ class katalog extends Controller
 {
     public function index()
     {
-        return view('katalog');
+        return view('pembeli.katalog');
     }
 }

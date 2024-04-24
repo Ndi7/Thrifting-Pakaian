@@ -8,6 +8,6 @@ class singleproduk extends Controller
 {
     public function index()
     {
-        return view('singleproduk');
+        return view('pembeli.singleproduk');
     }
 }

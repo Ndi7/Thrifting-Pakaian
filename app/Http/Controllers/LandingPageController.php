@@ -8,6 +8,6 @@ class landingpageController extends Controller
 {
     public function landingPage()
     {
-        return view('landingpage');
+        return view('pembeli.landingpage');
     }
 }

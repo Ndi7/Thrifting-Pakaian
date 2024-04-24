@@ -99,10 +99,10 @@
                             <h2>Code Voucher</h2>
                             <input class="mb-7 w-full h-6 rounded-md" type="text">
                             <h2>Opsi Pengiriman</h2>
-                            <form class="font-normal mb-5" name="formcek">
-                                <select class="w-full h-6 rounded-md" name="jurusan">
-                                 <option value="GoSend Instant">Via Transfer
-                                 <option value="Cash Of Delivery COD">Cash Of Delivery COD
+                            <form class="font-normal" name="formcek">
+                                <select class="w-full h-10 text-black rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" name="deliveryOption">
+                                    <option value="Via Transfer">Via Transfer</option>
+                                    <option value="Cash On Delivery (COD)">Cash On Delivery (COD)</option>
                                 </select>
                             </form>
                         </div>
@@ -114,221 +114,14 @@
                         </div>
                    </div>
                 </div>
-            </div>
-                
-            <br><br>
-                  
-                <!-- Katalog Produk Promo -->
-                <div class="py-3">
-                        <p class="font-bold my-0">Produk Promo</p>
-                        <p>promosi produk yang menarik untuk Style Kamu</p>
-                    </div>
-                    <div class="grid grid-cols-5 container sm:justify-center gap-y-3 gap-x-1 text-left m-auto">
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos1.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/celana1.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos3.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/celana5.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/celana2.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos2.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos4.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos1.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
-                            <img class="w-full h-52" src="{{ asset('images/kaos3.jpg') }}" alt="">
-                            <div class="m-1 flex-wrap gap-2">
-                                <h2 class="text-sm font-bold">Nama pakaian</h2>
-                                <h3 class="text-sm my-1">Harga</h3>
-                            <div class=" flex flex-wrap">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Beli
-                                </span>
-                            </button>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow px-3 py-1 rounded-md text-xs font-semibold">
-                                <span>
-                                    Masukan Keranjang
-                                </span>
-                            </button>
-                            </div>
-                            </div>  
-                        </div>
-                    </div>
-
-                        
-                    </div>
-                
-            </div>
+            </div>      
+            <br><br>          
+            @include('component.pakaianatas')
+            @include('component.pakaianbawah')
         </div>
+        </div>
+                
     </div>
+    </div>
+</div>
 @endsection
