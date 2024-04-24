@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
 <script src="{{ asset('js/flowbite.min.js') }}"></script>
-<div class="flex justify-center w-full text-sm items-center px-10 py-2">
-            <div class="flex flex-wrap px-10">
+<div class="flex w-full justify-between mt-5 m-auto">
+            <div class="flex flex-wrap px-10 m-auto">
             <a href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
     
                 <g transform="translate(0.000000,1043.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
@@ -22,8 +22,8 @@
                 <nav class="flex items-center font-semibold gap-2">
                     <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Home</button></a>
                     <a href="katalog" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Katalog</button></a>
-                    <a href="keranjang" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Keranjang</button></a>
-                    <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Kontak</button></a>
+                    <a href="detailpesanan" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Detail pesanan</button></a>
+                    <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Service</button></a>
                    
                     <div class="pt-3">
                     <form class="flex">   
@@ -46,10 +46,11 @@
                     </div>
                 </nav>
             </div>
+            @include('component.profildropdown')
     
-            <div class="flex justify-end">
-            <a href="" class="block px-10 py-5"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#000000" d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg></a>
-            </div>
+        </div>
+
+ </div>
             @auth
             <form action="{{ route('logout')}} " method="POST">
                 @csrf

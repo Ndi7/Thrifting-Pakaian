@@ -9,7 +9,6 @@
 <div class="container mx-auto px-5 my-10 justify-center">
             <div class="container mx-auto px-20 my-10 justify-center">
                 <div class="py-3">
-                    <h2 class="font-bold text-2xl my-0 text-center">2ND CHANCE</h2><br>
                     <h2 class="font-bold mb-5">Keranjang Belanja</h2>
                 
                 <div class="flex">
@@ -118,6 +117,7 @@
             <br><br>          
             @include('component.pakaianatas')
             @include('component.pakaianbawah')
+            @include('component.alaskaki')
         </div>
         </div>
                 

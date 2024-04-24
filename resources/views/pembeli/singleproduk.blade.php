@@ -10,7 +10,7 @@
 <div class="container mx-auto px-5 my-10 justify-center">
 
     <!--Layout Second Hand-->
-    <div class="container mx-auto px-20 my-10 justify-center">
+    <div class="container mx-auto px-20 my-10 justify-center"><br>
         <h2 class="font-bold mt-5">Second Hand</h2>
         <p class="">Tetaplah cerdas dengan pilihan Thrift mu</p>
 
@@ -129,7 +129,6 @@
                     </div>
                 </div>
                 <div class="flex justify-center m-auto mt-12">
-                    <button class="bg-black text-white rounded-md w-full m-1 font-semibold">Masukkan Keranjang</button>
                     <button class="bg-lawngreen rounded-md w-full m-1 font-semibold">Checkout</button>
                 </div>
             </div>
@@ -139,6 +138,7 @@
         <!--Carousel dan details-->    
         @include('component.pakaianatas')
         @include('component.pakaianbawah')
+        @include('component.alaskaki')
     </div>
     <!--Layout Second Hand-->
 

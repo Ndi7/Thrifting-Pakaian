@@ -9,6 +9,7 @@ use App\Http\Controllers\katalog;
 use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
 use App\Http\Controllers\checkout;
+use App\Http\Controllers\detailpesanan;
 
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\loginController;
@@ -31,7 +32,7 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/landingpage', [LandingPageController::class, 'landingPage'])->Middleware('auth');
@@ -54,6 +55,7 @@ Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);
 Route::get('/checkout', [checkout::class, 'index']);
+Route::get('/detailpesanan', [detailpesanan::class, 'index']);
 Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
 Route::get('/user', [UserProfileController::class, 'index']);
 
