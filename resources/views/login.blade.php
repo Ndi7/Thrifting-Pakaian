@@ -79,7 +79,7 @@
           
 
           <div class="text-center text-gray-400">Tidak punya akun?<span>
-            <a class="font-bold text-black" href="{{ route('register')}}">Daftar Disini</a></span>
+            <a class="font-bold text-black" href="{{ route('register')}}">Daftar Disini!</a></span>
           </div>
 
         </div>
