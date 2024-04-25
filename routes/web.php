@@ -16,6 +16,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\dashboard;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -58,6 +59,7 @@ Route::get('/checkout', [checkout::class, 'index']);
 Route::get('/detailpesanan', [detailpesanan::class, 'index']);
 Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
 Route::get('/user', [UserProfileController::class, 'index']);
+Route::get('/dashboard', [dashboard::class, 'index']);
 
 Route::get('/userprofile', function () {
     return view('user');

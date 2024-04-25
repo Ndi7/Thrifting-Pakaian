@@ -1,9 +1,10 @@
+<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
 <!-- Produk Sepatu/sandal -->
 <div class="py-3">
                         <p class="font-bold my-0">Sepatu/sandal</p>
                     </div>
                     <div class="alaskaki grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sepatu1.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
@@ -23,7 +24,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sepatu2.jpeg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
@@ -43,7 +44,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sepatu3.jpeg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
@@ -63,7 +64,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sandal1.jpeg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
@@ -83,7 +84,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sandal3.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
@@ -103,7 +104,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sandal2.jpg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
@@ -123,7 +124,7 @@
                             </div>  
                         </div>
 
-                        <div class=" w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                        <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
                             <img class="w-full h-52" src="{{ asset('images/sepatu5.jpeg') }}" alt="">
                             <div class="m-1 flex-wrap gap-2">
                                 <h2 class="text-sm font-bold">Nama Sepatu/sandal</h2>
