@@ -18,10 +18,15 @@
     <div class="flex items-center justify-center min-h-screen bg-gray-0">
       <div class="relative flex flex-col px-10 py-10 m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
         
-        <div class="flex flex-col justify-center p-8 md:p-14">
-          <span class="mb-3 text-4xl font-bold">Welcome </span>
+        <div class="flex flex-col justify-center p-8 md:p-20">
+        <div class="relative">
+          <img
+            src="{{ asset('images/brand1.jpg')}}"
+            alt="img"
+            class="w-[150px] h-full hidden rounded-r-2x1 md:block object-cover"
+          />
           <span class="font-light text-gray-400 mb-5">
-            plese input your information 
+           
         </span>
     
           
