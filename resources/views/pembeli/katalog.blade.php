@@ -9,7 +9,7 @@
 <div class="container mx-auto px-5 my-10 justify-center">
                 <div class="px-20 my-10 justify-center">
                     <div class="sm:flex flex-wrap text-center justify-center gap-4 pt-20 text-left m-auto">
-                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/kaos1.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">T-Shirt Harley Davidson</h2>
@@ -17,7 +17,7 @@
                                 <h3 class="text-sm my-1">Rp. 50000</h3>
                             </div>
                         </div>
-                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/kaos2.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">Kaos Oversize Harley Davidson</h2>
@@ -25,7 +25,7 @@
                                 <h3 class="text-sm my-1">Rp. 75000</h3>
                             </div>
                         </div>
-                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/kaos3.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">T-Shirt Polo</h2>
@@ -33,7 +33,7 @@
                                 <h3 class="text-sm my-1">Rp. 55000</h3>
                             </div>
                         </div>
-                        <div class="w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
                             <img class="w-60 h-60" src="{{ asset('images/celana1.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">Celana Jeans Modif</h2>

@@ -1,3 +1,4 @@
+//CAROUSEL SLIDE//
 const gallerycrslContainer = document.querySelector('.gallerycrsl-container');
 const gallerycrslControlContainer = document.querySelector('.gallerycrsl-controls');
 const gallerycrslItems = document.querySelectorAll('.gallerycrsl-item');
@@ -51,6 +52,21 @@ class Carousel {
     }
 }
 
+//AKSI KETIKA CLASS DI KLIK, AKAN MENUJU PAGE DETAIL PRODUK//
 const exampleCarousel = new Carousel(gallerycrslContainer, gallerycrslItems);
 
 exampleCarousel.setAutoSlide();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Mengambil semua elemen dengan class "card"
+    var cards = document.querySelectorAll('.card');
+  
+    // Loop melalui setiap card dan tambahkan event listener untuk klik
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        // Mengarahkan halaman ke "singleproduk" saat card diklik
+        window.location.href = 'singleproduk';
+      });
+    });
+  });
