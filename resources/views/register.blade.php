@@ -35,7 +35,7 @@
 
             @csrf 
           <div class="py-1">
-            <label for="name" class="form-label mb-2 text-md">Username</label>
+            <label for="name" class="form-label mb-2 text-md font-bold">Username</label>
             <input
               type="text"
               name="name"
@@ -48,7 +48,7 @@
           </div>
 
             <div class="py-1">
-                <label for="email" class="form-label mb-2 text-md">Email</label>
+                <label for="email" class="form-label mb-2 text-md font-bold">Email</label>
                 <input
                   type="email"
                   class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
@@ -61,7 +61,7 @@
           </div>
 
           <div class="py-1 mb-5">
-            <label for="password" class="form-label mb-2 text-md">Password</label>
+            <label for="password" class="form-label mb-2 text-md font-bold">Password</label>
             <input
               type="password"
               name="password"
