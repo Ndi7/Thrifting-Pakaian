@@ -51,7 +51,6 @@ Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.l
 Route::get('/register', [registerController::class, 'register'])->name('register');
 Route::post('/register/login', [registerController::class, 'registerPost'])->name('register.registerPost');
 
-
 Route::get('/katalog', [katalog::class, 'index']);
 Route::get('/keranjang', [keranjang::class, 'index']);
 Route::get('/singleproduk', [singleproduk::class, 'index']);

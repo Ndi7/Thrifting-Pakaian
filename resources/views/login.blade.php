@@ -45,7 +45,7 @@
         </div>
 
           <div class="py-1">
-              <label for="email" class="form-label mb-2 text-md">Email</label>
+              <label for="email" class="form-label mb-2 text-md text-bold">Email</label>
               <input
                 type="email"
                 class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
