@@ -7,13 +7,13 @@
 
 @section('title', 'Single Produk')
 @section('content')
-<div class="sm:ml-64">
-   <div id="dashboard-content" class="content dashboard-content p-4 mt-14 active">
+<div class="bg-slate-100 p-2 pt-10 sm:ml-64">
+   <div id="dashboard-content" class="bg-white m-4 content dashboard-content p-4 mt-14 active">
     <h1 class="text-xl font-bold mb-5">Dashboard</h1>
     <h2 class="font-semibold">- Ringkasan penjualan</h2>
    </div>
    
-   <div id="produk-content" class="content produk-content p-4 mt-14 hidden">
+   <div id="produk-content" class="bg-white m-4 content produk-content p-4 mt-14 hidden">
     <h1 class="text-xl font-bold mb-5">Katalog produk</h1> 
         <div>
         <!-- daftarin barang -->
@@ -27,7 +27,7 @@
     
         <!-- Main kataog modal -->
         <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative p-4 w-full max-w-xl max-h-full">
                 <!-- Modal katalog content -->
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <!-- Modal katalog header -->
@@ -45,7 +45,7 @@
                     <!-- Modal katalog body -->
                     <form class="p-4 md:p-5">
                         <div class="grid gap-4 mb-4 grid-cols-2">
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-3">
                                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
                                 <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                     <option selected="">Pilih kategori</option>
@@ -54,27 +54,34 @@
                                     <option value="SS">Sepatu/ Sandal</option>
                                 </select>
                             </div>
-                            <div class="col-span-2">
+                            <div class="col-span-3 sm:col-span-1">
                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Produk</label>
                                 <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik nama produk" required="">
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-3 sm:col-span-1">
                                 <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Brand</label>
                                 <input type="text" name="brand" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik nama brand" required="">
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-3 sm:col-span-1">
                                 <label for="color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Warna</label>
                                 <input type="text" name="color" id="color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik warna produk" required="">
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-3 sm:col-span-1">
                                 <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah</label>
                                 <input type="text" name="quantity" id="quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik jumlah produk" required="">
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-3 sm:col-span-1">
                                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga</label>
                                 <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Rp 10000" required="">
                             </div>
-                            <div class="col-span-2">
+                            <div class="col-span-3">
+                                <label for="images" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tambahkan Gambar</label>
+                                <table id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+                                <input class="" type="file" name="fileToUpload" id="fileToUpload">
+                                </table>
+                                <div id="preview"></div>
+                            </div>
+                            <div class="col-span-3">
                                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi produk</label>
                                 <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-lawngreen focus:border-lawngreen dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Cantumkan Deskripsi produk disini"></textarea>                    
                             </div>
@@ -141,6 +148,9 @@
                         <th scope="col" class="px-6 py-3">
                             <span class="sr-only">Edit</span>
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Hapus</span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -166,6 +176,9 @@
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                        </td>
                     </tr>
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -189,6 +202,9 @@
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                        </td>
                     </tr>
                     <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -211,6 +227,9 @@
                         </td>
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
                         </td>
                     </tr>
                 </tbody>
@@ -243,6 +262,9 @@
                         <th scope="col" class="px-6 py-3">
                             <span class="sr-only">Edit</span>
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Hapus</span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -268,6 +290,9 @@
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                        </td>
                     </tr>
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -291,6 +316,9 @@
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                        </td>
                     </tr>
                     <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -313,6 +341,9 @@
                         </td>
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
                         </td>
                     </tr>
                 </tbody>
@@ -345,6 +376,9 @@
                         <th scope="col" class="px-6 py-3">
                             <span class="sr-only">Edit</span>
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Hapus</span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -370,6 +404,9 @@
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                        </td>
                     </tr>
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -392,6 +429,9 @@
                         </td>
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
                         </td>
                     </tr>
                     <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -416,17 +456,20 @@
                         <td class="px-6 py-4 text-right">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
+                        <td class="px-2 py-4 text-left">
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
    </div>
 
-   <div id="penjualan-content" class="bg-red-200 content penjualan-content p-4 mt-14 hidden">
+   <div id="penjualan-content" class="bg-white m-4 content penjualan-content p-4 mt-14 hidden">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, tenetur!
    </div>
 
-   <div id="keuangan-content" class=" content keuangan-content p-4 mt-14 hidden">
+   <div id="keuangan-content" class="bg-white m-4 content keuangan-content p-4 mt-14 hidden">
    <!-- daftarin kstegori -->
    <h1 class="text-xl font-bold mb-5">Kategori</h1> 
    <button type="button" class="ml-2 mb-5 text-gray-700 bg-lawngreen hover:bg-lime-500 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
@@ -437,11 +480,11 @@
     </button>
    </div>
 
-   <div id="laporan-content" class="bg-red-400 content laporan-content p-4 mt-14 hidden">
+   <div id="laporan-content" class="bg-white m-4 content laporan-content p-4 mt-14 hidden">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, tenetur!
    </div>
 
-   <div id="pengaturan-content" class="bg-red-500 content pengaturan-content p-4 mt-14 hidden">
+   <div id="pengaturan-content" class="bg-white m-4 content pengaturan-content p-4 mt-14 hidden">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, tenetur!
    </div>
 </div>

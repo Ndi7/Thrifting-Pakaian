@@ -44,3 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+// UPLOAD GAMBAR
+document.getElementById('fileToUpload').addEventListener('change', function() {
+  var file = this.files[0];
+  if (file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var preview = document.getElementById('preview');
+      preview.innerHTML = '<img src="' + e.target.result + '" alt="Preview Gambar">';
+    };
+    reader.readAsDataURL(file);
+  }
+});
