@@ -36,7 +36,8 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/landingpage', [LandingPageController::class, 'landingPage'])->Middleware('auth');
+Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
+//->Middleware('auth');
 
 Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 Route::get('/listproduct', [layoutlist::class, 'index']);
@@ -45,7 +46,8 @@ Route::get('/listproduct', [layoutlist::class, 'index']);
 
 Route::post('/logout', [loginController::class, 'logout'])->name('logout');
 
-Route::get('/login', [loginController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/login', [loginController::class, 'login'])->name('login');
+//->middleware('guest');
 Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.loginPost');
 
 Route::get('/register', [registerController::class, 'register'])->name('register');
