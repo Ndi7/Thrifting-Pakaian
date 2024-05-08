@@ -27,7 +27,7 @@
          </a>
       </div>
       <div class="flex items-center">
-      @include('component.profildropdown')
+      @include('component.profildropdownseller')
     </div>
   </div>
 </nav>

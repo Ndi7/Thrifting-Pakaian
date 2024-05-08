@@ -8463,11 +8463,6 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(217 249 157 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-lime-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 204 22 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-lime-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(101 163 13 / var(--tw-bg-opacity));

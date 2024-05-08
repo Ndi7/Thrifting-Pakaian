@@ -46,7 +46,7 @@
                     </div>
                 </nav>
             </div>
-            @include('component.profildropdown')
+            @include('component.profildropdownbuyer')
     
         </div>
 

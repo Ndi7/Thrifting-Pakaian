@@ -26,7 +26,7 @@
         </button>
     
         <!-- CRUD ADD PRODUCT -->
-        @include('component.crudaddmodal')
+        @include('component.crudaddmodalproduk')
 
     
         <!-- dropdown kategori -->
@@ -52,7 +52,7 @@
         </div>
 
         <!-- CRUD EDIT PRODUCT -->
-        @include('component.crudeditmodal')
+        @include('component.crudeditmodalproduk')
         
 
         <!-- KATEGORI PAKAIAN ATAS -->
@@ -337,14 +337,16 @@
 
    <div id="keuangan-content" class="bg-white m-4 content keuangan-content p-4 mt-14 hidden">
    <!-- daftarin kategori -->
-   <h1 class="text-xl font-bold mb-5">Keuangan</h1> 
+   <h1 class="text-xl font-bold mb-5">Keuangan</h1>
+   @include('component.crudaddmodalmoney') 
+   @include('component.crudeditmodalmoney') 
         <div>
-            <button data-modal-target="crudadd-modal" data-modal-toggle="crudadd-modal" class="mb-2 bg-lawngreen hover:bg-lime-600 ml-2 text-black focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
+            <button data-modal-target="crudaddmoney-modal" data-modal-toggle="crudaddmoney-modal" class="mb-2 bg-lawngreen hover:bg-lime-600 ml-2 text-black focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
             <svg class="text-gray-700 font-extrabold aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
             </svg>
             <span class="ml-3">Tambah Kategori</span>
-        </button>
+            </button>
 
         <div id="" class="ml-2 relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -373,7 +375,9 @@
                                 Pakaian Atas
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <button data-modal-target="crudeditmoney-modal" data-modal-toggle="crudeditmoney-modal">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </button>
                             </td>
                             <td class="px-2 py-4 text-left">
                                 <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
@@ -387,7 +391,9 @@
                                 Pakaian Atas
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <button data-modal-target="crudeditmoney-modal" data-modal-toggle="crudeditmoney-modal">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </button>
                             </td>
                             <td class="px-2 py-4 text-left">
                                 <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
@@ -401,7 +407,9 @@
                             Pakaian Atas
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <button data-modal-target="crudeditmoney-modal" data-modal-toggle="crudeditmoney-modal">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </button>
                             </td>
                             <td class="px-2 py-4 text-left">
                                 <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</a>
