@@ -6310,20 +6310,12 @@ details.collapse summary::-webkit-details-marker {
   z-index: 1;
 }
 
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
-
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
 
 .col-span-full {
   grid-column: 1 / -1;
-}
-
-.col-span-1 {
-  grid-column: span 1 / span 1;
 }
 
 .-m-16 {
@@ -7579,11 +7571,6 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-white\/80 {
   background-color: rgb(255 255 255 / 0.8);
-}
-
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
