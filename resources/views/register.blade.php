@@ -19,7 +19,7 @@
       <div class="relative flex flex-col px-10 py-10 m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
         
         <div class="flex flex-col justify-center p-8 md:p-20">
-        <div class="relative justify-center">
+        <div class="relative justify-center py-4">
         <a href=""><svg class="ms-10" xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
     
     <g transform="translate(0.000000,1043.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
@@ -48,7 +48,7 @@
               type="text"
               name="name"
               id="name"
-              class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
+              class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter email"
             />
             @error('email')
                     <span class="text-red-500">{{ $message }}</span>
@@ -59,7 +59,7 @@
                 <label for="fullname" class="form-label mb-2 text-md font-bold">Full Name</label>
                 <input
                   type="text"
-                  class="form-control @error('fullname') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
+                class="form-control @error('fullname') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter full name"
                   name="name"
                   id="name"
                 />
@@ -74,7 +74,7 @@
               type="text"
               name="name"
               id="name"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
+              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter username"
             />
                 @error('password')
                     <span class="text-red-500">{{ $message }}</span>
@@ -87,7 +87,7 @@
               type="password"
               name="password"
               id="password"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
+              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter the password"
             />
                 @error('password')
                     <span class="text-red-500">{{ $message }}</span>
@@ -100,7 +100,7 @@
               type="password"
               name="password"
               id="password"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen"
+              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="ulangi password"
             />
                 @error('password')
                     <span class="text-red-500">{{ $message }}</span>
