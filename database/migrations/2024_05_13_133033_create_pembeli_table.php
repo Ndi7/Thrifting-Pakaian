@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pembeli', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->enum('role',['pembeli','penjual','admin'])->default('pembeli');
-            $table->rememberToken();
+            $table->foreignId('user_id')->constrained();
+            $table->string('no_telp_pembeli')->nullable();
+            $table->date('tgl_lahir_pembeli')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pembeli');
     }
 };

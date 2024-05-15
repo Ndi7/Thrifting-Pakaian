@@ -1,22 +1,26 @@
 <?php
 
-use App\Http\Controllers\checkoutberhasil;
-use App\Http\Controllers\DataBarang;
-use App\Http\Controllers\layoutlist;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\registerController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\LandingPageController;
 
-use App\Http\Controllers\SessionController;
+// Route Seller
+use App\Http\Controllers\dashboard;
+
+// Route Buyer
 use App\Http\Controllers\katalog;
-use App\Http\Controllers\keranjang;
 use App\Http\Controllers\singleproduk;
+use App\Http\Controllers\keranjang;
 use App\Http\Controllers\checkout;
+use App\Http\Controllers\checkoutberhasil;
 use App\Http\Controllers\detailpesanan;
 
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\loginController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\registerController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\dashboard;
+use App\Http\Controllers\DataBarang;
+use App\Http\Controllers\layoutlist;
+use App\Http\Controllers\SessionController;
+
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -39,8 +43,6 @@ Route::get('/', function () {
 Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 //->Middleware('auth');
 
-Route::get('/Barang', [DataBarang::class, 'tampilkan']);
-Route::get('/listproduct', [layoutlist::class, 'index']);
 
 //Logout Login register
 
@@ -53,18 +55,22 @@ Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.l
 Route::get('/register', [registerController::class, 'register'])->name('register');
 Route::post('/register/login', [registerController::class, 'registerPost'])->name('register.registerPost');
 
-Route::get('/katalog', [katalog::class, 'index']);
-Route::get('/keranjang', [keranjang::class, 'index']);
-Route::get('/singleproduk', [singleproduk::class, 'index']);
-Route::get('/checkout', [checkout::class, 'index']);
-Route::get('/detailpesanan', [detailpesanan::class, 'index']);
-Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
-Route::get('/user', [UserProfileController::class, 'index']);
 Route::get('/dashboard', [dashboard::class, 'index']);
+
+Route::get('/katalog', [katalog::class, 'index']);
+Route::get('/singleproduk', [singleproduk::class, 'index']);
+Route::get('/keranjang', [keranjang::class, 'index']);
+Route::get('/checkout', [checkout::class, 'index']);
+Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
+Route::get('/detailpesanan', [detailpesanan::class, 'index']);
+Route::get('/user', [UserProfileController::class, 'index']);
 
 Route::get('/userprofile', function () {
     return view('user');
 });
+
+// Route::get('/Barang', [DataBarang::class, 'tampilkan']);
+// Route::get('/listproduct', [layoutlist::class, 'index']);
 // // Route dashboar
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

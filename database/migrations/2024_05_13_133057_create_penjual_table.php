@@ -11,20 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('penjual', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori')->nullable();
+            $table->foreignId('user_id')->constrained();
+            $table->string('nama_toko')->nullable();
+            $table->string('no_telp_penjual')->nullable();
+            $table->date('tgl_lahir_penjual')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
-
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('penjual');
     }
 };
