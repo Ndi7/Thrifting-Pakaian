@@ -10,4 +10,9 @@ class dashboard extends Controller
     {
         return view('penjual.dashboard');
     }
+
+    public function category($id)
+    {
+        
+    }
 }
