@@ -5,9 +5,11 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ProdukController;
 
 // Route Seller
 use App\Http\Controllers\dashboard;
+use App\Http\Controllers\KategoriController;
 
 // Route Buyer
 use App\Http\Controllers\katalog;
@@ -68,6 +70,19 @@ Route::get('/user', [UserProfileController::class, 'index']);
 Route::get('/userprofile', function () {
     return view('user');
 });
+
+
+
+Route::get('/produk','ProdukController@index')->name('produk');
+Route::get('/create-produk','ProdukController@create')->name('crudaddmodalproduk');
+Route::post('/simpan-produk','ProdukController@store')->name('simpan-produk');
+
+
+Route::get('/data-kategori',[KategoriController::class, 'index'])->name('data-kategori');
+Route::get('/create-kategori',[KategoriController::class, 'create'])->name('create-kategori');
+Route::post('/simpan-kategori',[KategoriController::class, 'store'])->name('simpan-kategori');
+Route::get('/edit-kategori/{id}',[KategoriController::class, 'edit'])->name('edit-kategori');
+Route::post('/update-kategori/{id}',[KategoriController::class, 'update'])->name('update-kategori');
 
 // Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 // Route::get('/listproduct', [layoutlist::class, 'index']);

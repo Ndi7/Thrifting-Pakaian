@@ -15,7 +15,8 @@
                         </button>
                     </div>
                     <!-- Modal katalog body -->
-                    <form class="p-4 md:p-5">
+                    <form class="p-4 md:p-5" method="post" action="{{route('simpan-produk')}}">
+                        {{ csrf_field() }}
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-3">
                                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
