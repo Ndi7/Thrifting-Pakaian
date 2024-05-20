@@ -1,10 +1,5 @@
 <link rel="stylesheet" href="{{ asset('styles/style.css') }}">
 <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
-@extends('layout.register')
-
-@section ('title', 'register')
-@section('content')
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +10,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="flex items-center justify-center h-auto bg-gray-0">
+    <div class="flex items-center justify-center min-h-screen bg-gray-0">
     <div class="relative flex flex-col md:flex-row px-10 py-10 m-6 space-y-8 md:space-y-0 bg-white shadow-2xl rounded-2xl">
         
         <div class="flex flex-col justify-center p-8 md:p-20">
@@ -107,36 +102,14 @@
                 @enderror
 
                 <div>
-          <span><a class="text-sm" href="#" ></a></span>
+         
           </div>
           </div>
-          <div class="py-1 mb-2">
-            <label for="password" class="form-label mb-2 text-md font-bold">Ulangi Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="ulangi password"
-            />
-                @error('password')
-                    <span class="text-red-500">{{ $message }}</span>
-                @enderror
 
-                <div>
-          <span><a class="text-sm" href="#" ></a></span>
-          </div>
-          </div>
-          <div class="py-1">
-          <select class="w-full h-10 text-black rounded-md border border-gray-300 focus:ring-lawngreen focus:border-lawngreen" name="deliveryOption">
-            <option value="Via Transfer">Pilih Jenis User</option>
-            <option value="Via Transfer">Pembeli</option>
-            <option value="Cash On Delivery (COD)">Penjual</option>
-          </select>
-              @error('email')
-                  <span class="text-red-500">{{ $message }}</span>
-              @enderror
-        </div>
-
+        
+          
+          
+          
           <button
             name="register" type="submit" class="btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-lawngreen hover:text-black">
             Daftar
@@ -155,4 +128,3 @@
     </div>
   </body>
 </html>
-@endsection
