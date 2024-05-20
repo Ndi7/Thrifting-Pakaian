@@ -8,10 +8,14 @@
 @section('title', 'Kategori')
 @section('content')
 <div class="bg-slate-100 p-2 pt-10 sm:ml-64">
-   <div id="dashboard-content" class="bg-white m-4 content kategori-content h-full p-4 mt-14">
-   <h1 class="text-xl font-bold mb-5">Tambah Kategori Baru</h1>
+   <div id="" class="bg-white m-4 h-full p-4 mt-14">
+   <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+        <h1 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Tambah Kategori baru
+        </h1>
+        </div>
    <div>
-        <form class="p-4 md:p-5" method="post" action="{{ route('simpan-kategori') }}">
+        <form class="p-4 md:p-5" method="POST" action="{{ route('simpan-kategori') }}">
         {{ csrf_field() }}
             <div class="grid gap-4 mb-4 grid-cols-2">
                 <div class="col-span-3 sm:col-span-1">

@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\registerController;
-use App\Http\Controllers\ProfileController;
+// use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProdukController;
@@ -73,16 +73,31 @@ Route::get('/userprofile', function () {
 
 
 
-Route::get('/produk','ProdukController@index')->name('produk');
-Route::get('/create-produk','ProdukController@create')->name('crudaddmodalproduk');
-Route::post('/simpan-produk','ProdukController@store')->name('simpan-produk');
+// Route::get('/produk','ProdukController@index')->name('produk');
+// Route::get('/create-produk','ProdukController@create')->name('crudaddmodalproduk');
+// Route::post('/simpan-produk','ProdukController@store')->name('simpan-produk');
 
-
+// KATEGORI
 Route::get('/data-kategori',[KategoriController::class, 'index'])->name('data-kategori');
 Route::get('/create-kategori',[KategoriController::class, 'create'])->name('create-kategori');
 Route::post('/simpan-kategori',[KategoriController::class, 'store'])->name('simpan-kategori');
 Route::get('/edit-kategori/{id}',[KategoriController::class, 'edit'])->name('edit-kategori');
 Route::post('/update-kategori/{id}',[KategoriController::class, 'update'])->name('update-kategori');
+Route::get('/delete-kategori/{id}',[KategoriController::class, 'destroy'])->name('delete-kategori');
+// Route::post('update-kategori/{id}', 'KategoriController@update')->name('update-kategori');
+
+
+// PRODUK
+Route::get('/data-produk',[ProdukController::class, 'index'])->name('data-produk');
+Route::get('/create-pa',[ProdukController::class, 'create'])->name('create-pa');
+Route::get('/create-pb',[ProdukController::class, 'createpb'])->name('create-pb');
+Route::get('/create-ss',[ProdukController::class, 'createss'])->name('create-ss');
+Route::post('/simpan-produk',[ProdukController::class, 'store'])->name('simpan-produk');
+
+
+
+
+
 
 // Route::get('/Barang', [DataBarang::class, 'tampilkan']);
 // Route::get('/listproduct', [layoutlist::class, 'index']);

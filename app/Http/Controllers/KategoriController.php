@@ -42,7 +42,7 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         //
     }
@@ -50,27 +50,32 @@ class KategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $ktgr = Category::findorfail($id);
-        return view('penjual.kategori.edit-kategori', compact('ktgr'));
+        return view('penjual.kategori.edit-kategori',compact('ktgr'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
+        // dd($request->all());
         $ktgr = Category::findorfail($id);
         $ktgr->update($request->all());
+        // $ktgr->save();
         return redirect('data-kategori')->with('success', 'Data Berhasil Diupdate');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $ktgr = Category::findorfail($id);
+        $ktgr->delete();
+        return back()->with('info', 'Data Berhasil Dihapus');
     }
 }
