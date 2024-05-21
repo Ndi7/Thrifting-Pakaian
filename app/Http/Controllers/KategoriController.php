@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Category;
 
+use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
@@ -52,6 +53,7 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
+        
         $ktgr = Category::findorfail($id);
         return view('penjual.kategori.edit-kategori',compact('ktgr'));
     }
@@ -62,9 +64,13 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->all());
-        $ktgr = Category::findorfail($id);
-        $ktgr->update($request->all());
-        // $ktgr->save();
+        DB::table('kategori')
+        ->where('id', $id)
+        ->update([
+            'nama_kategori' => $request->input('kategori'),
+            // field lainnya
+        ]);
+
         return redirect('data-kategori')->with('success', 'Data Berhasil Diupdate');
 
     }

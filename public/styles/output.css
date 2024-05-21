@@ -6512,10 +6512,6 @@ details.collapse summary::-webkit-details-marker {
   margin-left: 0.5rem;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
 .ml-4 {
   margin-left: 1rem;
 }
@@ -7032,26 +7028,6 @@ details.collapse summary::-webkit-details-marker {
   cursor: pointer;
 }
 
-.cursor-crosshair {
-  cursor: crosshair;
-}
-
-.cursor-copy {
-  cursor: copy;
-}
-
-.cursor-no-drop {
-  cursor: no-drop;
-}
-
-.cursor-grab {
-  cursor: grab;
-}
-
-.cursor-move {
-  cursor: move;
-}
-
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -7427,11 +7403,6 @@ details.collapse summary::-webkit-details-marker {
   border-color: transparent;
 }
 
-.border-gray-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
-}
-
 .border-t-transparent {
   border-top-color: transparent;
 }
@@ -7639,6 +7610,16 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-white\/80 {
   background-color: rgb(255 255 255 / 0.8);
+}
+
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 232 232 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 246 178 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
@@ -7909,6 +7890,18 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.ps-8 {
+  padding-inline-start: 2rem;
+}
+
+.ps-5 {
+  padding-inline-start: 1.25rem;
+}
+
+.ps-12 {
+  padding-inline-start: 3rem;
 }
 
 .text-left {
@@ -9521,16 +9514,16 @@ details.collapse summary::-webkit-details-marker {
     padding: 3.5rem;
   }
 
+  .md\:p-2 {
+    padding: 0.5rem;
+  }
+
   .md\:p-20 {
     padding: 5rem;
   }
 
   .md\:p-5 {
     padding: 1.25rem;
-  }
-
-  .md\:p-2 {
-    padding: 0.5rem;
   }
 }
 

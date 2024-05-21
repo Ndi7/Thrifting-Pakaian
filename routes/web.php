@@ -6,6 +6,7 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\PakaianatasController;
 
 // Route Seller
 use App\Http\Controllers\dashboard;
@@ -95,6 +96,13 @@ Route::get('/create-ss',[ProdukController::class, 'createss'])->name('create-ss'
 Route::post('/simpan-produk',[ProdukController::class, 'store'])->name('simpan-produk');
 
 
+// PRODUK PAKAIAN ATAS
+Route::get('/data-pakaianatas',[PakaianatasController::class, 'index'])->name('data-pakaianatas');
+Route::get('/create-pakaianatas',[PakaianatasController::class, 'create'])->name('create-pakaianatas');
+Route::post('/simpan-pakaianatas',[PakaianatasController::class, 'store'])->name('simpan-pakaianatas');
+Route::get('/edit-pakaianatas/{id}',[PakaianatasController::class, 'edit'])->name('edit-pakaianatas');
+Route::post('/update-pakaianatas/{id}',[PakaianatasController::class, 'update'])->name('update-pakaianatas');
+Route::get('/delete-pakaianatas/{id}',[PakaianatasController::class, 'destroy'])->name('delete-pakaianatas');
 
 
 
