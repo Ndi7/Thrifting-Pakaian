@@ -55,8 +55,12 @@ Route::get('/login', [loginController::class, 'login'])->name('login');
 //->middleware('guest');
 Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.loginPost');
 
+//route register lama
 Route::get('/register', [registerController::class, 'register'])->name('register');
 Route::post('/register/login', [registerController::class, 'registerPost'])->name('register.registerPost');
+
+Route::get('/register1', [RegisterController::class, 'showRegistrationForm']);
+
 
 Route::get('/dashboard', [dashboard::class, 'index']);
 
