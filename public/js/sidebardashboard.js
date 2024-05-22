@@ -1,25 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const sidebarLinks = document.querySelectorAll('.sidebar-link');
-    const contentDivs = document.querySelectorAll('.content');
-  
-    sidebarLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1); // Ambil ID target tanpa tanda '#'
-  
-        // Sembunyikan semua konten div
-        contentDivs.forEach(div => {
-          div.classList.add('hidden');
-        });
-  
-        // Tampilkan konten div yang sesuai berdasarkan link yang diklik
-        const targetDiv = document.getElementById(targetId + '-content');
-        if (targetDiv) {
-          targetDiv.classList.remove('hidden');
-        }
-      });
-    });
-  });
+
 
 //KATEGORI LINK//
 document.addEventListener('DOMContentLoaded', function() {
@@ -58,3 +37,18 @@ document.getElementById('fileToUpload').addEventListener('change', function() {
     reader.readAsDataURL(file);
   }
 });
+
+
+
+// PRODUK LIST
+function toggleDropdown(id) {
+  var dropdown = document.getElementById(id);
+  var icon = document.getElementById(id.replace('dropdown', 'icon'));
+  if (dropdown.classList.contains('hidden')) {
+      dropdown.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+  } else {
+      dropdown.classList.add('hidden');
+      icon.classList.remove('rotate-180');
+  }
+}
