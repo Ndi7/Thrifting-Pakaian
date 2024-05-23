@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pakaianatas', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
             $table->string('nama_produk_pa');
             $table->string('deskripsi_pa');
             $table->string('stok');

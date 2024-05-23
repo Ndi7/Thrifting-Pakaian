@@ -11,5 +11,5 @@ class PA extends Model
     protected $table = "pakaianatas";
     	protected $primarykey = "id";
     	protected $fillable = [
-            'id', 'nama_produk_pa', 'deskripsi_pa', 'stok', 'harga_pa'];
+            'id', 'gambar', 'nama_produk_pa', 'deskripsi_pa', 'stok', 'harga_pa'];
 }

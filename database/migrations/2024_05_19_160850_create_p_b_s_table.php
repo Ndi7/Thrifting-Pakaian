@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_produk_pb');
             $table->string('deskripsi_pb');
-            $table->string('jumlah_pb');
+            $table->string('stok');
             $table->integer('harga_pb');
             $table->timestamps();
         });

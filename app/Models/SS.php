@@ -11,5 +11,5 @@ class SS extends Model
     protected $table = "sepatusandal";
     	protected $primarykey = "id";
     	protected $fillable = [
-            'id', 'nama_produk_ss', 'deskripsi_ss', 'jumlah_ss', 'harga_ss'];
+            'id', 'nama_produk_ss', 'deskripsi_ss', 'stok', 'harga_ss'];
 }

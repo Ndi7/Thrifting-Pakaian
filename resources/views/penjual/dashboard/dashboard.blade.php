@@ -13,6 +13,4 @@
     <h2 class="font-semibold">- Ringkasan penjualan</h2>
    </div>
    
-   
-
 @endsection
