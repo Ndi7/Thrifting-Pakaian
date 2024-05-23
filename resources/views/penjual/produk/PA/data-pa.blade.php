@@ -15,7 +15,7 @@
         <div>
             <h5 class="text-md text-gray-900 dark:text-white">
             Pakaian Atas
-            </h5>
+            </h5> 
         </div>
         <div>
         <a href="{{ route('create-pakaianatas') }}">
