@@ -14,6 +14,7 @@ class PakaianatasController extends Controller
     public function index()
     {
         $dtPA = PA::all();
+        $dtPA = PA::latest()->get();
         	return view('penjual.produk.PA.data-pa',compact('dtPA'));
             
     }
@@ -32,13 +33,23 @@ class PakaianatasController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $nm = $request->gambar;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension();
+
+        $nm->move(public_path(). '/images/PA', $namaFile);
+
         PA::create([
             'nama_produk_pa' => $request->nama_produk,
+            'gambar' => $namaFile,
             'deskripsi_pa' => $request->deskripsi,
             'stok' => $request->stok,
             'harga_pa' => $request->harga,
         ]);
-
+            // $dtUpload = new PA;
+            // $dtUpload->nama_produk_pa = $request->nama;
+            // $dtUpload->gambar = $namaFile;
+            
+            // $dtUpload->save();
         return redirect('data-pakaianatas')->with('success', 'Data Berhasil Disimpan');;
     }
 
@@ -67,16 +78,29 @@ class PakaianatasController extends Controller
     public function update(Request $request, string $id)
     {
         // dd($request->all());
-        DB::table('pakaianatas')
-        ->where('id', $id)
-        ->update([
+
+        // Fetch the existing record
+        $ubah = PA::findOrFail($id);
+        $awal = $ubah->gambar;
+
+        // Handle the file upload if a new file is provided
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $namaFile = $ubah->gambar;
+            $gambar->move(public_path('/images/PA'), $namaFile);
+            $awal = $namaFile; // Update the file name in the database
+        }
+
+        // Update the database record
+        $ubah->update([
             'nama_produk_pa' => $request->input('nama_produk'),
             'deskripsi_pa' => $request->input('deskripsi'),
             'stok' => $request->input('stok'),
             'harga_pa' => $request->input('harga'),
-            // field lainnya
+            'gambar' => $awal,
+            // Add other fields as needed
         ]);
-        
+
         return redirect('data-pakaianatas')->with('success', 'Data Berhasil Diupdate');
     }
 
@@ -85,9 +109,16 @@ class PakaianatasController extends Controller
      */
     public function destroy(string $id)
     {
-        $ktgr = PA::findorfail($id);
-        $ktgr->delete();
+        $deletePA = PA::findorfail($id);
 
+        $file = public_path('/images/PA/').$deletePA->gambar;
+        // cek jika ada gambar
+        if (file_exists($file)){
+            // Maka hapus file di folder public/images/PA
+            @unlink($file);
+        }
+
+        $deletePA->delete();
         return back()->with('info', 'Data Berhasil Dihapus');
     }
 }

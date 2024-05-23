@@ -16,12 +16,12 @@
         </div>
         <div>
             <!-- Modal katalog body -->
-            <form class="p-4 md:p-5" method="POST" action="{{ route('simpan-produk') }}">
+            <form class="p-4 md:p-5" method="POST" action="{{ route('simpan-pakaianbawah') }}">
             {{ csrf_field() }}
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-3">
-                    <label for="Kpakaianatas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                        <input type="text" name="Kpakaianatas" id="Kpakaianatas" class="bg-gray-100 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Pakaian Bawah" required="" disabled>
+                    <!-- <label for="Kpakaianatas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
+                        <input type="text" name="Kpakaianatas" id="Kpakaianatas" class="bg-gray-100 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Pakaian Bawah" required="" disabled> -->
                         <!-- <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
                         <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option selected="">Pilih kategori</option>

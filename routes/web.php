@@ -7,6 +7,9 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PakaianatasController;
+use App\Http\Controllers\PakaianbawahController;
+use App\Http\Controllers\SepatusandalController;
+use App\Http\Controllers\ProfilepenjualController;
 
 // Route Seller
 use App\Http\Controllers\dashboard;
@@ -92,14 +95,6 @@ Route::get('/delete-kategori/{id}',[KategoriController::class, 'destroy'])->name
 // Route::post('update-kategori/{id}', 'KategoriController@update')->name('update-kategori');
 
 
-// PRODUK
-Route::get('/data-produk',[ProdukController::class, 'index'])->name('data-produk');
-Route::get('/create-pa',[ProdukController::class, 'create'])->name('create-pa');
-Route::get('/create-pb',[ProdukController::class, 'createpb'])->name('create-pb');
-Route::get('/create-ss',[ProdukController::class, 'createss'])->name('create-ss');
-Route::post('/simpan-produk',[ProdukController::class, 'store'])->name('simpan-produk');
-
-
 // PRODUK PAKAIAN ATAS
 Route::get('/data-pakaianatas',[PakaianatasController::class, 'index'])->name('data-pakaianatas');
 Route::get('/create-pakaianatas',[PakaianatasController::class, 'create'])->name('create-pakaianatas');
@@ -107,6 +102,35 @@ Route::post('/simpan-pakaianatas',[PakaianatasController::class, 'store'])->name
 Route::get('/edit-pakaianatas/{id}',[PakaianatasController::class, 'edit'])->name('edit-pakaianatas');
 Route::post('/update-pakaianatas/{id}',[PakaianatasController::class, 'update'])->name('update-pakaianatas');
 Route::get('/delete-pakaianatas/{id}',[PakaianatasController::class, 'destroy'])->name('delete-pakaianatas');
+
+
+// PRODUK PAKAIAN BAWAH
+Route::get('/data-pakaianbawah',[PakaianbawahController::class, 'index'])->name('data-pakaianbawah');
+Route::get('/create-pakaianbawah',[PakaianbawahController::class, 'create'])->name('create-pakaianbawah');
+Route::post('/simpan-pakaianbawah',[PakaianbawahController::class, 'store'])->name('simpan-pakaianbawah');
+Route::get('/edit-pakaianbawah/{id}',[PakaianbawahController::class, 'edit'])->name('edit-pakaianbawah');
+Route::post('/update-pakaianbawah/{id}',[PakaianbawahController::class, 'update'])->name('update-pakaianbawah');
+Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'])->name('delete-pakaianbawah');
+
+
+// PRODUK SEPATU SANDAL
+Route::get('/data-sepatusandal',[SepatusandalController::class, 'index'])->name('data-sepatusandal');
+Route::get('/create-sepatusandal',[SepatusandalController::class, 'create'])->name('create-sepatusandal');
+Route::post('/simpan-sepatusandal',[SepatusandalController::class, 'store'])->name('simpan-sepatusandal');
+Route::get('/edit-sepatusandal/{id}',[SepatusandalController::class, 'edit'])->name('edit-sepatusandal');
+Route::post('/update-sepatusandal/{id}',[SepatusandalController::class, 'update'])->name('update-sepatusandal');
+Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
+
+
+// PROFILE PENJUAL
+Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
+Route::get('/create-sepatusandal',[ProfilepenjualController::class, 'create'])->name('create-sepatusandal');
+Route::post('/simpan-sepatusandal',[ProfilepenjualController::class, 'store'])->name('simpan-sepatusandal');
+Route::get('/edit-sepatusandal/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-sepatusandal');
+Route::post('/update-sepatusandal/{id}',[ProfilepenjualController::class, 'update'])->name('update-sepatusandal');
+Route::get('/delete-sepatusandal/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-sepatusandal');
+
+
 
 
 
