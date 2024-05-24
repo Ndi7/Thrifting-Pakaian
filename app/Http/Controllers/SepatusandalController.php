@@ -14,7 +14,8 @@ class SepatusandalController extends Controller
     public function index()
     {
         $dtSS = SS::all();
-        	return view('penjual.produk.SS.data-ss',compact('dtSS'));
+        $dtSS = SS::latest()->get();
+        	return view('penjual.produk.SS.ss-data',compact('dtSS'));
             
     }
 
@@ -23,7 +24,7 @@ class SepatusandalController extends Controller
      */
     public function create()
     {
-        return view('penjual.produk.SS.create-ss');
+        return view('penjual.produk.SS.ss-create');
     }
 
     /**
@@ -32,8 +33,14 @@ class SepatusandalController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $nm = $request->gambar;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension();
+
+        $nm->move(public_path(). '/images/SS', $namaFile);
+
         SS::create([
             'nama_produk_ss' => $request->nama_produk,
+            'gambar' => $namaFile,
             'deskripsi_ss' => $request->deskripsi,
             'stok' => $request->stok,
             'harga_ss' => $request->harga,
@@ -55,9 +62,9 @@ class SepatusandalController extends Controller
      */
     public function edit(string $id)
     {   
-        $dtSS = SS::findorfail($id);
+        $dtPB = SS::findorfail($id);
 
-        return view('penjual.produk.SS.edit-ss',compact('dtSS'));
+        return view('penjual.produk.SS.ss-edit',compact('dtSS'));
 
     }
 
@@ -67,14 +74,26 @@ class SepatusandalController extends Controller
     public function update(Request $request, string $id)
     {
         // dd($request->all());
-        DB::table('sepatusandal')
-        ->where('id', $id)
-        ->update([
+        // Fetch the existing record
+        $ubah = SS::findOrFail($id);
+        $awal = $ubah->gambar;
+
+        // Handle the file upload if a new file is provided
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $namaFile = $ubah->gambar;
+            $gambar->move(public_path('/images/SS'), $namaFile);
+            $awal = $namaFile; // Update the file name in the database
+        }
+
+        // Update the database record
+        $ubah->update([
             'nama_produk_ss' => $request->input('nama_produk'),
             'deskripsi_ss' => $request->input('deskripsi'),
             'stok' => $request->input('stok'),
             'harga_ss' => $request->input('harga'),
-            // field lainnya
+            'gambar' => $awal,
+            // Add other fields as needed
         ]);
         
         return redirect('data-sepatusandal')->with('success', 'Data Berhasil Diupdate');
@@ -86,8 +105,16 @@ class SepatusandalController extends Controller
     public function destroy(string $id)
     {
         $deleteSS = SS::findorfail($id);
-        $deleteSS->delete();
 
-        return back()->with('info', 'Data Berhasil Dihapus');
+        $file = public_path('/images/SS/').$deleteSS->gambar;
+        // cek jika ada gambar
+        if (file_exists($file)){
+            // Maka hapus file di folder public/images/PA
+            @unlink($file);
+        }
+
+            $deleteSS->delete();
+
+            return back()->with('info', 'Data Berhasil Dihapus');
     }
 }

@@ -10,12 +10,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "*",
         "laravel/tinker": "^2.8",
-<<<<<<< HEAD
-        "realrashid/sweet-alert": "^7.1"
-=======
         "realrashid/sweet-alert": "^7.1",
         "spatie/laravel-permission": "^6.7"
->>>>>>> 3769af4cbb2acb935abf6a7a8f9e7121d2b18d3a
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

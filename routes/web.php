@@ -6,14 +6,15 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProdukController;
+
+// Route Seller
+use App\Http\Controllers\dashboard;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PakaianatasController;
 use App\Http\Controllers\PakaianbawahController;
 use App\Http\Controllers\SepatusandalController;
 use App\Http\Controllers\ProfilepenjualController;
 
-// Route Seller
-use App\Http\Controllers\dashboard;
-use App\Http\Controllers\KategoriController;
 
 // Route Buyer
 use App\Http\Controllers\katalog;
@@ -124,11 +125,11 @@ Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'
 
 // PROFILE PENJUAL
 Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
-Route::get('/create-sepatusandal',[ProfilepenjualController::class, 'create'])->name('create-sepatusandal');
-Route::post('/simpan-sepatusandal',[ProfilepenjualController::class, 'store'])->name('simpan-sepatusandal');
-Route::get('/edit-sepatusandal/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-sepatusandal');
-Route::post('/update-sepatusandal/{id}',[ProfilepenjualController::class, 'update'])->name('update-sepatusandal');
-Route::get('/delete-sepatusandal/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-sepatusandal');
+Route::get('/create-profile',[ProfilepenjualController::class, 'create'])->name('create-profile');
+Route::post('/simpan-profile',[ProfilepenjualController::class, 'store'])->name('simpan-profile');
+Route::get('/edit-profile/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-profile');
+Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
+Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
 
 
 

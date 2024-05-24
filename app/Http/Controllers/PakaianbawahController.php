@@ -14,6 +14,7 @@ class PakaianbawahController extends Controller
     public function index()
     {
         $dtPB = PB::all();
+        $dtPB = PB::latest()->get();
         	return view('penjual.produk.PB.data-pb',compact('dtPB'));
             
     }
@@ -32,8 +33,14 @@ class PakaianbawahController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $nm = $request->gambar;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension();
+
+        $nm->move(public_path(). '/images/PB', $namaFile);
+
         PB::create([
             'nama_produk_pb' => $request->nama_produk,
+            'gambar' => $namaFile,
             'deskripsi_pb' => $request->deskripsi,
             'stok' => $request->stok,
             'harga_pb' => $request->harga,
@@ -67,17 +74,29 @@ class PakaianbawahController extends Controller
     public function update(Request $request, string $id)
     {
         // dd($request->all());
-        DB::table('pakaianbawah')
-        ->where('id', $id)
-        ->update([
+        // Fetch the existing record
+        $ubah = PB::findOrFail($id);
+        $awal = $ubah->gambar;
+
+        // Handle the file upload if a new file is provided
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $namaFile = $ubah->gambar;
+            $gambar->move(public_path('/images/PB'), $namaFile);
+            $awal = $namaFile; // Update the file name in the database
+        }
+
+        // Update the database record
+        $ubah->update([
             'nama_produk_pb' => $request->input('nama_produk'),
             'deskripsi_pb' => $request->input('deskripsi'),
             'stok' => $request->input('stok'),
             'harga_pb' => $request->input('harga'),
-            // field lainnya
+            'gambar' => $awal,
+            // Add other fields as needed
         ]);
         
-        return redirect('data-pakaianatas')->with('success', 'Data Berhasil Diupdate');
+        return redirect('data-pakaianbawah')->with('success', 'Data Berhasil Diupdate');
     }
 
     /**
@@ -86,8 +105,16 @@ class PakaianbawahController extends Controller
     public function destroy(string $id)
     {
         $deletePB = PB::findorfail($id);
-        $deletePB->delete();
 
-        return back()->with('info', 'Data Berhasil Dihapus');
+        $file = public_path('/images/PB/').$deletePB->gambar;
+        // cek jika ada gambar
+        if (file_exists($file)){
+            // Maka hapus file di folder public/images/PA
+            @unlink($file);
+        }
+
+            $deletePB->delete();
+
+            return back()->with('info', 'Data Berhasil Dihapus');
     }
 }

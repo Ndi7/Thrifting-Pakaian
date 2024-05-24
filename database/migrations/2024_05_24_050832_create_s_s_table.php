@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('sepatusandal', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
             $table->string('nama_produk_ss');
             $table->string('deskripsi_ss');
             $table->string('stok');

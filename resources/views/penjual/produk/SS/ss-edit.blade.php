@@ -16,8 +16,8 @@
         </div>
         <div>
             <!-- Modal katalog body -->
-            <form class="p-4 md:p-5" method="POST" action="{{ route('update-sepatusandal', $dtSS->id) }}">
-            {{ csrf_field() }}
+            <form class="p-4 md:p-5" method="POST" action="{{ route('update-sepatusandal', $dtSS->id) }}" enctype="multipart/form-data">
+            
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-3">
                     <!-- <label for="Kpakaianatas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
@@ -47,6 +47,12 @@
                         <textarea id="deskripsi" name="deskripsi" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-lawngreen focus:border-lawngreen dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         {{ $dtSS->deskripsi_ss }}
                         </textarea>
+                    </div>
+                    <div class="col-span-3 sm:col-span-1">     
+                        <input type="file" name="gambar" id="gambar" multiple>
+                    </div>
+                    <div class="col-span-3">     
+                        <img src="{{ asset('images/SS/'. $dtSS->gambar) }}" class="w-40" alt="">
                     </div>
                     <!-- <div class="col-span-3">
                         <label for="images" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tambahkan Gambar</label>
