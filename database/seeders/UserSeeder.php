@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -13,19 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $penjual = User::create([
-            'name' => 'penjual',
-            'nama_toko' => 'toko_penjual',
-            'email' => 'penjual@example.com',
-            'password' => bcrypt('penjual'),
+        DB::table('users')->insert([
+            'name'=>'penjual',
+            'email'=>'penjual@example.com',
+            'usertype'=>2,
+            'password'=> Hash::make('penjual')
         ]);
-        $penjual->assignRole('penjual');
-
-        $pembeli = User::create([
-            'name' => 'pembeli',
-            'email' => 'pembeli@example.com',
-            'password' => bcrypt('pembeli'),
-        ]);
-        $pembeli->assignRole('pembeli');
     }
 }

@@ -4,7 +4,7 @@
 <div class="flex w-full justify-between mt-5 m-auto">
             <div class="flex flex-wrap px-10 m-auto">
             <a href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
-    
+
                 <g transform="translate(0.000000,1043.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                 <path d="M10408 10065 c-15 -498 -53 -663 -179 -780 -63 -57 -127 -87 -239 -110 -92 -19 -272 -35 -425 -36 l-130 -2 160 -8 c393 -19 531 -51 636 -146 104 -94 148 -247 169 -583 5 -91 11 -230 12 -310 1 -116 3 -93 9 110 13 479 54 664 171 777 101 98 244 132 633 152 l160 8 -125 2 c-367 4 -570 51 -673 153 -114 115 -154 298 -166 778 l-6 245 -7 -250z"/>
                 <path d="M32562 10060 c-6 -765 -40 -1516 -88 -1883 -103 -803 -336 -1175 -849 -1357 -334 -118 -742 -164 -1665 -190 -206 -6 -376 -12 -377 -14 -2 -1 151 -6 339 -9 1213 -24 1729 -120 2058 -384 239 -191 386 -497 464 -963 68 -401 100 -928 114 -1885 l7 -440 8 445 c23 1308 72 1846 208 2265 116 360 298 578 601 719 337 158 817 221 1858 244 l315 8 -200 7 c-110 4 -333 12 -495 17 -682 25 -1077 78 -1370 187 -484 179 -711 525 -819 1253 -54 366 -81 848 -100 1835 -7 362 -8 372 -9 145z"/>
@@ -17,16 +17,16 @@
                 </g>
                 </svg></a>
             </div>
-    
+
             <div class="flex justify-center items-center m-auto w-full">
                 <nav class="flex items-center font-semibold gap-2">
-                    <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Home</button></a>
+                    <a href="landingpage" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Home</button></a>
                     <a href="katalog" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Katalog</button></a>
                     <a href="detailpesanan" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Detail pesanan</button></a>
                     <a href="#" ><button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-lawngreen bg-white text-black shadow-sm hover:bg-lawngreen disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-neutral-800">Service</button></a>
-                   
+
                     <div class="pt-3">
-                    <form class="flex">   
+                    <form class="flex">
                         <label for="simple-search" class="sr-only">Search</label>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -47,14 +47,9 @@
                 </nav>
             </div>
             @include('component.profildropdownbuyer')
-    
+
         </div>
 
  </div>
-            @auth
-            <form action="{{ route('logout')}} " method="POST">
-                @csrf
-                <button type="submit" class="block px-3 py-2 bg-white hover:bg-lawngreen rounded-2xl transition duration-300 hover:duration-500">Logout</button>
-            </form>
-        @endauth
+
         </div>
