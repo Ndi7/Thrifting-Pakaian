@@ -108,9 +108,7 @@
                 </div>
             </div>      
             <br><br>          
-            @include('component.pakaianatas')
-            @include('component.pakaianbawah')
-            @include('component.alaskaki')
+            
         </div>
         </div>
                 
