@@ -15,8 +15,13 @@ class PakaianbawahController extends Controller
     {
         $dtPB = PB::all();
         $dtPB = PB::latest()->get();
-        	return view('penjual.produk.PB.data-pb',compact('dtPB'));
-            
+        	return view('penjual.produk.PB.data-pb',compact('dtPB'));           
+    }
+
+    public function katalog()
+    {
+        $dtPB = PB::all();
+        	return $dtPB;
     }
 
     /**
@@ -65,6 +70,13 @@ class PakaianbawahController extends Controller
         $dtPB = PB::findorfail($id);
 
         return view('penjual.produk.PB.edit-pb',compact('dtPB'));
+
+    }
+    public function detailproduk(string $id)
+    {   
+        $dtPB = PB::findorfail($id);
+
+        return view('pembeli.singleproduk_pb',compact('dtPB'));
 
     }
 

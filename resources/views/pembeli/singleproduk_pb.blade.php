@@ -25,7 +25,7 @@
                         <div class="h-full">
                             <!-- Item 1 -->
                             <div class="blok duration-700 ease-in-out" data-carousel-item>
-                                <a href="{{ asset('images/PA/'. $dtPA->gambar) }}"><img src="{{ asset('images/PA/'. $dtPA->gambar) }}" value="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></a>
+                                <a href="{{ asset('images/PB/'. $dtPB->gambar) }}"><img src="{{ asset('images/PB/'. $dtPB->gambar) }}" value="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></a>
                             </div>
                             <!-- Item 2
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
@@ -73,16 +73,16 @@
             <div class="w-2/3 bg-slate-100/80 ml-2 h-full">
                 <div class="m-5 grid gap-4 mb-4 grid-cols-4">
                     <div class="col-span-4 pt-2 font-bold">
-                            <h1 class="text-2xl mb-3" value="">{{ $dtPA->nama_produk_pa }}</h1>
+                            <h1 class="text-2xl mb-3" value="">{{ $dtPB->nama_produk_pb }}</h1>
                     </div>
                     <div class="col-span-4 pt-2">
-                            <h1 class="text-4xl mb-3" value="">{{ $dtPA->harga_pa }}</h1>
+                            <h1 class="text-4xl mb-3" value="">{{ $dtPB->harga_pb }}</h1>
                     </div>
                     <div class="col-span-1 pt-4 font-bold">
                             <h1 class="text-md mb-3" value="">Deskripsi</h1>
                     </div>
                     <div class="col-span-3 pt-2">
-                            <textarea class="text-md mb-3 w-full bg-white/70" row="4" value="" disabled>{{ $dtPA->deskripsi_pa }}</textarea>
+                            <textarea class="text-md mb-3 w-full bg-white/70" row="4" value="" disabled>{{ $dtPB->deskripsi_pb }}</textarea>
                     </div>
                 </div><br><br>
 

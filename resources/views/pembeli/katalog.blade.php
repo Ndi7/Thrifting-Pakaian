@@ -6,7 +6,7 @@
 
 @section ('title', 'Katalog')
 @section('content')
-<div class="container mx-auto px-5 my-10 justify-center">
+    <div class="container mx-auto px-5 my-10 justify-center">
                 <div class="px-20 my-10 justify-center">
                     <div class="sm:flex flex-wrap text-center justify-center gap-4 pt-20 text-left m-auto">
                         <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
@@ -64,12 +64,77 @@
                         <script src="{{ asset('js/crsl.js') }}"></script>
                     </div>
                     <br><br>
-                    @include('component.pakaianatas')
-                    @include('component.pakaianbawah')
-                    @include('component.alaskaki')
- 
+
+                    
                 </div>
+        
+        <!-- Produk Pakaian Atas -->
+        <div class="py-3">
+        @if(isset($dtPA))
+            <p class="font-bold my-0">Pakaian Atas</p>
+        </div>
+        <div class="bg-red--200 pakaianatas grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
+            
+            @foreach ($dtPA as $produk)
+                <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md" id="card">
+                    <img class="w-full h-52" src="{{ asset('images/PA/'. $produk->gambar) }}" alt="">
+                    <div class="m-1 flex-wrap gap-2">
+                        <h2 class="text-xs font-bold">{{$produk->nama_produk_pa}}</h2>
+                        <h3 class="text-sm my-1">{{$produk->harga_pa}}</h3>
+                        <div class=" flex flex-wrap">
+                            <a href="{{ url('detail-produk',$produk->id) }}">
+                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                            Detail
+                            </button>
+                            </a>
+                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow py-1 rounded-md text-xs font-semibold">
+                            Masukan Keranjang
+                            </button>
+                        </div>
+                    </div>  
                 </div>
-      
+            @endforeach
+            
+                </div>
+                <button id="showAllBtn" class="text-blue-500/90 w-48 font-thin text-left underline underline-offset-4 decoration-blue-500/90"><h1>Tampilkan semua pakaian atas...</h1></button>
+                <button id="hideAllBtn" class="text-blue-500/90 w-48 font-thin text-left underline underline-offset-4 decoration-blue-500/90" style="display: none;"><h1>Sembunyikan</h1></button>
+                <script src="{{ asset('js/tampilkansemua.js') }}"></script>
+                <br><br><br>
+        @endif
+
+        <!-- Katalog Pakaian Bawah -->
+        <div class="py-3">
+        @if(isset($dtPB))
+            <p class="font-bold">Pakaian Bawah</p>
+        </div>
+        <div class="pakaianbawah grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
+        @foreach ($dtPB as $produk)
+            <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+                <img class="w-full h-52" src="{{ asset('images/PB/'. $produk->gambar) }}" alt="">
+                <div class="m-1 flex-wrap gap-2">
+                    <h2 class="text-xs font-bold">{{$produk->nama_produk_pb}}</h2>
+                    <h3 class="text-sm my-1">{{$produk->harga_pb}}</h3>
+                    <div class=" flex flex-wrap">
+                            <a href="{{ url('detail-produk-pakaianbawah',$produk->id) }}">
+                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                            Detail
+                            </button>
+                            </a>
+                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow py-1 rounded-md text-xs font-semibold">
+                            Masukan Keranjang
+                            </button>
+                        </button>
+                    </div>
+                </div>  
             </div>
+            @endforeach
+                </div>
+                <button id="showAllBtnbawah" class="text-blue-500/90 w-48 font-thin text-left underline underline-offset-4 decoration-blue-500/90"><h1>Tampilkan semua pakaian bawah...</h1></button>
+                <button id="hideAllBtnbawah" class="text-blue-500/90 w-48 font-thin text-left underline underline-offset-4 decoration-blue-500/90" style="display: none;"><h1>Sembunyikan</h1></button>
+                <script src="{{ asset('js/tampilkansemua.js') }}"></script>
+        @endif
+        </div>
+    </div><br>     
+</div>
+</div>
 @endsection

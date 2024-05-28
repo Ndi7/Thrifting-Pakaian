@@ -15,8 +15,13 @@ class PakaianatasController extends Controller
     {
         $dtPA = PA::all();
         $dtPA = PA::latest()->get();
-        	return view('penjual.produk.PA.data-pa',compact('dtPA'));
-            
+        	return view('penjual.produk.PA.data-pa',compact('dtPA'));     
+    }
+
+    public function katalog()
+    {
+        $dtPA = PA::all();
+        	return $dtPA;
     }
 
     /**
@@ -69,6 +74,13 @@ class PakaianatasController extends Controller
         $dtPA = PA::findorfail($id);
 
         return view('penjual.produk.PA.edit-pa',compact('dtPA'));
+
+    }
+    public function detailproduk(string $id)
+    {   
+        $dtPA = PA::findorfail($id);
+
+        return view('pembeli.singleproduk',compact('dtPA'));
 
     }
 

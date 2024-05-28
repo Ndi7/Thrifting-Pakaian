@@ -1,36 +1,37 @@
 <?php
 
-use App\Http\Controllers\loginController;
-use App\Http\Controllers\registerController;
-use App\Http\Controllers\registerPenjual;
+use App\Http\Controllers\katalog;
+use App\Http\Controllers\checkout;
+use App\Http\Controllers\dashboard;
 // use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\keranjang;
+use App\Http\Controllers\DataBarang;
+use App\Http\Controllers\layoutlist;
 
 // Route Seller
-use App\Http\Controllers\dashboard;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\PakaianatasController;
-use App\Http\Controllers\PakaianbawahController;
-use App\Http\Controllers\SepatusandalController;
-use App\Http\Controllers\ProfilepenjualController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\singleproduk;
+use App\Http\Controllers\detailpesanan;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\registerPenjual;
+use App\Http\Controllers\checkoutberhasil;
 
 
 // Route Buyer
-use App\Http\Controllers\katalog;
-use App\Http\Controllers\singleproduk;
-use App\Http\Controllers\keranjang;
-use App\Http\Controllers\checkout;
-use App\Http\Controllers\checkoutberhasil;
-use App\Http\Controllers\detailpesanan;
-
-use App\Http\Controllers\DataBarang;
-use App\Http\Controllers\layoutlist;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\katalogController;
 use App\Http\Controllers\SessionController;
-
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\registerController;
 use Illuminate\Routing\Controllers\Middleware;
-use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\PakaianatasController;
+use App\Http\Controllers\UserProfileController;
+
+use App\Http\Controllers\PakaianbawahController;
+use App\Http\Controllers\SepatusandalController;
+use App\Http\Controllers\ProfilepenjualController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
@@ -109,18 +110,22 @@ Route::get('/delete-kategori/{id}',[KategoriController::class, 'destroy'])->name
 
 // PRODUK PAKAIAN ATAS
 Route::get('/data-pakaianatas',[PakaianatasController::class, 'index'])->name('data-pakaianatas');
+// Route::get('/katalog',[PakaianatasController::class, 'katalog'])->name('katalog');
 Route::get('/create-pakaianatas',[PakaianatasController::class, 'create'])->name('create-pakaianatas');
 Route::post('/simpan-pakaianatas',[PakaianatasController::class, 'store'])->name('simpan-pakaianatas');
 Route::get('/edit-pakaianatas/{id}',[PakaianatasController::class, 'edit'])->name('edit-pakaianatas');
+Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');
 Route::post('/update-pakaianatas/{id}',[PakaianatasController::class, 'update'])->name('update-pakaianatas');
 Route::get('/delete-pakaianatas/{id}',[PakaianatasController::class, 'destroy'])->name('delete-pakaianatas');
 
 
 // PRODUK PAKAIAN BAWAH
 Route::get('/data-pakaianbawah',[PakaianbawahController::class, 'index'])->name('data-pakaianbawah');
+// Route::get('/katalog',[PakaianbawahController::class, 'katalog'])->name('katalog');
 Route::get('/create-pakaianbawah',[PakaianbawahController::class, 'create'])->name('create-pakaianbawah');
 Route::post('/simpan-pakaianbawah',[PakaianbawahController::class, 'store'])->name('simpan-pakaianbawah');
 Route::get('/edit-pakaianbawah/{id}',[PakaianbawahController::class, 'edit'])->name('edit-pakaianbawah');
+Route::get('/detail-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'detailproduk'])->name('detail-produk-pakaianbawah');
 Route::post('/update-pakaianbawah/{id}',[PakaianbawahController::class, 'update'])->name('update-pakaianbawah');
 Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'])->name('delete-pakaianbawah');
 
@@ -132,6 +137,11 @@ Route::post('/simpan-sepatusandal',[SepatusandalController::class, 'store'])->na
 Route::get('/edit-sepatusandal/{id}',[SepatusandalController::class, 'edit'])->name('edit-sepatusandal');
 Route::post('/update-sepatusandal/{id}',[SepatusandalController::class, 'update'])->name('update-sepatusandal');
 Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
+
+
+
+// KATALOG
+Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
 
 
 // PROFILE PENJUAL
