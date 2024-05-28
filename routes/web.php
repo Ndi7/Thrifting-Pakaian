@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\registerPenjual;
 // use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LandingPageController;
@@ -51,17 +52,27 @@ Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 //->Middleware('auth');
 
 
-//Logout Login register
 
-Route::post('/logout', [loginController::class, 'logout'])->name('logout');
+//route login
+Route::get('/login',[loginController::class,'index']);
+Route::post('/login/home', [loginController::class, 'login'])->name('login.loginPost');
 
-Route::get('/login', [loginController::class, 'login'])->name('login');
-//->middleware('guest');
-Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.loginPost');
+//route logout
+Route::get('/login/logout', [loginController::class, 'logout']);
 
-//route register lama
+//route register pembeli
 Route::get('/register', [registerController::class, 'register'])->name('register');
-Route::post('/register/login', [registerController::class, 'registerPost'])->name('register.registerPost');
+Route::post('/register/create', [registerController::class, 'create'])->name('register.registerPost');
+
+//route register penjual
+Route::get('/penjualregister', [registerPenjual::class, 'register'])->name('penjualregister');
+Route::post('/penjualregister/create', [registerPenjual::class, 'create'])->name('penjualregister.penjualregisterPost');
+
+
+//Route::get('/login', [loginController::class, 'login'])->name('login');
+//->middleware('guest');
+//Route::post('/login/home', [loginController::class, 'loginPost'])->name('login.loginPost');
+
 
 Route::get('/register1', [RegisterController::class, 'showRegistrationForm']);
 

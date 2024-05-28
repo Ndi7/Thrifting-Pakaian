@@ -17,24 +17,24 @@
   <body>
     <div class="flex items-center justify-center min-h-screen bg-gray-0">
       <div class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
-        
+
         <div class="flex flex-col justify-center p-8 md:p-14">
           <span class="mb-3 text-4xl font-bold">Selamat datang</span>
           <span class="font-light text-gray-400 mb-8">
             Silahkan Login!
         </span>
-        
+
 
         <form action="{{ route('login.loginPost')}}" method="POST">
 
-          @csrf 
+          @csrf
 
           @if (session()->has('loginError'))
           <span class="text-red-500">{{ session('loginError') }}</span>
           @endif
 
-          <div class="py-1">
-          <select class="w-full h-10 text-black rounded-md border border-gray-300 focus:ring-lawngreen focus:border-lawngreen" name="deliveryOption">
+          <!--<div class="py-1">
+           <select class="w-full h-10 text-black rounded-md border border-gray-300 focus:ring-lawngreen focus:border-lawngreen" name="deliveryOption">
             <option value="Via Transfer">Pilih Jenis User</option>
             <option value="Via Transfer">Pembeli</option>
             <option value="Cash On Delivery (COD)">Penjual</option>
@@ -42,7 +42,25 @@
               @error('email')
                   <span class="text-red-500">{{ $message }}</span>
               @enderror
-        </div>
+        </div>-->
+
+        @error('eror')
+        <span class="text-red-500">{{ $message }}</span>
+    @enderror
+
+    @if (session('success'))
+    <span class="text-green-500">
+        {{ session('success') }}
+    </span>
+@endif
+
+@if (session('berhasil'))
+    <span class="text-green-500">
+        {{ session('berhasil') }}
+    </span>
+@endif
+
+
 
           <div class="py-1">
               <label for="email" class="form-label mb-2 text-md text-bold">Email</label>
@@ -65,7 +83,7 @@
               @enderror
 
         </div>
-          
+
           <div class="flex justify-between w-full mb-5">
             <!-- <div class="mr-24">
               <input type="checkbox" name="ch" id="ch" class="mr-2" />
@@ -76,7 +94,7 @@
 
           <button name="login" type="submit" class="bg-gray-100 btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-lawngreen">
           Sign in</button>
-          
+
 
           <div class="text-center text-gray-400">Tidak punya akun?<span>
             <a class="font-bold text-black" href="{{ route('register')}}">Daftar Disini!</a></span>
@@ -95,7 +113,7 @@
           <div
             class="absolute hidden bottom-5 right-5 p-6 bg-white bg-opacity-20 backdrop-blur-sm rounded drop-shadow-lg md:block"
           >
-           
+
           </div>
         </div>
       </div>

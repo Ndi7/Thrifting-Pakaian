@@ -12,11 +12,11 @@
   <body>
     <div class="flex items-center justify-center min-h-screen bg-gray-0">
     <div class="relative flex flex-col md:flex-row px-10 py-10 m-6 space-y-8 md:space-y-0 bg-white shadow-2xl rounded-2xl">
-        
+
         <div class="flex flex-col justify-center p-8 md:p-20">
         <div class="relative justify-center py-4">
         <a href=""><svg class="ms-10" xmlns="http://www.w3.org/2000/svg" version="1.0" width="105pt" height="30pt" viewBox="0 0 3573.000000 1043.000000" preserveAspectRatio="xMidYMid meet">
-    
+
     <g transform="translate(0.000000,1043.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
     <path d="M10408 10065 c-15 -498 -53 -663 -179 -780 -63 -57 -127 -87 -239 -110 -92 -19 -272 -35 -425 -36 l-130 -2 160 -8 c393 -19 531 -51 636 -146 104 -94 148 -247 169 -583 5 -91 11 -230 12 -310 1 -116 3 -93 9 110 13 479 54 664 171 777 101 98 244 132 633 152 l160 8 -125 2 c-367 4 -570 51 -673 153 -114 115 -154 298 -166 778 l-6 245 -7 -250z"/>
     <path d="M32562 10060 c-6 -765 -40 -1516 -88 -1883 -103 -803 -336 -1175 -849 -1357 -334 -118 -742 -164 -1665 -190 -206 -6 -376 -12 -377 -14 -2 -1 151 -6 339 -9 1213 -24 1729 -120 2058 -384 239 -191 386 -497 464 -963 68 -401 100 -928 114 -1885 l7 -440 8 445 c23 1308 72 1846 208 2265 116 360 298 578 601 719 337 158 817 221 1858 244 l315 8 -200 7 c-110 4 -333 12 -495 17 -682 25 -1077 78 -1370 187 -484 179 -711 525 -819 1253 -54 366 -81 848 -100 1835 -7 362 -8 372 -9 145z"/>
@@ -29,21 +29,25 @@
     </g>
     </svg></a>
           <span class="font-light text-gray-400 mb-5">
-           
-        </span>
-    
-          
-          </div>
-          <form action="{{ route('register.registerPost')}}" method="POST">
 
-            @csrf 
+        </span>
+
+        @error('gagal')
+        <span class="text-red-500">{{ $message }}</span>
+        @enderror
+
+
+          </div>
+          <form action="{{ route('penjualregister.penjualregisterPost')}}" method="POST">
+
+            @csrf
           <div class="py-1">
-            <label for="name" class="form-label mb-2 text-md font-bold">Email</label>
+            <label for="email" class="form-label mb-2 text-md font-bold">Email</label>
             <input
               type="text"
-              name="name"
-              id="name"
-              class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter email"
+              name="email"
+              id="email"
+              class="form-control @error('email') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="Masukkan Email"
             />
             @error('email')
                     <span class="text-red-500">{{ $message }}</span>
@@ -51,27 +55,27 @@
           </div>
 
             <div class="py-1">
-                <label for="fullname" class="form-label mb-2 text-md font-bold">Full Name</label>
+                <label for="name" class="form-label mb-2 text-md font-bold">Nama</label>
                 <input
                   type="text"
-                class="form-control @error('fullname') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter full name"
+                class="form-control @error('name') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="Masukkan Nama"
                   name="name"
                   id="name"
                 />
-                @error('full sname')
+                @error('name')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
           </div>
 
           <div class="py-1 mb-2">
-            <label for="password" class="form-label mb-2 text-md font-bold">Username</label>
+            <label for="nama_toko" class="form-label mb-2 text-md font-bold">Nama Toko</label>
             <input
               type="text"
-              name="name"
-              id="name"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter username"
+              name="nama_toko"
+              id="nama_toko"
+              class="form-control @error('nama_toko') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="Masukkan Nama Toko"
             />
-                @error('password')
+                @error('nama_toko')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
 
@@ -82,7 +86,7 @@
               type="password"
               name="password"
               id="password"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="enter the password"
+              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="Masukkan Password"
             />
                 @error('password')
                     <span class="text-red-500">{{ $message }}</span>
@@ -90,26 +94,27 @@
 
           </div>
           <div class="py-1 mb-2">
-            <label for="password" class="form-label mb-2 text-md font-bold">Ulangi Password</label>
+            <label for="password_confirmation" class="form-label mb-2 text-md font-bold">Ulangi Password</label>
             <input
               type="password"
-              name="password"
-              id="password"
-              class="form-control @error('password') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="ulangi password"
+              name="password_confirmation"
+              id="password_confirmation"
+              class="form-control @error('password_confirmation') is invalid @enderror w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500 focus:ring-lawngreen focus:border-lawngreen" placeholder="Ulangi Password"
             />
-                @error('password')
+                @error('password_confirmation')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
 
                 <div>
-         
+
+
           </div>
           </div>
 
-        
-          
-          
-          
+
+
+
+
           <button
             name="register" type="submit" class="btn w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-lawngreen hover:text-black">
             Daftar
@@ -117,12 +122,12 @@
 
           <div class="text-center text-gray-400">
             Sudah punya akun?
-            <span > <a class="font-bold text-black" href="{{ route('login')}}">Log in</a>  </span>
+            <span > <a class="font-bold text-black" href="login">Log in</a>  </span>
           </div>
-          
+
         </div>
         </form>
-        
+
         </div>
       </div>
     </div>
