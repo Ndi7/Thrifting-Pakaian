@@ -112,8 +112,7 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     // Route::post('/update-sepatusandal/{id}',[SepatusandalController::class, 'update'])->name('update-sepatusandal');
     // Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
 
-    // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
-    Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
+
 
     // ROUTE PROFILE PENJUAL
     Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
@@ -130,6 +129,9 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     // ROUTE LANDING PAGE
     Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 
+
+        // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
+        Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
 
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
