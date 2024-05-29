@@ -86,8 +86,13 @@
                     </div>
                 </div><br><br>
 
-                    <div class="justify-center ml-4 mr-4 mb-4">
-                        <button class="bg-lawngreen rounded-md w-full font-semibold">Checkout</button>
+                    <div class="flex flex-wrap justify-center gap-8 w-full ">
+                    <div class="justify-center w-72">
+                        <button class="bg-lawngreen rounded-md w-full font-semibold">Keep</button>
+                    </div>
+                    <div class="justify-center mb-4 w-72">
+                        <button class="bg-yellow-200 rounded-md w-full font-semibold">Beli</button>
+                    </div>
                     </div>
             </div>
             <!--Detail-->
