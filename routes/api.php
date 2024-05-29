@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\produkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::middleware('auth')->group(function () {
+    Route::post('/products/{id}/keep', [produkController::class, 'keepProduct']);
+    Route::post('/products/{id}/buy', [produkController::class, 'buyProduct']);
 });

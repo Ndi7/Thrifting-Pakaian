@@ -60,7 +60,7 @@
             <div id="produk-dropdown" class="hidden space-y-1 bg-gray-100">
                <a href="{{ route('data-pakaianatas')}}" class="sidebar-link block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">● Pakaian Atas</a>
                <a href="{{ route('data-pakaianbawah')}}" class="sidebar-link block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">● Pakaian Bawah</a>
-               <a href="{{ route('data-sepatusandal')}}" class="sidebar-link block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">● Sepatu/Sandal</a>
+               <a href="" class="sidebar-link block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">● Sepatu/Sandal</a>
             </div>
             </div>
          </li>
