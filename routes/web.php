@@ -131,20 +131,37 @@ Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'
 // Route::post('/update-sepatusandal/{id}',[SepatusandalController::class, 'update'])->name('update-sepatusandal');
 // Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
 
-// ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
-Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
-
-// ROUTE PROFILE PENJUAL
-Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
-Route::get('/create-profile',[ProfilepenjualController::class, 'create'])->name('create-profile');
-Route::post('/simpan-profile',[ProfilepenjualController::class, 'store'])->name('simpan-profile');
-Route::get('/edit-profile/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-profile');
-Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
-Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
 
 
+    // ROUTE PROFILE PENJUAL
+    Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
+    Route::get('/create-profile',[ProfilepenjualController::class, 'create'])->name('create-profile');
+    Route::post('/simpan-profile',[ProfilepenjualController::class, 'store'])->name('simpan-profile');
+    Route::get('/edit-profile/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-profile');
+    Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
+    Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
+});
+
+//midlleware pembeli
+Route::group(['middleware' => ['auth','level:pembeli']], function(){
+
+    // ROUTE LANDING PAGE
+    Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 
 
+        // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
+        Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
+
+    Route::get('/singleproduk', [singleproduk::class, 'index']);
+    Route::get('/keranjang', [keranjangController::class, 'index']);
+    Route::get('/checkout', [checkout::class, 'index']);
+    Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
+    Route::get('/detailpesanan', [detailpesanan::class, 'index']);
+    Route::get('/user', [UserProfileController::class, 'index']);
+
+    Route::get('/userprofile', function () {
+        return view('user');});
+});
 
 
 // Route::get('/Barang', [DataBarang::class, 'tampilkan']);
