@@ -140,7 +140,6 @@ Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'
     Route::get('/edit-profile/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-profile');
     Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
     Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
-});
 
 //midlleware pembeli
 Route::group(['middleware' => ['auth','level:pembeli']], function(){
