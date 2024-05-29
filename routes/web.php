@@ -54,7 +54,6 @@ Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 //->Middleware('auth');
 
 
-
 //route login
 Route::get('/login',[loginController::class,'index']);
 Route::post('/login/home', [loginController::class, 'login'])->name('login.loginPost');
@@ -77,7 +76,6 @@ Route::post('/penjualregister/create', [registerPenjual::class, 'create'])->name
 
 
 Route::get('/register1', [RegisterController::class, 'showRegistrationForm']);
-
 
 Route::get('/dashboard', [dashboard::class, 'index']);
 
@@ -132,7 +130,6 @@ Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'
 // Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
 
 
-
     // ROUTE PROFILE PENJUAL
     Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
     Route::get('/create-profile',[ProfilepenjualController::class, 'create'])->name('create-profile');
@@ -148,8 +145,8 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/landingpage', [LandingPageController::class, 'landingPage']);
 
 
-        // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
-        Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
+    // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
+    Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
 
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
@@ -161,81 +158,3 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/userprofile', function () {
         return view('user');});
 });
-
-
-// Route::get('/Barang', [DataBarang::class, 'tampilkan']);
-// Route::get('/listproduct', [layoutlist::class, 'index']);
-// // Route dashboar
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// // CRUD produk
-// Route::get('/product', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('product');
-
-// //  about
-// Route::get('/about', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('about');
-
-// //  contact
-// Route::get('/contact', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('contact');
-
-
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// require __DIR__ . '/auth.php';
-
-//
-//Route::get('/user/{id}', function ($id) {
-//    return 'User dengan ID ' . $id;
-//});
-//
-//Route::prefix('admin')->group(function () {
-//    Route::get('/dashboard', function () {
-//        return 'Admin Dashboard';
-//    });
-//
-//    Route::get('/users', function () {
-//        return 'Admin Users';
-//    });
-//});
-//Route::get('/', [ProductController::class, 'index'])->name('home');
-//
-//Route::get('/listbarang/{id}/{nama}', function($id,$nama){
-//    return view('list_barangthrift', compact('id', 'nama'));
-//});
-//
-//Route::get('/', [HomeController::class, 'index']);
-//Route::get('/contact', [HomeController::class, 'contact']);
-//
-//Route::get('/welcome', function () {
-//    return view('welcome');
-//})
-//Route::get('/user/{id}', function ($id) {
-//    return 'User dengan ID ' . $id;
-//})
-//Route::prefix('admin')->group(function () {
-//    Route::get('/dashboard', function () {
-//        return 'Admin Dashboard';
-//    });
-//
-//    Route::get('/users', function () {
-//        return 'Admin Users';
-//    });
-//})
-//Route::get('/listbarang/{id}/{nama}', function($id,$nama){
-//    return view('list_barangthrift', compact('id', 'nama'));
-//})
-//Route::get('/', [HomeController::class, 'index']);
-//Route::get('/contact', [HomeController::class, 'contact'])
-//
