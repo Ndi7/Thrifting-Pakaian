@@ -81,13 +81,18 @@
                     <div class="col-span-1 pt-4 font-bold">
                             <h1 class="text-md mb-3" value="">Deskripsi</h1>
                     </div>
-                    <div class="col-span-3 pt-2">
-                            <textarea class="text-md mb-3 w-full bg-white/70" row="4" value="" disabled>{{ $dtPA->deskripsi_pa }}</textarea>
+                    <div class="col-span-3 pt-2 text-wrap">
+                        <p class="h-24 text-md mb-3 p-2 w-full bg-white/50" value="">{{ $dtPA->deskripsi_pa }}</p>
                     </div>
                 </div><br><br>
 
-                    <div class="justify-center ml-4 mr-4 mb-4">
-                        <button class="bg-lawngreen rounded-md w-full font-semibold">Checkout</button>
+                    <div class="flex flex-wrap justify-center gap-8 w-full ">
+                    <!-- <div class="justify-center w-72">
+                        <button class="bg-lawngreen rounded-md w-full font-semibold">Keep</button>
+                    </div> -->
+                    <div class="justify-center mb-4 mx-2 w-full">
+                        <button class="bg-lawngreen rounded-md py-1 w-full font-semibold">Beli</button>
+                    </div>
                     </div>
             </div>
             <!--Detail-->

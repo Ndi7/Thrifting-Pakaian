@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Checkout;
+
 
 class checkout extends Controller
 {
-    public function index()
-    {
-        return view("checkout");
-    }
+    
 }

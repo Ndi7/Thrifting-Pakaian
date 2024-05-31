@@ -22,31 +22,25 @@
                 <button id="btnLihatDetail" class="text-indigo-500 font-semibold hover:underline focus:outline-none">Lihat Detail Pemesanan</button>
             </div><br>
             <div>
-            <a href="Home" class="bg-gray-300 text-gray-700  py-2 px-4 rounded-md hover:bg-gray-400">Kembali ke Home</a>
+            <a href="../landingpage" class="bg-gray-300 text-gray-700  py-2 px-4 rounded-md hover:bg-gray-400">Kembali ke Home</a>
             </div>
         </div>
     </div>
 
     <!-- Modal Detail Pemesanan -->
 <div id="modalDetail" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+    <form method="POST" action="">
+    {{ csrf_field() }}
     <div class="bg-white p-3 max-w-md mx-auto rounded-lg shadow-lg">
         <h3 class="text-lg font-semibold mb-4">Detail Pemesanan:</h3>
         <div class="text-align-justify">
             <div>
-                <span class="text-gray-700">Nama Produk 1 :</span>
+                <span class="text-gray-700">Nama :</span>
                 <span class="font-semibold">Kaos Oversize Harley Davidson</span>
             </div>
             <div>
-                <span class="text-gray-700">Nama Produk 2 :</span>
-                <span class="font-semibold">T-Shirt Polo</span>
-            </div>
-            <div>
-                <span class="text-gray-700">Harga 1 : </span>
+                <span class="text-gray-700">Harga : </span>
                 <span class="font-semibold">Rp75.000</span>
-            </div>
-            <div>
-                <span class="text-gray-700">Harga 2 : </span>
-                <span class="font-semibold">Rp55.000</span>
             </div>
             <div>
                 <span class="text-gray-700">Jumlah :</span>
@@ -68,10 +62,6 @@
                 <span class="text-gray-700">Subtotal Pengiriman :</span>
                 <span class="font-semibold">Rp20.000</span>
             </div>
-            <div>
-                <span class="text-gray-700">Kupon Diskon :</span>
-                <span class="font-semibold">-Rp10.000</span>
-            </div>
             <!-- Tambahkan informasi produk lainnya di sini -->
         </div>
         <div class="mt-4">
@@ -83,6 +73,7 @@
             <button id="btnTutupModal" class="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none">Tutup</button>
         </div>
     </div>
+    </form>
 </div>
 
 

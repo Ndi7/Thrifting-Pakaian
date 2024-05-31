@@ -9,7 +9,7 @@
     <div class="container mx-auto px-5 my-10 justify-center">
                 <div class="px-20 my-10 justify-center">
                     <div class="sm:flex flex-wrap text-center justify-center gap-4 pt-20 text-left m-auto">
-                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class=" rounded-none w-60 bg-slate-200 shadow-lg cursor-pointer" id="">
                             <img class="w-60 h-60" src="{{ asset('images/kaos1.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">T-Shirt Harley Davidson</h2>
@@ -17,7 +17,7 @@
                                 <h3 class="text-sm my-1">Rp. 50000</h3>
                             </div>
                         </div>
-                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class=" rounded-none w-60 bg-slate-200 shadow-lg cursor-pointer" id="">
                             <img class="w-60 h-60" src="{{ asset('images/kaos2.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">Kaos Oversize Harley Davidson</h2>
@@ -25,7 +25,7 @@
                                 <h3 class="text-sm my-1">Rp. 75000</h3>
                             </div>
                         </div>
-                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class=" rounded-none w-60 bg-slate-200 shadow-lg cursor-pointer" id="">
                             <img class="w-60 h-60" src="{{ asset('images/kaos3.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">T-Shirt Polo</h2>
@@ -33,7 +33,7 @@
                                 <h3 class="text-sm my-1">Rp. 55000</h3>
                             </div>
                         </div>
-                        <div class="card rounded-none w-60 bg-slate-300 shadow-lg cursor-pointer" id="card">
+                        <div class=" rounded-none w-60 bg-slate-200 shadow-lg cursor-pointer" id="">
                             <img class="w-60 h-60" src="{{ asset('images/celana1.jpg') }}" alt=""><br>
                             <div class="mx-1 -mt-5">
                                 <h2 class="text-base font-bold">Celana Jeans Modif</h2>
@@ -76,20 +76,22 @@
         <div class="bg-red--200 pakaianatas grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
             
             @foreach ($dtPA as $produk)
-                <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md" id="card">
+                <div class="card rounded-none w-48 h-fit bg-slate-100 shadow-md" id="card">
                     <img class="w-full h-52" src="{{ asset('images/PA/'. $produk->gambar) }}" alt="">
                     <div class="m-1 flex-wrap gap-2">
                         <h2 class="text-xs font-bold">{{$produk->nama_produk_pa}}</h2>
                         <h3 class="text-sm my-1">{{$produk->harga_pa}}</h3>
-                        <div class=" flex flex-wrap">
-                            <a href="{{ url('detail-produk',$produk->id) }}">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                        <div class=" flex flex-wrap w-full">
+                            <a href="{{ url('detail-produk',$produk->id) }}" class="w-1/2">
+                            <button class="bg-white/80 hover:bg-white w-20 px-3 py-1 ml-1  rounded-md text-xs font-semibold">
                             Detail
                             </button>
                             </a>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow py-1 rounded-md text-xs font-semibold">
-                            Masukan Keranjang
+                            <a href="{{asset('checkout')}}">
+                            <button class="bg-lawngreen/80 hover:bg-lawngreen w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold">
+                            Beli
                             </button>
+                            </a>
                         </div>
                     </div>  
                 </div>
@@ -109,22 +111,23 @@
         </div>
         <div class="pakaianbawah grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
         @foreach ($dtPB as $produk)
-            <div class="card rounded-none w-48 h-fit bg-slate-200 shadow-md cursor-pointer" id="card">
+            <div class="card rounded-none w-48 h-fit bg-slate-100 shadow-md cursor-pointer" id="card">
                 <img class="w-full h-52" src="{{ asset('images/PB/'. $produk->gambar) }}" alt="">
                 <div class="m-1 flex-wrap gap-2">
                     <h2 class="text-xs font-bold">{{$produk->nama_produk_pb}}</h2>
                     <h3 class="text-sm my-1">{{$produk->harga_pb}}</h3>
-                    <div class=" flex flex-wrap">
-                            <a href="{{ url('detail-produk-pakaianbawah',$produk->id) }}">
-                            <button class="bg-white/80 hover:bg-white max-w-fit px-3 py-1 rounded-md text-xs font-semibold">
+                    <div class=" flex flex-wrap w-full">
+                            <a href="{{ url('detail-produk-pakaianbawah',$produk->id) }}" class="w-1/2">
+                            <button class="bg-white/80 hover:bg-white w-20 px-3 py-1 ml-1  rounded-md text-xs font-semibold">
                             Detail
                             </button>
                             </a>
-                            <button class="ml-2 bg-lawngreen/80 hover:bg-lawngreen flex-grow py-1 rounded-md text-xs font-semibold">
-                            Masukan Keranjang
+                            <a href="{{asset('checkout')}}">
+                            <button class="bg-lawngreen/80 hover:bg-lawngreen w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold">
+                            Beli
                             </button>
-                        </button>
-                    </div>
+                            </a>
+                        </div>
                 </div>  
             </div>
             @endforeach
@@ -134,7 +137,8 @@
                 <script src="{{ asset('js/tampilkansemua.js') }}"></script>
         @endif
         </div>
-    </div><br>     
+    </div><br>
+
 </div>
 </div>
 @endsection

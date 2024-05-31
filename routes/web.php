@@ -20,11 +20,12 @@ use App\Http\Controllers\checkoutberhasil;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\katalogController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\registerController;
-use App\Http\Controllers\keranjangController;
 
 // CLASS ROUTE SELLER
+use App\Http\Controllers\keranjangController;
 use Illuminate\Routing\Controllers\Middleware;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PakaianatasController;
@@ -90,7 +91,6 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::get('/create-pakaianatas',[PakaianatasController::class, 'create'])->name('create-pakaianatas');
     Route::post('/simpan-pakaianatas',[PakaianatasController::class, 'store'])->name('simpan-pakaianatas');
     Route::get('/edit-pakaianatas/{id}',[PakaianatasController::class, 'edit'])->name('edit-pakaianatas');
-    Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');
     Route::post('/update-pakaianatas/{id}',[PakaianatasController::class, 'update'])->name('update-pakaianatas');
     Route::get('/delete-pakaianatas/{id}',[PakaianatasController::class, 'destroy'])->name('delete-pakaianatas');
 
@@ -100,7 +100,6 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::get('/create-pakaianbawah',[PakaianbawahController::class, 'create'])->name('create-pakaianbawah');
     Route::post('/simpan-pakaianbawah',[PakaianbawahController::class, 'store'])->name('simpan-pakaianbawah');
     Route::get('/edit-pakaianbawah/{id}',[PakaianbawahController::class, 'edit'])->name('edit-pakaianbawah');
-    Route::get('/detail-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'detailproduk'])->name('detail-produk-pakaianbawah');
     Route::post('/update-pakaianbawah/{id}',[PakaianbawahController::class, 'update'])->name('update-pakaianbawah');
     Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'])->name('delete-pakaianbawah');
 
@@ -112,8 +111,6 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     // Route::post('/update-sepatusandal/{id}',[SepatusandalController::class, 'update'])->name('update-sepatusandal');
     // Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
 
-    // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
-    Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
 
     // ROUTE PROFILE PENJUAL
     Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
@@ -133,13 +130,24 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
-    Route::get('/checkout', [checkout::class, 'index']);
+    Route::get('/checkout', [checkoutController::class, 'index']);
     Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
+    Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');
+    Route::get('/detail-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'detailproduk'])->name('detail-produk-pakaianbawah');
+
 
     Route::get('/userprofile', function () {
         return view('user');});
+
+    // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
+    Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
+
+    Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout.store');
+    
+
 });
+
 
 
