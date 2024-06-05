@@ -122,7 +122,7 @@
                             Detail
                             </button>
                             </a>
-                            <a href="{{ url('checkout-produk',$produk->id) }}">
+                            <a href="{{ url('checkout-produk-pakaianbawah',$produk->id) }}">
                             <button class="bg-lawngreen/80 hover:bg-lawngreen w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold">
                             Beli
                             </button>

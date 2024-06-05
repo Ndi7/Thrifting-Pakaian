@@ -91,7 +91,7 @@
                         <button class="bg-lawngreen rounded-md w-full font-semibold">Keep</button>
                     </div> -->
                     <div class="justify-center mb-4 mx-2 w-full">
-                        <a href="{{ url('checkout-produk',$dtPB->id) }}">
+                        <a href="{{ url('checkout-produk-pakaianbawah',$dtPB->id) }}">
                         <button class="bg-lawngreen rounded-md py-1 w-full font-semibold">Beli</button>
                         </a>
                     </div>
