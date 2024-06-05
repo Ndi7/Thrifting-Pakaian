@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class checkoutController extends Controller
 {
-    public function checkout() {
+    public function index() {
         return view("checkout");
     }
 
@@ -35,7 +35,7 @@ class checkoutController extends Controller
     }
 
     public function show($id)
-    {   
+    {
         $dtcheckout = Checkout::findorfail($id);
 
         return view('pembeli.checkoutberhasil', compact('dtcheckout'));
