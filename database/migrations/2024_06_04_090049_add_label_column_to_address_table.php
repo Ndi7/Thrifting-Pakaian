@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-       // Schema::create('order', function (Blueprint $table) {
-       //     $table->id();
-       //     $table->foreignId('produk_id')->constrained('produk')->onDelete('cascade');
-       //     $table->foreignId('user_id')->constrained()->onDelete('cascade');
-       //     $table->timestamps();
-       // });
+        Schema::table('alamat_pengiriman', function (Blueprint $table) {
+            $table->string('label')->after('is_primary')->nullable();
+        });
     }
 
     /**
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order');
+        Schema::table('alamat_pengiriman', function (Blueprint $table) {
+            $table->dropColumn('label');
+        });
     }
 };

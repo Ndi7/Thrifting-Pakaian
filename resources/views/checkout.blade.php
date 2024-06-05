@@ -130,7 +130,7 @@
             <h2 class="text-xs mt-2 text-red-500 font-semibold">*Dengan melanjutkan pembelian, artinya Anda menyetujui Syarat dan Ketentuan dan Kebijakan Privasi kami.</h2>
         </div><br>
         <div class="mt-7 text-xl items-end justify-end flex">
-            <div class="h-24 flex justify-end items-center w-full">           
+            <div class="h-24 flex justify-end items-center w-full">
                 <button type="" class="tombol-lanjutkan p-2 w-40 rounded-md bg-lawngreen text-center">CHECKOUT</button>
             </div>
             </form>
@@ -139,5 +139,5 @@
         </div>
     </div>
 </div>
-      
+
 @endsection

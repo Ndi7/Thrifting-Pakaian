@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class checkoutController extends Controller
 {
-    public function index()
-    {
+    public function checkout() {
         return view("checkout");
     }
 

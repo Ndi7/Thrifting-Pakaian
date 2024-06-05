@@ -1,0 +1,167 @@
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
+@extends('layout.navbar')
+
+@section ('title', 'checkout')
+@section('content')
+
+    <div class="container flex mx-auto px-5 my-10">
+        <div class="row">
+            <section class="lg:col-span-12 md:col-span-12 shopping-cart">
+                <h2 class="font-bold text-xl">Checkout</h2><br>
+                <body>
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div class="row">
+                        <div class="grid grid-cols-1 lg:grid-cols-7 md:grid-cols-6">
+                            <form name="form" action="{{ route('checkout.store') }}" method="POST">
+                                @csrf
+                                <div class="flex justify-between">
+                                    <h5 class="mb-0 inline-block"><i class='bx bx-map'></i> Delivery Address</h5>
+                                    <a href="#" class="text-gray-500 underline">Add a new address</a>
+                                </div>
+                                <div class="mt-6">
+                                    <div class="flex flex-wrap">
+                                        @forelse ($addresses as $address)
+                                        <div class="lg:w-1/2 w-full mb-4">
+                                            <div class="bg-white rounded-lg shadow-lg p-6">
+                                                <div class="mb-4">
+                                                    <input class="form-radio text-blue-500 h-4 w-4" value="{{ $address->id }}" type="radio" name="address_id" id="homeRadio" {{ ($address->is_primary) ? 'checked' : '' }}>
+                                                    <label class="ml-2 text-gray-700" for="homeRadio">{{ $address->label }}</label>
+                                                </div>
+                                                <!-- address -->
+                                                <address>
+                                                    <strong>{{ $address->first_name }} + {{ $address->last_name }}</strong>
+                                                    <br>
+
+                                                    {{ $address->address1 }}
+                                                    <br>
+
+                                                    {{ $address->address2 }}
+                                                    <br>
+
+                                                    <abbr title="Phone">P: {{ $address->phone }}</abbr>
+                                                </address>
+                                                @if ($address->is_primary)
+                                                <span class="text-danger">Default address</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        @empty
+                                        <p class="text-gray-700">No addresses found.</p>
+                                        @endforelse
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><i class='bx bxs-truck'></i> Delivery Service</h5>
+                                <div class="mt-3">
+                                    <div class="flex items-center">
+                                        <input class="form-radio courier-code" type="radio" name="courier" id="inlineRadio1" value="jne">
+                                        <label class="ml-2" for="inlineRadio1">JNE</label>
+                                    </div>
+                                    <div class="flex items-center mt-2">
+                                        <input class="form-radio courier-code" type="radio" name="courier" id="inlineRadio2" value="pos">
+                                        <label class="ml-2" for="inlineRadio2">POS</label>
+                                    </div>
+                                    <div class="flex items-center mt-2">
+                                        <input class="form-radio courier-code" type="radio" name="courier" id="inlineRadio3" value="tiki">
+                                        <label class="ml-2" for="inlineRadio3">TIKI</label>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>Available services:</p>
+                                    <ul class="list-group list-group-flush available-services" style="display: none;"></ul>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <a href="" class="btn btn-second">Back to Shopping Cart</a>
+                                    <button type="submit" class="btn btn-first">Place Order</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-5 col-md-6">
+                            <div class="mb-5 card mt-6 shadow">
+                                <div class="card-body p-6">
+                                    <!-- heading -->
+                                    <h2 class="h5 mb-4">Order Details</h2>
+                                    <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-6 col-md-6 col-lg-7">
+                                                <div class="d-flex">
+                                                    <img src="" alt="Ecommerce" style="height: 70px;">
+                                                    <div class="ms-3">
+                                                        <a href="">
+                                                            <h6 class="mb-0">..</h6>
+                                                        </a>
+                                                        <span>
+                                                            <!-- ... -->
+                                                            <small>IDR </small>
+                                                            <small class="text-muted text-decoration-line-through"></small>
+                                                            <!-- ... -->
+                                                            <small>IDR </small>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 col-md-2 col-lg-2">
+                                                1
+                                            </div>
+                                            <div class="col-3 text-lg-end text-start text-md-end col-md-3">
+                                                <!-- ... -->
+                                                <span class="fw-bold">IDR </span>
+                                                <!-- ... -->
+                                                <span class="fw-bold">IDR </span>
+                                                <!-- ... -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item py-3">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>Item Subtotal</div>
+                                            <div class="fw-bold">IDR ..</div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>Discount</div>
+                                            <div class="fw-bold">IDR ...</div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>Tax (11%)</div>
+                                            <div class="fw-bold">IDR ...</div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div>Shipping Fee</div>
+                                            <div class="fw-bold" id="shipping-fee">IDR 0</div>
+                                        </div>
+
+                                    </li>
+                                    <li class="list-group-item py-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-2 fw-bold">
+                                            <div>Grand Total</div>
+                                            <div id="grand-total">IDR ...</div>
+                                        </div>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+            </section>
+        </div>
+    </div>
+</section>
+
+@endsection
