@@ -80,6 +80,14 @@ class PakaianbawahController extends Controller
 
     }
 
+    public function checkoutproduk(string $id)
+    {   
+        $dtPB = PB::findorfail($id);
+
+        return view('checkoutpb',compact('dtPB'));
+
+    }
+
     /**
      * Update the specified resource in storage.
      */

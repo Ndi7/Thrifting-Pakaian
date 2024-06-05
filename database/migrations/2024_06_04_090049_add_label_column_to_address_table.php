@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-       // Schema::create('checkouts', function (Blueprint $table) {
-       //     $table->id();
-       //     $table->timestamps();
-       // });
+        Schema::table('alamat_pengiriman', function (Blueprint $table) {
+            $table->string('label')->after('is_primary')->nullable();
+        });
     }
 
     /**
@@ -22,7 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checkouts');
+        Schema::table('alamat_pengiriman', function (Blueprint $table) {
+            $table->dropColumn('label');
+        });
     }
 };
-

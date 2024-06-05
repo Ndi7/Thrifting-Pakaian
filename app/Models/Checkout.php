@@ -21,6 +21,8 @@ class Checkout extends Model
         'opsi_pengiriman',
         'opsi_pembayaran',
         'catatan_pesanan',
+        'nama_produk',
+        'harga_produk',
     ];
 
     // Optionally, you can define the casts property to cast certain attributes to specific types

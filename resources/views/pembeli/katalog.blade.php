@@ -80,14 +80,14 @@
                     <img class="w-full h-52" src="{{ asset('images/PA/'. $produk->gambar) }}" alt="">
                     <div class="m-1 flex-wrap gap-2">
                         <h2 class="text-xs font-bold">{{$produk->nama_produk_pa}}</h2>
-                        <h3 class="text-sm my-1">{{$produk->harga_pa}}</h3>
+                        <h3 class="text-sm my-1">Rp. {{$produk->harga_pa}}</h3>
                         <div class=" flex flex-wrap w-full">
                             <a href="{{ url('detail-produk',$produk->id) }}" class="w-1/2">
                             <button class="bg-white/80 hover:bg-white w-20 px-3 py-1 ml-1  rounded-md text-xs font-semibold">
                             Detail
                             </button>
                             </a>
-                            <a href="{{asset('checkout')}}">
+                            <a href="{{ url('checkout-produk',$produk->id) }}">
                             <button class="bg-lawngreen/80 hover:bg-lawngreen w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold">
                             Beli
                             </button>
@@ -115,14 +115,14 @@
                 <img class="w-full h-52" src="{{ asset('images/PB/'. $produk->gambar) }}" alt="">
                 <div class="m-1 flex-wrap gap-2">
                     <h2 class="text-xs font-bold">{{$produk->nama_produk_pb}}</h2>
-                    <h3 class="text-sm my-1">{{$produk->harga_pb}}</h3>
+                    <h3 class="text-sm my-1">Rp. {{$produk->harga_pb}}</h3>
                     <div class=" flex flex-wrap w-full">
                             <a href="{{ url('detail-produk-pakaianbawah',$produk->id) }}" class="w-1/2">
                             <button class="bg-white/80 hover:bg-white w-20 px-3 py-1 ml-1  rounded-md text-xs font-semibold">
                             Detail
                             </button>
                             </a>
-                            <a href="{{asset('checkout')}}">
+                            <a href="{{ url('checkout-produk',$produk->id) }}">
                             <button class="bg-lawngreen/80 hover:bg-lawngreen w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold">
                             Beli
                             </button>

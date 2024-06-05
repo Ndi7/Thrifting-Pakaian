@@ -84,6 +84,15 @@ class PakaianatasController extends Controller
 
     }
 
+    public function checkoutproduk(string $id)
+    {   
+        $dtPA = PA::findorfail($id);
+
+        return view('checkout',compact('dtPA'));
+
+    }
+
+
     /**
      * Update the specified resource in storage.
      */

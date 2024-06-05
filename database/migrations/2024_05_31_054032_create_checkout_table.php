@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('telepon');
             $table->string('opsi_pengiriman');
             $table->string('opsi_pembayaran');
+            $table->string('nama_produk');
+            $table->string('harga_produk');
             $table->text('catatan_pesanan')->nullable();
             $table->timestamps();
         });
@@ -34,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checkout');
+        Schema::dropIfExists('checkouts');
     }
 };
