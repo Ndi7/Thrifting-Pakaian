@@ -26,7 +26,7 @@
 
     <form name="form" action="{{ route('checkout.store') }}" method="POST">
         @csrf
-        <div class="input-control text-sm mb-10">        
+        <div class="input-control text-sm mb-10">
             <input class="w-2/3 h-10 p-2 border-t border-b border-black rounded-lg" type="email" id="email" name="email" placeholder="Alamat Email" required><br>
             <input type="checkbox" id="subscribe" name="subscribe" value="yes">
             <label for="subscribe" class="">Saya ingin menerima informasi terbaru mengenai produk dan promosi.</label>
@@ -112,7 +112,7 @@
             <h2 class="text-xs mt-2 text-red-500 font-semibold">*Dengan melanjutkan pembelian, artinya Anda menyetujui Syarat dan Ketentuan dan Kebijakan Privasi kami.</h2>
         </div><br>
         <div class="mt-7 text-xl items-end justify-end flex">
-            <div class="h-24 flex justify-end items-center w-full">           
+            <div class="h-24 flex justify-end items-center w-full">
                 <button type="" class="tombol-lanjutkan p-2 w-40 rounded-md bg-lawngreen text-center">CHECKOUT</button>
             </div>
             </form>
@@ -121,5 +121,5 @@
         </div>
     </div>
 </div>
-      
+
 @endsection

@@ -28,6 +28,8 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\keranjangController;
 use Illuminate\Routing\Controllers\Middleware;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\orderController as ControllersOrderController;
 use App\Http\Controllers\PakaianatasController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\PakaianbawahController;
@@ -130,7 +132,8 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
-    Route::get('/checkout', [checkoutController::class, 'index']);
+    //Route::get('/checkout', [checkoutController::class, 'index']);
+    Route::get('/checkout', [orderController::class, 'checkout'])->name('checkout.store');
     Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
@@ -145,7 +148,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
 
     Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout.store');
-    
+
 
 });
 
