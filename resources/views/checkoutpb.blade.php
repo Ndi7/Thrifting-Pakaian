@@ -24,23 +24,26 @@
         </div>
     @endif
 
-    <div class="flex flex-wrap mb-10" method="POST">
+    <form name="form" action="{{ route('checkout.store') }}" method="POST">
+    <div class="flex flex-wrap mb-10">
     {{ csrf_field() }}
     <div>
-        <img src="{{ asset('images/PB/'. $dtPB->gambar) }}" alt="" class="w-32  h-32">
+        <img src="{{ asset('images/PB/'. $dtPB->gambar) }}" alt="" id="gambar" name="gambar" class="w-32  h-32">
     </div>
-    <div class="flex items-center text-center w-64 p-4 mr-5">
-        <h1 class="text-center" value="">{{ $dtPB->nama_produk_pb }}</h1>
+    <div class="flex items-center text-center w-64 p-4 mr-5" id="nama_produk" name="nama_produk">
+        <input class="text-center bg-white" value="{{ $dtPB->nama_produk_pb }}" disabled></input>
     </div>
-    <div class="flex items-center justify-end text-end w-40 pr-4">
-        <h1 class="text-end">{{ $dtPB->harga_pb }}</h1>
+    <div class="flex items-center justify-end text-end w-40 pr-4" id="harga_produk" name="harga_produk">
+        <input class="text-end bg-white" value="Rp. {{ $dtPB->harga_pb }}" disabled></input>
     </div>
+        
+        <!-- Input hidden untuk mengirim data produk -->
+        <input type="hidden" name="nama_produk" value="{{ $dtPB->nama_produk_pb }}">
+        <input type="hidden" name="harga_produk" value="{{ $dtPB->harga_pb }}">
 
     </div>
 
 
-    <form name="form" action="{{ route('checkout.store') }}" method="POST">
-        @csrf
         <div class="input-control text-sm mb-10">        
             <input class="w-2/3 h-10 p-2 border-t border-b border-black rounded-lg" type="email" id="email" name="email" placeholder="Alamat Email" required><br>
             <input type="checkbox" id="subscribe" name="subscribe" value="yes">
@@ -115,6 +118,8 @@
                 <option value="reguler">Pengiriman Reguler (Estimasi tiba: 3-5 hari kerja)</option>
                 <!-- <option value="ekspres">Pengiriman Ekspres (Estimasi tiba: 1-2 hari kerja)</option>
                 <option value="kargo">Pengiriman Kargo (Estimasi tiba: 5-7 hari kerja)</option> -->
+                <!-- <option value="ekspres">Pengiriman Ekspres (Estimasi tiba: 1-2 hari kerja)</option>
+                <option value="kargo">Pengiriman Kargo (Estimasi tiba: 5-7 hari kerja)</option> -->
             </select>
             <h2 class="font-bold mt-5">Opsi Pembayaran</h2>
             <select class="w-2/3 border-t border-b border-black rounded-lg" id="opsi_pembayaran" name="opsi_pembayaran" required>
@@ -127,8 +132,10 @@
             <h2 class="text-xs mt-2 text-red-500 font-semibold">*Dengan melanjutkan pembelian, artinya Anda menyetujui Syarat dan Ketentuan dan Kebijakan Privasi kami.</h2>
         </div><br>
         <div class="mt-7 text-xl items-end justify-end flex">
-            <div class="h-24 flex justify-end items-center w-full">           
-                <button type="" class="tombol-lanjutkan p-2 w-40 rounded-md bg-lawngreen text-center">CHECKOUT</button>
+            <div class="h-24 flex justify-end items-center w-full">
+            <a href="{{ url('checkoutberhasil',$dtPB->id) }}">
+            <button type="" class="tombol-lanjutkan p-2 w-40 rounded-md bg-lawngreen text-center">CHECKOUT</button>
+            </a>
             </div>
             </form>
     </body>
@@ -136,5 +143,6 @@
         </div>
     </div>
 </div>
-      
+
+
 @endsection

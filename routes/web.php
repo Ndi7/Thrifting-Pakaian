@@ -132,7 +132,6 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
-    Route::get('/checkout', [checkoutController::class, 'index'])->name('checkout.store');
     Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
