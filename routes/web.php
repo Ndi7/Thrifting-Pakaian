@@ -135,7 +135,9 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
     Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');
+    Route::get('/checkout-produk/{id}',[PakaianatasController::class, 'checkoutproduk'])->name('checkout-produk');
     Route::get('/detail-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'detailproduk'])->name('detail-produk-pakaianbawah');
+    Route::get('/checkout-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'checkoutproduk'])->name('checkout-produk-pakaianbawah');
 
 
     Route::get('/userprofile', function () {
@@ -145,6 +147,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
 
     Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout.store');
+    Route::get('/checkoutberhasil/{id}', [checkoutController::class, 'show'])->name('checkoutberhasil');
     
 
 });

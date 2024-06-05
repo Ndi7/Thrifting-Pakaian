@@ -76,7 +76,7 @@
                             <h1 class="text-2xl mb-3" value="">{{ $dtPB->nama_produk_pb }}</h1>
                     </div>
                     <div class="col-span-4 pt-2">
-                            <h1 class="text-4xl mb-3" value="">{{ $dtPB->harga_pb }}</h1>
+                            <h1 class="text-4xl mb-3" value="">Rp. {{ $dtPB->harga_pb }}</h1>
                     </div>
                     <div class="col-span-1 pt-4 font-bold">
                             <h1 class="text-md mb-3" value="">Deskripsi</h1>
@@ -91,7 +91,9 @@
                         <button class="bg-lawngreen rounded-md w-full font-semibold">Keep</button>
                     </div> -->
                     <div class="justify-center mb-4 mx-2 w-full">
+                        <a href="{{ url('checkout-produk',$dtPB->id) }}">
                         <button class="bg-lawngreen rounded-md py-1 w-full font-semibold">Beli</button>
+                        </a>
                     </div>
                     </div>
             </div>

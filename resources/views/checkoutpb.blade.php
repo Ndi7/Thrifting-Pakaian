@@ -24,26 +24,23 @@
         </div>
     @endif
 
-    <form name="form" action="{{ route('checkout.store') }}" method="POST">
-    <div class="flex flex-wrap mb-10" action="{{ route('checkout.store') }}" method="POST">
+    <div class="flex flex-wrap mb-10" method="POST">
     {{ csrf_field() }}
     <div>
-        <img src="{{ asset('images/PA/'. $dtPA->gambar) }}" alt="" id="gambar" name="gambar" class="w-32  h-32">
+        <img src="{{ asset('images/PB/'. $dtPB->gambar) }}" alt="" class="w-32  h-32">
     </div>
-    <div class="flex items-center text-center w-64 p-4 mr-5" id="nama_produk" name="nama_produk">
-        <input class="text-center bg-white" value="{{ $dtPA->nama_produk_pa }}" disabled></input>
+    <div class="flex items-center text-center w-64 p-4 mr-5">
+        <h1 class="text-center" value="">{{ $dtPB->nama_produk_pb }}</h1>
     </div>
-    <div class="flex items-center justify-end text-end w-40 pr-4" id="harga_produk" name="harga_produk">
-        <input class="text-end bg-white" value="Rp. {{ $dtPA->harga_pa }}" disabled></input>
+    <div class="flex items-center justify-end text-end w-40 pr-4">
+        <h1 class="text-end">{{ $dtPB->harga_pb }}</h1>
     </div>
-        
-        <!-- Input hidden untuk mengirim data produk -->
-        <input type="hidden" name="nama_produk" value="{{ $dtPA->nama_produk_pa }}">
-        <input type="hidden" name="harga_produk" value="{{ $dtPA->harga_pa }}">
 
     </div>
 
 
+    <form name="form" action="{{ route('checkout.store') }}" method="POST">
+        @csrf
         <div class="input-control text-sm mb-10">        
             <input class="w-2/3 h-10 p-2 border-t border-b border-black rounded-lg" type="email" id="email" name="email" placeholder="Alamat Email" required><br>
             <input type="checkbox" id="subscribe" name="subscribe" value="yes">

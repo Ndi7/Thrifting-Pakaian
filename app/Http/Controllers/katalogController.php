@@ -22,5 +22,6 @@ class katalogController extends Controller
         $dtPB = $this->pakaianbawahController->katalog();
 
         return view('pembeli.katalog', compact('dtPA', 'dtPB'));
+    
     }
 }

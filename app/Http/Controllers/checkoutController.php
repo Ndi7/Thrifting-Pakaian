@@ -15,7 +15,7 @@ class checkoutController extends Controller
     public function store(Request $request)
     {
 
-        Checkout::create([
+        $checkout = Checkout::create([
             'email' => $request->email,
             'subscribe' => $request->has('subscribe'),
             'nama' => $request->nama,
@@ -28,16 +28,18 @@ class checkoutController extends Controller
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'opsi_pembayaran' => $request->opsi_pembayaran,
             'catatan_pesanan' => $request->catatan_pesanan,
+            'nama_produk' => $request->nama_produk,
+            'harga_produk' => $request->harga_produk,
         ]);
 
-        return redirect('checkoutberhasil')->with('success', 'Checkout berhasil!');
+        return redirect()->route('checkoutberhasil', $checkout->id)->with('success', 'Checkout berhasil!');
     }
 
-    public function edit(string $id)
+    public function show($id)
     {   
         $dtcheckout = Checkout::findorfail($id);
 
-        return view('pembeli.checkoutberhasil',compact('dtcheckout'));
+        return view('pembeli.checkoutberhasil', compact('dtcheckout'));
 
     }
 }
