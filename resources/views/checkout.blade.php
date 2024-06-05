@@ -131,7 +131,7 @@
         </div><br>
         <div class="mt-7 text-xl items-end justify-end flex">
             <div class="h-24 flex justify-end items-center w-full">
-                <button type="" class="tombol-lanjutkan p-2 w-40 rounded-md bg-lawngreen text-center">CHECKOUT</button>
+            <button type="" class="tombol-lanjutkan p-2 w-40 rounded-md bg-lawngreen text-center">CHECKOUT</button>
             </div>
             </form>
     </body>
