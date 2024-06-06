@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('checkouts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('checkouts', function (Blueprint $table) {
+            $table->string('subtotal')->nullable()->after('harga_produk');
         });
     }
 
@@ -22,7 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checkouts');
+        Schema::table('checkouts', function (Blueprint $table) {
+            //
+        });
     }
 };
-

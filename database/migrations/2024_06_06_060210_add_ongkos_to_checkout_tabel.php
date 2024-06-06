@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('alamat_pengiriman', function (Blueprint $table) {
-            $table->string('label')->after('is_primary')->nullable();
+        Schema::table('checkouts', function (Blueprint $table) {
+            $table->string('ongkos')->nullable()->after('opsi_pengiriman');
+            $table->enum('status', ['Unpaid', 'Paid'])->after('catatan_pesanan');
         });
     }
 
@@ -21,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('alamat_pengiriman', function (Blueprint $table) {
-            $table->dropColumn('label');
+        Schema::table('checkouts', function (Blueprint $table) {
+            //
         });
     }
 };
