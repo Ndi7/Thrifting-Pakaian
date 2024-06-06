@@ -17,7 +17,7 @@ return new class extends Migration
             $table->boolean('subscribe')->default(false);
             $table->string('nama');
             $table->text('alamat');
-            $table->string('apartemen')->nullable();
+            $table->string('label')->nullable();
             $table->string('provinsi');
             $table->string('kota');
             $table->string('kode_pos');

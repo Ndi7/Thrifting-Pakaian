@@ -36,7 +36,7 @@
     <div class="flex items-center justify-end text-end w-40 pr-4" id="harga_produk" name="harga_produk">
         <input class="text-end bg-white" value="Rp. {{ $dtPB->harga_pb }}" disabled></input>
     </div>
-        
+
         <!-- Input hidden untuk mengirim data produk -->
         <input type="hidden" name="nama_produk" value="{{ $dtPB->nama_produk_pb }}">
         <input type="hidden" name="harga_produk" value="{{ $dtPB->harga_pb }}">
@@ -44,7 +44,7 @@
     </div>
 
 
-        <div class="input-control text-sm mb-10">        
+        <div class="input-control text-sm mb-10">
             <input class="w-2/3 h-10 p-2 border-t border-b border-black rounded-lg" type="email" id="email" name="email" placeholder="Alamat Email" required><br>
             <input type="checkbox" id="subscribe" name="subscribe" value="yes">
             <label for="subscribe" class="">Saya ingin menerima informasi terbaru mengenai produk dan promosi.</label>
@@ -58,7 +58,7 @@
                 <textarea class="w-2/3 p-2 border-t border-b border-black rounded-lg" id="alamat" name="alamat" rows="3" placeholder="Alamat" required></textarea>
             </div><br>
             <div class="input-control">
-                <input class="w-2/3 h-10 p-2 border-t border-b border-black rounded-lg" type="text" id="apartemen" name="apartemen" placeholder="Apartement, kamar, dll. (opsional)">
+                <input class="w-2/3 h-10 p-2 border-t border-b border-black rounded-lg" type="text" id="label" name="label" placeholder="Apartement, kamar, dll. (opsional)">
             </div><br>
             <div class="mb-10 w-2/3">
                 <div class="input-control flex flex-wrap gap-3">
@@ -127,6 +127,7 @@
                 <option value="transfer">Transfer Bank</option>
                 <option value="COD">Cash on Delivery</option>
             </select>
+
             <h2 class="mt-5">Tambahkan catatan ke pesanan:</h2>
             <textarea class="w-2/3 p-2 border-t border-b border-black rounded-lg" id="catatan_pesanan" name="catatan_pesanan" rows="1" placeholder="Catatan tentang pesanan anda"></textarea>
             <h2 class="text-xs mt-2 text-red-500 font-semibold">*Dengan melanjutkan pembelian, artinya Anda menyetujui Syarat dan Ketentuan dan Kebijakan Privasi kami.</h2>

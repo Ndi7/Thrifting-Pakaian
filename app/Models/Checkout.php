@@ -13,20 +13,30 @@ class Checkout extends Model
         'subscribe',
         'nama',
         'alamat',
-        'apartemen',
+        'label',
         'provinsi',
         'kota',
         'kode_pos',
         'telepon',
         'opsi_pengiriman',
+        'ongkos',
         'opsi_pembayaran',
         'catatan_pesanan',
         'nama_produk',
         'harga_produk',
+        'subtotal',
+        'status',
     ];
 
     // Optionally, you can define the casts property to cast certain attributes to specific types
     protected $casts = [
         'subscribe' => 'boolean',
     ];
+
+    // Checkout.php (model)
+
+public function order()
+{
+    return $this->hasOne(Order::class);
+}
 }
