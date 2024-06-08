@@ -37,6 +37,7 @@ use App\Http\Controllers\SepatusandalController;
 use App\Http\Controllers\ProfilepenjualController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use App\Http\Controllers\orderController as ControllersOrderController;
+use App\Http\Controllers\riwayatpesananController;
 
 
 /*
@@ -137,6 +138,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
     Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
+    Route::get('/riwayatpesanan', [riwayatpesananController::class, 'index']);
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
     Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');

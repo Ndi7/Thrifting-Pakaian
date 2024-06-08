@@ -6802,10 +6802,6 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
-.h-\[48px\] {
-  height: 48px;
-}
-
 .max-h-96 {
   max-height: 24rem;
 }
@@ -6935,8 +6931,12 @@ details.collapse summary::-webkit-details-marker {
   width: 100%;
 }
 
-.w-\[48px\] {
-  width: 48px;
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .min-w-0 {
@@ -6954,10 +6954,6 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-lg {
   max-width: 32rem;
-}
-
-.max-w-md {
-  max-width: 28rem;
 }
 
 .max-w-xl {
@@ -7176,6 +7172,10 @@ details.collapse summary::-webkit-details-marker {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-x-2 {
@@ -7473,6 +7473,21 @@ details.collapse summary::-webkit-details-marker {
   border-color: transparent;
 }
 
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+
+.border-blue-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(118 169 250 / var(--tw-border-opacity));
+}
+
 .border-t-transparent {
   border-top-color: transparent;
 }
@@ -7568,11 +7583,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 245 255 / var(--tw-bg-opacity));
-}
-
-.bg-indigo-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(104 117 245 / var(--tw-bg-opacity));
 }
 
 .bg-indigo-600 {
@@ -7680,6 +7690,21 @@ details.collapse summary::-webkit-details-marker {
 .bg-yellow-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 246 178 / var(--tw-bg-opacity));
+}
+
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 213 213 / var(--tw-bg-opacity));
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 180 180 / var(--tw-bg-opacity));
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(195 221 253 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
@@ -8190,11 +8215,6 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(5 122 85 / var(--tw-text-opacity));
 }
 
-.text-indigo-500 {
-  --tw-text-opacity: 1;
-  color: rgb(104 117 245 / var(--tw-text-opacity));
-}
-
 .text-indigo-600 {
   --tw-text-opacity: 1;
   color: rgb(88 80 236 / var(--tw-text-opacity));
@@ -8230,6 +8250,11 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(118 169 250 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -8240,6 +8265,10 @@ details.collapse summary::-webkit-details-marker {
 
 .underline-offset-4 {
   text-underline-offset: 4px;
+}
+
+.underline-offset-1 {
+  text-underline-offset: 1px;
 }
 
 .antialiased {
@@ -8570,11 +8599,6 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(104 117 245 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-indigo-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(88 80 236 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-lawngreen:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(124 252 0 / var(--tw-bg-opacity));
@@ -8638,10 +8662,6 @@ details.collapse summary::-webkit-details-marker {
 .hover\:text-indigo-500:hover {
   --tw-text-opacity: 1;
   color: rgb(104 117 245 / var(--tw-text-opacity));
-}
-
-.hover\:underline:hover {
-  text-decoration-line: underline;
 }
 
 .hover\:shadow-md:hover {
