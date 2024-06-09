@@ -50,7 +50,7 @@ class checkoutController extends Controller
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isProduction = config('midtrans.is_production');
         // Set sanitization on (default)
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
@@ -62,7 +62,8 @@ class checkoutController extends Controller
                 'gross_amount' => $dtcheckout->subtotal,
             ),
             'customer_details' => array(
-                'name' => $request->nama,
+                'first_name' => $request->nama,
+                'last_name' => '',
                 'phone' => $request->telepon,
             ),
         );
@@ -77,7 +78,7 @@ class checkoutController extends Controller
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
-            if($request->transaction_status == 'capture'){
+            if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement'){
             $dtcheckout = Checkout::find($request->order_id);
             $dtcheckout -> update(['status' => 'Paid']);
             }
