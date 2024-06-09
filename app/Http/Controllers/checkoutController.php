@@ -73,4 +73,21 @@ class checkoutController extends Controller
 
     }
 
+    public function callback(Request $request){
+        $serverKey = config('midtrans.server_key');
+        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+        if($hashed == $request->signature_key){
+            if($request->transaction_status == 'capture'){
+            $dtcheckout = Checkout::find($request->order_id);
+            $dtcheckout -> update(['status' => 'Paid']);
+            }
+        }
+    }
+
+    public function invoice($id){
+        $dtcheckout = Checkout::find($id);
+        return view('invoice', compact('dtcheckout'));
+
+    }
+
 }

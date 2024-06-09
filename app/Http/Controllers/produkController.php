@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use auth;
 use App\Models\Produk;
+use App\Models\Purchase;
 use Illuminate\Http\Request;
 
 class produkController extends Controller
