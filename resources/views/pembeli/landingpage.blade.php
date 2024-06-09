@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
 @extends('layout.navbar')
 
-@section ('title', 'landingpage')
+@section ('title', 'Home')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">

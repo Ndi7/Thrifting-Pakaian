@@ -69,30 +69,46 @@
     </div>
 
     <script type="text/javascript">
-        // For example trigger on button clicked, or any time you need
-        var payButton = document.getElementById('pay-button');
-        payButton.addEventListener('click', function () {
-          // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-          window.snap.pay('{{$snapToken}}', {
-            onSuccess: function(result){
-              /* You may add your own implementation here */
-              alert("payment success!"); console.log(result);
-            },
-            onPending: function(result){
-              /* You may add your own implementation here */
-              alert("wating your payment!"); console.log(result);
-            },
-            onError: function(result){
-              /* You may add your own implementation here */
-              alert("payment failed!"); console.log(result);
-            },
-            onClose: function(){
-              /* You may add your own implementation here */
-              alert('you closed the popup without finishing the payment');
-            }
-          })
+        // Fungsi untuk mengubah tombol setelah pembayaran berhasil
+        function onPaymentSuccess() {
+            var payButton = document.getElementById('pay-button');
+            payButton.innerText = 'Kembali Ke Home';
+            payButton.onclick = function() {
+                window.location.href = '/landingpage'; // Ganti '/' dengan URL halaman utama Anda
+            };
+        }
+
+        // Menambahkan event listener pada tombol bayar
+        document.addEventListener('DOMContentLoaded', function() {
+            var payButton = document.getElementById('pay-button');
+            payButton.addEventListener('click', function () {
+                // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+                window.snap.pay('{{$snapToken}}', {
+                    onSuccess: function(result){
+                        /* Anda dapat menambahkan implementasi Anda sendiri di sini */
+                        alert("payment success!"); 
+                        console.log(result);
+                        // Panggil fungsi setelah pembayaran sukses
+                        onPaymentSuccess();
+                    },
+                    onPending: function(result){
+                        /* Anda dapat menambahkan implementasi Anda sendiri di sini */
+                        alert("wating your payment!"); 
+                        console.log(result);
+                    },
+                    onError: function(result){
+                        /* Anda dapat menambahkan implementasi Anda sendiri di sini */
+                        alert("payment failed!"); 
+                        console.log(result);
+                    },
+                    onClose: function(){
+                        /* Anda dapat menambahkan implementasi Anda sendiri di sini */
+                        alert('you closed the popup without finishing the payment');
+                    }
+                });
+            });
         });
-      </script>
+    </script>
 
 
 </body>

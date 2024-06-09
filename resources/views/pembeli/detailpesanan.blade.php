@@ -5,7 +5,7 @@
 <script src="{{ asset('js/indikatorpesanan.js') }}"></script>
 @extends('layout.navbar')
 
-@section ('title', 'Katalog')
+@section ('title', 'Detail pesanan')
 @section('content')
 <div class="container mx-auto px-5 my-36 justify-center">
 <ul class="text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">

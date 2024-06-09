@@ -15,6 +15,7 @@ use App\Http\Controllers\singleproduk;
 // CLASS ROUTE BUYER
 use App\Http\Controllers\detailpesanan;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\registerPenjual;
 use App\Http\Controllers\checkoutberhasil;
 use App\Http\Controllers\ProdukController;
@@ -22,20 +23,21 @@ use App\Http\Controllers\katalogController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\registerController;
 
 // CLASS ROUTE SELLER
+use App\Http\Controllers\registerController;
 use App\Http\Controllers\keranjangController;
+use App\Http\Controllers\PenjualanController;
 use Illuminate\Routing\Controllers\Middleware;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\orderController as ControllersOrderController;
 use App\Http\Controllers\PakaianatasController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\PakaianbawahController;
 use App\Http\Controllers\SepatusandalController;
 use App\Http\Controllers\ProfilepenjualController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
+use App\Http\Controllers\orderController as ControllersOrderController;
+use App\Http\Controllers\riwayatpesananController;
 
 
 /*
@@ -113,6 +115,7 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     // Route::post('/update-sepatusandal/{id}',[SepatusandalController::class, 'update'])->name('update-sepatusandal');
     // Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
 
+    Route::get('/data-penjualan',[PenjualanController::class, 'index'])->name('data-penjualan');
 
     // ROUTE PROFILE PENJUAL
     Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
@@ -121,6 +124,8 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::get('/edit-profile/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-profile');
     Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
     Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
+
+    
 });
 
 //midlleware pembeli
@@ -133,6 +138,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
     Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
+    Route::get('/riwayatpesanan', [riwayatpesananController::class, 'index']);
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
     Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');
