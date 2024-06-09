@@ -1,13 +1,16 @@
-<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
-<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
-<link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
-<script src="{{ asset('js/flowbite.min.js') }}"></script>
-@extends('layout.navbar')
+<!DOCTYPE html>
+<html lang="en">
 
-@section ('title', 'invoice')
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-<section>
+<body>
+
+
     <div class="flex h-screen w-full items-center justify-center bg-gray-50">
         <div class="w-80 rounded bg-gray-50 px-6 pt-8 shadow">
           <img src="http://www.w3.org/2000/svg" alt="chippz" class="mx-auto w-16 py-4" />
@@ -87,6 +90,5 @@
         </div>
       </div>
 
-</section>
-
-@endsection
+    </body>
+    </html>

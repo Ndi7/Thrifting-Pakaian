@@ -125,7 +125,7 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
     Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
 
-    
+
 });
 
 //midlleware pembeli
@@ -155,6 +155,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
     Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout.store');
     Route::get('/checkoutberhasil/{id}', [checkoutController::class, 'show'])->name('checkoutberhasil');
+    Route::get('/invoice/{id}', [checkoutController::class,'invoice']);
 
 
 });

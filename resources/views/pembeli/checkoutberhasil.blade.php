@@ -86,19 +86,20 @@
                 window.snap.pay('{{$snapToken}}', {
                     onSuccess: function(result){
                         /* Anda dapat menambahkan implementasi Anda sendiri di sini */
-                        alert("payment success!"); 
+                        window.location.href = '/invoice/{{$dtcheckout->id}}'
+                        alert("payment success!");
                         console.log(result);
                         // Panggil fungsi setelah pembayaran sukses
                         onPaymentSuccess();
                     },
                     onPending: function(result){
                         /* Anda dapat menambahkan implementasi Anda sendiri di sini */
-                        alert("wating your payment!"); 
+                        alert("wating your payment!");
                         console.log(result);
                     },
                     onError: function(result){
                         /* Anda dapat menambahkan implementasi Anda sendiri di sini */
-                        alert("payment failed!"); 
+                        alert("payment failed!");
                         console.log(result);
                     },
                     onClose: function(){
