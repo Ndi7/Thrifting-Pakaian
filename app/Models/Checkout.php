@@ -35,8 +35,8 @@ class Checkout extends Model
 
     // Checkout.php (model)
 
-public function order()
-{
-    return $this->hasOne(Order::class);
-}
+    public function order()
+    {
+        return $this->hasOne(Order::class);
+    }
 }

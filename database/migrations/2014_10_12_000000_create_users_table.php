@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('nama_toko')->nullable();
             $table->string('email')->unique();
-            $table->string('level');
+            $table->enum('level', ['pembeli', 'penjual']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone')->nullable();

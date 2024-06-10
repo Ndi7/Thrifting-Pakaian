@@ -52,7 +52,7 @@ class checkoutController extends Controller
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = config('midtrans.is_production');
+        \Midtrans\Config::$isProduction = false;
         // Set sanitization on (default)
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
@@ -64,9 +64,7 @@ class checkoutController extends Controller
                 'gross_amount' => $dtcheckout->subtotal,
             ),
             'customer_details' => array(
-                'first_name' => $request->nama,
-                'last_name' => '',
-                'email' => $request->email,
+                'name' => $request->nama,
                 'phone' => $request->telepon,
             ),
         );
@@ -81,7 +79,7 @@ class checkoutController extends Controller
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
-            if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement'){
+            if($request->transaction_status == 'capture'){
             $dtcheckout = Checkout::find($request->order_id);
             $dtcheckout -> update(['status' => 'Paid']);
             }
@@ -94,29 +92,14 @@ class checkoutController extends Controller
 
     }
 
-    public function orderHistory()
-{
-    // Ambil semua riwayat pesanan
-    $dtcheckout = Checkout::all();
-
-    // Ambil semua produk dari Pakaian Atas dan Pakaian Bawah yang sesuai dengan riwayat pesanan
-    $productIds = $dtcheckout->pluck('product_id')->toArray();
-    $dtPA = PA::whereIn('id', $productIds)->get();
-    $dtPB = PB::whereIn('id', $productIds)->get();
-
-    // Gabungkan produk dari PA dan PB menjadi satu koleksi
-    $dtProduk = $dtPA->merge($dtPB);
-
-    // Menggabungkan data riwayat pesanan dan produk dalam satu variabel
-    $data = [
-        'dtcheckout' => $dtcheckout,
-        'dtProduk' => $dtProduk
-    ];
-
-    return view('pembeli.riwayatpesanan', $data);
-}
-
-
+    public function orderHistory(){
+        // Ambil semua riwayat pesanan
+        $dtcheckout = Checkout::all();
+    
+        $dtPA = PA::all();
+    
+        return view('pembeli.riwayatpesanan', compact('dtcheckout', 'dtPA'));
+    }
     
     
 }
