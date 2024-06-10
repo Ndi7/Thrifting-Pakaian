@@ -117,6 +117,8 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
 
     Route::get('/data-penjualan',[PenjualanController::class, 'index'])->name('data-penjualan');
 
+
+
     // ROUTE PROFILE PENJUAL
     Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
     Route::get('/create-profile',[ProfilepenjualController::class, 'create'])->name('create-profile');
