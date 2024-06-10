@@ -138,7 +138,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/singleproduk', [singleproduk::class, 'index']);
     Route::get('/keranjang', [keranjangController::class, 'index']);
     Route::get('/checkoutberhasil', [checkoutberhasil::class, 'index']);
-    Route::get('/riwayatpesanan', [riwayatpesananController::class, 'index']);
+    // Route::get('/riwayatpesanan', [riwayatpesananController::class, 'index']);
     Route::get('/detailpesanan', [detailpesanan::class, 'index']);
     Route::get('/user', [UserProfileController::class, 'index']);
     Route::get('/detail-produk/{id}',[PakaianatasController::class, 'detailproduk'])->name('detail-produk');
@@ -155,7 +155,9 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
     Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout.store');
     Route::get('/checkoutberhasil/{id}', [checkoutController::class, 'show'])->name('checkoutberhasil');
-    Route::get('/invoice/{id}', [checkoutController::class,'invoice']);
+    Route::get('/invoice/{id}', [checkoutController::class,'invoice'])->name('invoice');
+    Route::get('/riwayatpesanan', [checkoutController::class, 'orderHistory'])->name('riwayatpesanan');
+
 
 
 });

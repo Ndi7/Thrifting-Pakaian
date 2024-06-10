@@ -5,11 +5,11 @@
 <script src="{{ asset('js/flowbite.min.js') }}"></script>
 @extends('layout.dashboardnavbar')
 
-@section('title', 'Kategori')
+@section('title', 'Penjualan')
 @section('content')
 <div class="bg-slate-100 p-2 pt-10 sm:ml-64">
    <div id="" class="bg-white m-4 kategori-content h-full p-4 mt-14 overflow-auto">
-   <h1 class="text-xl font-bold mb-5">Kategori</h1><br>
+   <h1 class="text-xl font-bold mb-5">Tabel Daftar Penjualan</h1><br>
    @include('sweetalert::alert')
         <div>
             <a href="">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PA;
+use App\Models\PB;
 use App\Models\Checkout;
 use Illuminate\Http\Request;
 
@@ -90,4 +92,29 @@ class checkoutController extends Controller
 
     }
 
+    public function orderHistory()
+{
+    // Ambil semua riwayat pesanan
+    $dtcheckout = Checkout::all();
+
+    // Ambil semua produk dari Pakaian Atas dan Pakaian Bawah yang sesuai dengan riwayat pesanan
+    $productIds = $dtcheckout->pluck('product_id')->toArray();
+    $dtPA = PA::whereIn('id', $productIds)->get();
+    $dtPB = PB::whereIn('id', $productIds)->get();
+
+    // Gabungkan produk dari PA dan PB menjadi satu koleksi
+    $dtProduk = $dtPA->merge($dtPB);
+
+    // Menggabungkan data riwayat pesanan dan produk dalam satu variabel
+    $data = [
+        'dtcheckout' => $dtcheckout,
+        'dtProduk' => $dtProduk
+    ];
+
+    return view('pembeli.riwayatpesanan', $data);
+}
+
+
+    
+    
 }
