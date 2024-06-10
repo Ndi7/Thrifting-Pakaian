@@ -64,6 +64,7 @@ class checkoutController extends Controller
             'customer_details' => array(
                 'first_name' => $request->nama,
                 'last_name' => '',
+                'email' => $request->email,
                 'phone' => $request->telepon,
             ),
         );
