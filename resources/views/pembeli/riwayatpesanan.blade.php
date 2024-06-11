@@ -13,34 +13,30 @@
     </div>
 
     {{ csrf_field() }}
+
 @foreach ($dtcheckout as $checkout)
-    <div class="mt-4 flex items-center justify-center">
-        <div class="w-5/6 flex items-center border-b border-gray-300">
-            <div class="my-2">
-                <select name="pa_id_{{ $checkout->id }}">
-                    @foreach($dtPA as $pa)
-                        <option value="{{ $pa->id }}" {{ $checkout->pa_id == $pa->id ? 'selected' : '' }}>
-                            {{ $pa->nama_produk_pa }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="my-2">
-                @if ($checkout->pa_id && $dtPA->where('id', $checkout->pa_id)->isNotEmpty()) <!-- Periksa apakah PA terkait ada -->
-                    <img src="{{ asset('images/PA/'. $dtPA->where('id', $checkout->pa_id)->first()->gambar) }}" alt="" class="w-20">
-                @else
-                    <img src="{{ asset('images/PA/default.png') }}" alt="" class="w-20">
-                @endif
-            </div>
-            <div class="flex-1 ml-5">
-                <p class="text-md">{{ $checkout->nama_produk }}</p>
-            </div>
-            <div>
-                <a href="{{ route('invoice', $checkout->id) }}" class="border-b border-blue-400 text-blue-400">Invoice</a>
-            </div>
+<div class="mt-4 flex items-center justify-center">
+    <div class="w-5/6 flex items-center border-b border-gray-300">
+        <div class="my-2">
+            @if ($checkout->pakaianAtas)
+                <img src="{{ asset('images/PA/'. $checkout->pakaianAtas->gambar) }}" alt="" class="w-20">
+            @elseif ($checkout->pakaianBawah)
+                <img src="{{ asset('images/PB/'. $checkout->pakaianBawah->gambar) }}" alt="" class="w-20">
+            @endif
+        </div>
+        <div class="flex-1 ml-5">
+            <p class="text-md">{{ $checkout->nama_produk }}</p>
+        </div>
+        <div>
+            <a href="{{ route('invoice', $checkout->id) }}" class="border-b border-blue-400 text-blue-400">Invoice</a>
         </div>
     </div>
+</div>
+    </div>
+</div>
 @endforeach
+
+
 
 
 

@@ -20,6 +20,8 @@ class checkoutController extends Controller
     $harga_produk = $request->harga_produk;
     $subtotal = $ongkos + $harga_produk;
 
+
+
     $checkout = Checkout::create([
         'email' => $request->email,
         'subscribe' => $request->has('subscribe'),
@@ -38,6 +40,8 @@ class checkoutController extends Controller
         'harga_produk' => $harga_produk,
         'subtotal' => $subtotal,
         'status' => 'Unpaid', // Set status to Unpaid by default
+        'pa_product_id' => $request->pa_product_id,
+        'pb_product_id' => $request->pb_product_id,
         ]);
 
 
@@ -64,8 +68,10 @@ class checkoutController extends Controller
                 'gross_amount' => $dtcheckout->subtotal,
             ),
             'customer_details' => array(
-                'name' => $request->nama,
+                'first_name' => $request->nama,
+                'last_name' => '',
                 'phone' => $request->telepon,
+                'email' => $request->email,
             ),
         );
 
@@ -94,12 +100,12 @@ class checkoutController extends Controller
 
     public function orderHistory(){
         // Ambil semua riwayat pesanan
-        $dtcheckout = Checkout::all();
-    
+        $dtcheckout = Checkout::with('pakaianAtas', 'pakaianBawah')->get();
+
         $dtPA = PA::all();
-    
+
         return view('pembeli.riwayatpesanan', compact('dtcheckout', 'dtPA'));
     }
-    
-    
+
+
 }

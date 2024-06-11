@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Checkout extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
     protected $fillable = [
+        'pb_product_id',
+        'pa_product_id',
         'email',
         'subscribe',
         'nama',
@@ -32,6 +35,16 @@ class Checkout extends Model
     protected $casts = [
         'subscribe' => 'boolean',
     ];
+
+        public function pakaianAtas()
+    {
+        return $this->belongsTo(PA::class, 'pa_product_id');
+    }
+
+    public function pakaianBawah()
+    {
+        return $this->belongsTo(PB::class, 'pb_product_id');
+    }
 
     // Checkout.php (model)
 
