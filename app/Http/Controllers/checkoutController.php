@@ -103,8 +103,9 @@ class checkoutController extends Controller
         $dtcheckout = Checkout::with('pakaianAtas', 'pakaianBawah')->get();
 
         $dtPA = PA::all();
+        $dtPB = PB::all();
 
-        return view('pembeli.riwayatpesanan', compact('dtcheckout', 'dtPA'));
+        return view('pembeli.riwayatpesanan', compact('dtcheckout', 'dtPA', 'dtPB'));
     }
 
 
