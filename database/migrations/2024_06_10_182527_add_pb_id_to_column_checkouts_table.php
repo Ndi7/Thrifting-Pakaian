@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('checkouts', function (Blueprint $table) {
-            $table->unsignedBigInteger('pb_product_id')->nullable()->after('id');
+            $table->unsignedBigInteger('pb_product_id')->nullable()->after('pa_product_id');
             $table->foreign('pb_product_id')->references('id')->on('pakaianbawah');
         });
     }
@@ -23,8 +23,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('checkouts', function (Blueprint $table) {
-            schema::disableForeignKeyConstraints();
-            $table->dropForeign('pb_product_id');
+            Schema::disableForeignKeyConstraints();
+            $table->dropForeign(['pb_product_id']);
+       
+            Schema::enableForeignKeyConstraints();
         });
     }
 };
