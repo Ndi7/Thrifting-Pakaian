@@ -74,7 +74,14 @@
                 @endforeach
             </tbody>
         </table>
-    </div><br>
+    </div>
+        <div class="text-right"> <!-- Menggunakan class text-right untuk membuat tombol berada di sebelah kanan -->
+            <a href="{{ route('cetak-pakaianbawah') }}" target="_blank" class="inline-block">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Cetak Data
+                </button>
+            </a>
+        </div>
 
     </div>
 </div>

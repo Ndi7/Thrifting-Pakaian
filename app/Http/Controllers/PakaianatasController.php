@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\PA;
+use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class PakaianatasController extends Controller
 {
@@ -141,5 +143,12 @@ class PakaianatasController extends Controller
 
         $deletePA->delete();
         return back()->with('info', 'Data Berhasil Dihapus');
+    }
+
+    public function cetakPdf()
+    {
+        $dtPA = PA::all();
+        $pdf = Pdf::loadView('penjual.produk.PA.cetak-pa', compact('dtPA'));
+        return $pdf->stream('Data Produk Pakaian Atas.pdf');
     }
 }
