@@ -165,6 +165,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
 
 });
+Route::get('/invoice/{id}', [PenjualanController::class,'invoicepenjual'])->name('invoicepenjual');
 
 
 

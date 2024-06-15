@@ -31,6 +31,7 @@ class Checkout extends Model
         'harga_produk',
         'subtotal',
         'status',
+        'created_at'
     ];
 
     // Optionally, you can define the casts property to cast certain attributes to specific types
