@@ -118,6 +118,7 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     // Route::get('/delete-sepatusandal/{id}',[SepatusandalController::class, 'destroy'])->name('delete-sepatusandal');
 
     Route::get('/data-penjualan',[PenjualanController::class, 'index'])->name('data-penjualan');
+    Route::get('/data-penjualan/invoice/{id}', [PenjualanController::class,'invoicepenjual'])->name('invoicepenjual');
 
 
 
@@ -165,6 +166,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
 
 
 });
+
 
 
 
