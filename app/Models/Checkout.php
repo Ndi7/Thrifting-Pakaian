@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\PA;
+use App\Models\PB;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Checkout extends Model
 {

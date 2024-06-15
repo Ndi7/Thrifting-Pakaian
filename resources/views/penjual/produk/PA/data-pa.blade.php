@@ -21,7 +21,7 @@
         <a href="{{ route('create-pakaianatas') }}">
             <!-- daftarin barang -->
             <!-- Modal toggle -->
-            <button class="bg-lawngreen hover:bg-lime-600 ml-2 text-black focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
+            <button class="bg-lawngreen hover:bg-lime-600 ml-2 text-black focus:ring-4 focus:outline-none focus:ring-lime-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
             <span class="">Tambah Produk +</span>
             </button>
         </a>
@@ -75,7 +75,14 @@
                 @endforeach
             </tbody>
         </table>
-    </div><br>
+    </div>
+        <div class="text-right"> <!-- Menggunakan class text-right untuk membuat tombol berada di sebelah kanan -->
+            <a href="{{ route('cetak-pakaianatas') }}" target="_blank" class="inline-block">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Cetak Data
+                </button>
+            </a>
+        </div>
 
     </div>
 </div>

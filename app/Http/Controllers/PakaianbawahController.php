@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PB;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 
 class PakaianbawahController extends Controller
@@ -136,5 +137,12 @@ class PakaianbawahController extends Controller
             $deletePB->delete();
 
             return back()->with('info', 'Data Berhasil Dihapus');
+    }
+
+    public function cetakPdf()
+    {
+        $dtPB = PB::all();
+        $pdf = Pdf::loadView('penjual.produk.PB.cetak-pb', compact('dtPB'));
+        return $pdf->stream('Data Produk Pakaian Bawah.pdf');
     }
 }

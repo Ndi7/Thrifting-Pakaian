@@ -97,6 +97,7 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::get('/edit-pakaianatas/{id}',[PakaianatasController::class, 'edit'])->name('edit-pakaianatas');
     Route::post('/update-pakaianatas/{id}',[PakaianatasController::class, 'update'])->name('update-pakaianatas');
     Route::get('/delete-pakaianatas/{id}',[PakaianatasController::class, 'destroy'])->name('delete-pakaianatas');
+    Route::get('cetak-pakaianatas', [PakaianatasController::class, 'cetakPdf'])->name('cetak-pakaianatas');
 
     // ROUTE PRODUK PAKAIAN BAWAH
     Route::get('/data-pakaianbawah',[PakaianbawahController::class, 'index'])->name('data-pakaianbawah');
@@ -106,6 +107,7 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::get('/edit-pakaianbawah/{id}',[PakaianbawahController::class, 'edit'])->name('edit-pakaianbawah');
     Route::post('/update-pakaianbawah/{id}',[PakaianbawahController::class, 'update'])->name('update-pakaianbawah');
     Route::get('/delete-pakaianbawah/{id}',[PakaianbawahController::class, 'destroy'])->name('delete-pakaianbawah');
+    Route::get('cetak-pakaianbawah', [PakaianbawahController::class, 'cetakPdf'])->name('cetak-pakaianbawah');
 
     // ROUTE PRODUK SEPATU SANDAL
     // Route::get('/data-sepatusandal',[SepatusandalController::class, 'index'])->name('data-sepatusandal');

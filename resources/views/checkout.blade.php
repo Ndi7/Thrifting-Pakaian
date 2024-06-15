@@ -38,6 +38,7 @@
     </div>
 
         <!-- Input hidden untuk mengirim data produk -->
+        <input type="hidden" name="pa_product_id" value="{{ $dtPA->id }}">
         <input type="hidden" name="nama_produk" value="{{ $dtPA->nama_produk_pa }}">
         <input type="hidden" name="harga_produk" value="{{ $dtPA->harga_pa }}">
 
