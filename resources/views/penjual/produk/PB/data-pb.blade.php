@@ -17,11 +17,13 @@
             </h5>
         </div>
         <div>
-        <a href="{{ route('create-pakaianbawah') }}">
-            <!-- daftarin barang -->
-            <!-- Modal toggle -->
-            <button class="bg-lawngreen hover:bg-lime-600 ml-2 text-black focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-            <span class="">Tambah Produk +</span>
+        <a href="{{ route('create-pakaianatas') }}">
+            <button class="bg-lawngreen hover:bg-lime-500 text-Black font-bold py-2 px-4 rounded-lg inline-flex items-center mx-2">
+                Tambah Produk
+                <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                    <!-- Font Awesome SVG Icon -->
+                    <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                </svg>
             </button>
         </a>
         </div>
@@ -75,10 +77,14 @@
             </tbody>
         </table>
     </div>
-        <div class="text-right"> <!-- Menggunakan class text-right untuk membuat tombol berada di sebelah kanan -->
-            <a href="{{ route('cetak-pakaianbawah') }}" target="_blank" class="inline-block">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <div class="text-right">
+            <a href="{{ route('cetak-pakaianatas') }}" target="_blank" class="inline-block">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
                     Cetak Data
+                    <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                        <!-- Font Awesome SVG Icon -->
+                        <path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/>
+                    </svg>
                 </button>
             </a>
         </div>
