@@ -119,6 +119,8 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
 
     Route::get('/data-penjualan',[PenjualanController::class, 'index'])->name('data-penjualan');
     Route::get('/data-penjualan/invoice/{id}', [PenjualanController::class,'invoicepenjual'])->name('invoicepenjual');
+    Route::get('/download-invoice/{id}', [PenjualanController::class,'downloadInvoice'])->name('downloadInvoice');
+    Route::get('/download-Allinvoice/{id}', [PenjualanController::class,'downloadAllInvoice'])->name('download-Allinvoice');
 
 
 
