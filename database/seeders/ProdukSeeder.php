@@ -15,7 +15,7 @@ class ProdukSeeder extends Seeder
     {
         // Tambahkan data produk dummy Pakaian Atas
         PA::create([
-            'gambar' => '1718033969685.jpg',
+            'gambar' => '1718601981629.jpg',
             'nama_produk_pa' => 'Kaos T-shirt Unisex',
             'deskripsiproduk' => 'Kaos T-shirt unisex ukuran L dengan warna hitam ini adalah pilihan sempurna untuk gaya kasual sehari-hari. Dibuat oleh brand impor terkenal, kaos ini menawarkan kenyamanan dan kualitas yang tinggi. Meskipun bekas, kaos ini masih dalam kondisi sangat baik tanpa noda atau kerusakan yang signifikan. Cocok untuk pria dan wanita, t-shirt ini mudah dipadukan dengan berbagai outfit, menjadikannya item yang wajib dimiliki di lemari pakaian Anda.',
             'stok' => 1,
@@ -128,7 +128,7 @@ class ProdukSeeder extends Seeder
             'material' =>'Denim',
             'kondisi' =>'Bekas',
             'detailtambahan' =>'Resleting depan dengan kancing, kantong depan dan belakang.',
-            'catatan' =>''
+            'catatan' =>'Cuci terpisah dengan pakaian lain untuk pertama kali.'
         ]);
         PB::create([
             'gambar' => '1717821754136.jpg',

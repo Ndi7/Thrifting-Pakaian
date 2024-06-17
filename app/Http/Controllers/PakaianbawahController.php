@@ -121,13 +121,13 @@ class PakaianbawahController extends Controller
             'stok' => $request->input('stok'),
             'harga_pb' => $request->input('harga'),
             'gambar' => $awal,
-            'ukuran' => $request ->input('ukuran'),
-            'warna' => $request ->input('warna'),
-            'brand' => $request ->input('brand'),
-            'material' => $request ->input('material'),
-            'kondisi' => $request ->input('kondisi'),
-            'detailtambahan' => $request ->input('detailtambahan'),
-            'catatan' => $request ->input('catatan'),
+            'ukuran' => $request->input('ukuran'),
+            'warna' => $request->input('warna'),
+            'brand' => $request->input('brand'),
+            'material' => $request->input('material'),
+            'kondisi' => $request->input('kondisi'),
+            'detailtambahan' => $request->input('detailtambahan'),
+            'catatan' => $request->input('catatan'),
             // Add other fields as needed
         ]);
         
