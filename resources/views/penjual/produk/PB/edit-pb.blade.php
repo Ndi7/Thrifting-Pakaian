@@ -72,8 +72,8 @@
                             <input type="text" name="detailtambahan" value="{{ $dtPB->detailtambahan }}" class="mr-28 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             </div>                  
                             <div class="grid gap-2 grid-cols-1 mr-20 mt-2 w-2/3">
-                                <label for="deksripsiproduk" class="block mb-2 text-sm text-gray-900 dark:text-white">Deskripsi produk:</label>
-                                <textarea id="deskprisiproduk" name="deskprisiproduk" value="" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-lawngreen focus:border-lawngreen dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-y" placeholder="Masukkan deskripsi produk" required>{{ $dtPB->deskripsiproduk }}</textarea>
+                                <label for="deskripsiproduk" class="block mb-2 text-sm text-gray-900 dark:text-white">Deskripsi produk:</label>
+                                <textarea id="deskripsiproduk" name="deskripsiproduk" value="" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-lawngreen focus:border-lawngreen dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-y" placeholder="Masukkan deskripsi produk" required>{{ $dtPB->deskripsiproduk }}</textarea>
                             </div>                                         
                             <div class="grid gap-2 grid-cols-1 mr-20 mt-2 w-2/3">
                             <label for="ukuran" class=" flex flex-wrap block mb-2 text-sm text-gray-900 dark:text-white">Catatan:</label>

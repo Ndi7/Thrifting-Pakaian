@@ -124,10 +124,17 @@ class PakaianatasController extends Controller
         // Update the database record
         $ubah->update([
             'nama_produk_pa' => $request->input('nama_produk'),
-            'deskripsi_pa' => $request->input('deskripsi'),
+            'deskripsiproduk' => $request->input('deskripsiproduk'),
             'stok' => $request->input('stok'),
             'harga_pa' => $request->input('harga'),
             'gambar' => $awal,
+            'ukuran' => $request ->input('ukuran'),
+            'warna' => $request ->input('warna'),
+            'brand' => $request ->input('brand'),
+            'material' => $request ->input('material'),
+            'kondisi' => $request ->input('kondisi'),
+            'detailtambahan' => $request ->input('detailtambahan'),
+            'catatan' => $request ->input('catatan'),
             // Add other fields as needed
         ]);
 

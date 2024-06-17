@@ -74,7 +74,7 @@
                             <li>Brand: {{ $item->brand }}</li>
                             <li>Material: {{ $item->material }}</li>
                             <li>Kondisi: {{ $item->kondisi }}</li>
-                            <li>Detail Tambahan: {{ $item->detail_tambahan }}</li>
+                            <li>Detail Tambahan: {{ $item->detailtambahan }}</li>
                         </ul>
                         
                         <p class="mt-2">Deskripsi Produk:</p>

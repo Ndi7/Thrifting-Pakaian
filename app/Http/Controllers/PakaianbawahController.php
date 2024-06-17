@@ -117,10 +117,17 @@ class PakaianbawahController extends Controller
         // Update the database record
         $ubah->update([
             'nama_produk_pb' => $request->input('nama_produk'),
-            'deskripsi_pb' => $request->input('deskripsi'),
+            'deskripsiproduk' => $request->input('deskripsiproduk'),
             'stok' => $request->input('stok'),
             'harga_pb' => $request->input('harga'),
             'gambar' => $awal,
+            'ukuran' => $request ->input('ukuran'),
+            'warna' => $request ->input('warna'),
+            'brand' => $request ->input('brand'),
+            'material' => $request ->input('material'),
+            'kondisi' => $request ->input('kondisi'),
+            'detailtambahan' => $request ->input('detailtambahan'),
+            'catatan' => $request ->input('catatan'),
             // Add other fields as needed
         ]);
         
