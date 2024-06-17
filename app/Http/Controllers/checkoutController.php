@@ -6,6 +6,7 @@ use App\Models\PA;
 use App\Models\PB;
 use App\Models\Checkout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class checkoutController extends Controller
 {
@@ -23,6 +24,7 @@ class checkoutController extends Controller
 
 
     $checkout = Checkout::create([
+        'user_email' => $request->user()->email, // Tambahkan ini untuk menyimpan email pengguna yang login
         'email' => $request->email,
         'subscribe' => $request->has('subscribe'),
         'nama' => $request->nama,
@@ -98,15 +100,27 @@ class checkoutController extends Controller
 
     }
 
-    public function orderHistory(){
-        // Ambil semua riwayat pesanan
-        $dtcheckout = Checkout::with('pakaianAtas', 'pakaianBawah')->get();
+    public function orderHistory()
+{
+    // Ambil pengguna yang diautentikasi
+    $user = Auth::user();
 
-        $dtPA = PA::all();
-        $dtPB = PB::all();
-
-        return view('pembeli.riwayatpesanan', compact('dtcheckout', 'dtPA', 'dtPB'));
+    // Pastikan pengguna yang diautentikasi adalah pembeli
+    if ($user->level !== 'pembeli') {
+        abort(403, 'Unauthorized action.');
     }
+
+    // Ambil riwayat pesanan berdasarkan email pengguna yang diautentikasi
+    $dtcheckout = Checkout::with('pakaianAtas', 'pakaianBawah')
+                    ->where('user_email', $user->email)
+                    ->get();
+
+    // Ambil semua data PA dan PB
+    $dtPA = PA::all();
+    $dtPB = PB::all();
+
+    return view('pembeli.riwayatpesanan', compact('dtcheckout', 'dtPA', 'dtPB'));
+}
 
 
 

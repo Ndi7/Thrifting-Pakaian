@@ -10,14 +10,15 @@
 <div class="bg-slate-100 p-2 pt-10 sm:ml-64">
    <div id="" class="bg-white m-4 h-full p-4 mt-14 overflow-auto">
    <h1 class="text-xl font-bold mb-5">Katalog produk</h1><br>
+   @include('sweetalert::alert')
     <div class="flex items-center p-3 md:p-2 mb-3 border-b rounded-t dark:border-gray-600">
         <div>
             <h5 class="text-md text-gray-900 dark:text-white">
             Pakaian Bawah
-            </h5>
+            </h5> 
         </div>
         <div>
-        <a href="{{ route('create-pakaianatas') }}">
+        <a href="{{ route('create-pakaianbawah') }}">
             <button class="bg-lawngreen hover:bg-lime-500 text-Black font-bold py-2 px-4 rounded-lg inline-flex items-center mx-2">
                 Tambah Produk
                 <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
@@ -27,9 +28,10 @@
             </button>
         </a>
         </div>
+
     </div>
-    <!-- KATEGORI PAKAIAN ATAS -->
-    <div id="pakaianatas" class="kategori ml-2 relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+    <!-- KATEGORI PAKAIAN BAWAH -->
+    <div id="pakaianbawah" class="kategori ml-2 relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
     <table class="w-fit text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-center text-gray-700 uppercase bg-lawngreen dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -61,11 +63,27 @@
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
                     <!-- <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{$item->id}} -->
-                    <td class="px-6 py-4 " width="20%">
+                    <td class="px-6 py-4 " width="15%">
                         <a href="{{ asset('images/PB/'. $item->gambar) }}"><img src="{{ asset('images/PB/'. $item->gambar) }}" class="" alt=""></a>
                     </td>
                     <td class="px-6 py-4 text-center">{{$item->nama_produk_pb}}</td>
-                    <td class="px-6 py-4">{{$item->deskripsi_pb}}</td>
+                    <td class="px-6 py-4">
+                        <ul class="list-disc list-inside">
+                            <li>Ukuran: {{ $item->ukuran }}</li>
+                            <li>Warna: {{ $item->warna }}</li>
+                            <li>Brand: {{ $item->brand }}</li>
+                            <li>Material: {{ $item->material }}</li>
+                            <li>Kondisi: {{ $item->kondisi }}</li>
+                            <li>Detail Tambahan: {{ $item->detail_tambahan }}</li>
+                        </ul>
+                        
+                        <p class="mt-2">Deskripsi Produk:</p>
+                        <p>{{ $item->deskripsiproduk }}</p>
+                        
+                        <p class="mt-2">Catatan:</p>
+                        <p>{{ $item->catatan }}</p>
+                    </td>
+
                     <td class="px-6 py-4 text-center">{{$item->stok}}</td>
                     <td class="px-6 py-4 text-center">{{$item->harga_pb}}</td>
                     <td class="px-6 py-24 justify-center items-center text-center flex space-x-4">
@@ -78,7 +96,7 @@
         </table>
     </div>
         <div class="text-right">
-            <a href="{{ route('cetak-pakaianatas') }}" target="_blank" class="inline-block">
+            <a href="{{ route('cetak-pakaianbawah') }}" target="_blank" class="inline-block">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
                     Cetak Data
                     <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">

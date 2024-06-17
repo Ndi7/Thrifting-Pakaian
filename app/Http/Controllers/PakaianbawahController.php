@@ -45,11 +45,18 @@ class PakaianbawahController extends Controller
         $nm->move(public_path(). '/images/PB', $namaFile);
 
         PB::create([
-            'nama_produk_pb' => $request->nama_produk,
-            'gambar' => $namaFile,
-            'deskripsi_pb' => $request->deskripsi,
+            'gambar' => $filename,
+            'nama_produk_pb' => $request->nama_produk_pb,
             'stok' => $request->stok,
-            'harga_pb' => $request->harga,
+            'harga_pb' => $request->harga_pb,
+            'ukuran' => $request->ukuran,
+            'warna' => $request->warna,
+            'brand' => $request->brand,
+            'material' => $request->material,
+            'kondisi' => $request->kondisi,
+            'detailtambahan' => $request->detailtambahan,
+            'deskripsiproduk' => $request->deskripsiproduk,
+            'catatan' => $request->catatan,
         ]);
 
         return redirect('data-pakaianbawah')->with('success', 'Data Berhasil Disimpan');;
