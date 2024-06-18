@@ -31,7 +31,7 @@
         <div class="mt-2 flex flex-1 flex-col items-center justify-end px-8 lg:items-end">
 
           <div class="mt-2 flex items-center space-x-4">
-            <a href="/editprofilpembeli">
+            <a href="{{ route('edit.profilpembeli.form', $profil->id) }}">
               <button class="flex items-center space-x-2 rounded bg-lime-600 px-4 py-2 text-sm text-gray-100 transition duration-100 hover:bg-lime-700">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>

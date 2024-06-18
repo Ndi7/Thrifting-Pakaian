@@ -21,25 +21,34 @@ class ProfilPembeliController extends Controller
 }
 
 
-    public function update(Request $request) {
-        // Find the user by their ID (assuming $request->id contains the user's ID)
-        $user = User::findOrFail($request->id);
+public function update(Request $request, string $id) {
+    // Find the user by their ID (assuming $request->id contains the user's ID)
+    $user = User::findOrFail($id);
+    $ubah = $user->photo;
 
-        // Update the fields that are fillable
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->address = $request->address;
-        $user->phone = $request->phone;
-        $user->photo = $request->photo;
-
-        // Check if a new password is provided and update it if necessary
-        if ($request->has('password')) {
-            $user->password = bcrypt($request->password); // Hash the new password
-        }
-
-        // Save the updated user record
-        $user->save();
-
-        return redirect()->route('pembeli.profilpembeli', $user->id)->with('success', 'Edit Profil berhasil!');
+    if ($request->hasFile('photo')) {
+        $photo = $request->file('photo');
+        $namaFile = $ubah->photo;
+        $photo->move(public_path('/images/Profil'), $namaFile);
+        $ubah = $namaFile; // Update the file name in the database
     }
+    // Update the fields that are fillable
+    $user->update ([
+        'name' => $request->input('name'),
+        'email' => $request->input('email'),
+        'address' => $request->input('address'),
+        'phone' => $request->input('phone'),
+    ]);
+
+    // Check if a new password is provided and update it if necessary
+    if ($request->has('password')) {
+        $user->password = bcrypt($request->password); // Hash the new password
+    }
+
+    // Save the updated user record
+    $user->save();
+
+    return redirect()->intended(route('pembeli.profilpembeli'));
+}
+
 }

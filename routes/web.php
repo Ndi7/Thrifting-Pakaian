@@ -156,10 +156,9 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/checkout-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'checkoutproduk'])->name('checkout-produk-pakaianbawah');
 
     //Route profile
-    Route::get('/profilpembeli', [ProfilPembeliController::class, 'show'])->name('profilpembeli');
-    Route::get('/editprofilpembeli', [ProfilPembeliController::class, 'editForm'])->name('edit.profilpembeli.form');
-    Route::post('/editprofilpembeli/update', [ProfilPembeliController::class, 'update'])->name('edit.profilpembeli.update');
-
+    Route::get('/editprofilpembeli/{id}', [ProfilPembeliController::class, 'editForm'])->name('edit.profilpembeli.form');
+    Route::post('/updateprofilpembeli/{id}', [ProfilPembeliController::class, 'update'])->name('edit.profilpembeli.update');
+    Route::get('/profilpembeli', [ProfilPembeliController::class, 'show'])->name('pembeli.profilpembeli');
 
     // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
     Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');

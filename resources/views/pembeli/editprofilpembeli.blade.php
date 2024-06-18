@@ -7,8 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <form name="form" action="{{ route('edit.profilpembeli.update') }}" method="POST" enctype="multipart/form-data" class="container m-10 p-5 sm:p-0">
-        @csrf
+    <form name="form" action="{{ route('edit.profilpembeli.update', $profil->id) }}" method="POST" enctype="multipart/form-data" class="container m-10 p-5 sm:p-0">
+        {{ csrf_field() }}
+        @method('POST')
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
                 <h1 class="text-base font-semibold leading-7 text-gray-900">Edit Profile</h1>
@@ -18,6 +19,7 @@
                     <div class="sm:col-span-4">
                         <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                         <div class="mt-2">
+                            <input type="hidden" name="id" value="{{ $profil->id }}">
                             <input type="text" name="name" id="name" autocomplete="name" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" value="{{ $profil->name }}" />
                         </div>
                     </div>
@@ -74,33 +76,9 @@
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
             <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="event.preventDefault(); submitForm()">Save</button>
         </div>
     </form>
-
-    <script>
-       function updatePhotoPreview(input) {
-    const preview = document.getElementById('photoPreview');
-    const error = document.getElementById('photoError');
-    const file = input.files[0];
-    const fileSize = file.size / 1024 / 1024; // in MB
-
-    if (fileSize > 1) {
-        error.textContent = 'File size exceeds 1MB limit.';
-        input.value = ''; // Clear the file input
-        preview.src = '{{ $profil->photo ? $profil->photo : 'https://cc64k.aktivin.id/assets/avatar-placeholder-63430c6b.png' }}'; // Reset preview to original or placeholder image
-        return;
-    }
-
-    error.textContent = '';
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        preview.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-}
-
-    </script>
 
 </body>
 </html>
