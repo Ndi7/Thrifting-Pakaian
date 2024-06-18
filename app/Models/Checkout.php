@@ -12,6 +12,7 @@ class Checkout extends Model
 {
     use HasFactory, HasUuids;
     protected $fillable = [
+        'user_email', // tambahkan user_email
         'pb_product_id',
         'pa_product_id',
         'email',
@@ -54,5 +55,10 @@ class Checkout extends Model
     public function order()
     {
         return $this->hasOne(Order::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_email', 'email');
     }
 }

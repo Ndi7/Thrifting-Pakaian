@@ -15,9 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('gambar');
             $table->string('nama_produk_pb');
-            $table->string('deskripsi_pb');
             $table->string('stok');
             $table->integer('harga_pb');
+            $table->string('ukuran');
+            $table->string('warna');
+            $table->string('brand');
+            $table->string('material');
+            $table->string('kondisi');
+            $table->string('detailtambahan');
+            $table->text('deskripsiproduk');
+            $table->text('catatan');
             $table->timestamps();
         });
     }

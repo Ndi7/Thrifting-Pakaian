@@ -45,11 +45,18 @@ class PakaianbawahController extends Controller
         $nm->move(public_path(). '/images/PB', $namaFile);
 
         PB::create([
-            'nama_produk_pb' => $request->nama_produk,
-            'gambar' => $namaFile,
-            'deskripsi_pb' => $request->deskripsi,
+            'gambar' => $filename,
+            'nama_produk_pb' => $request->nama_produk_pb,
             'stok' => $request->stok,
-            'harga_pb' => $request->harga,
+            'harga_pb' => $request->harga_pb,
+            'ukuran' => $request->ukuran,
+            'warna' => $request->warna,
+            'brand' => $request->brand,
+            'material' => $request->material,
+            'kondisi' => $request->kondisi,
+            'detailtambahan' => $request->detailtambahan,
+            'deskripsiproduk' => $request->deskripsiproduk,
+            'catatan' => $request->catatan,
         ]);
 
         return redirect('data-pakaianbawah')->with('success', 'Data Berhasil Disimpan');;
@@ -110,10 +117,17 @@ class PakaianbawahController extends Controller
         // Update the database record
         $ubah->update([
             'nama_produk_pb' => $request->input('nama_produk'),
-            'deskripsi_pb' => $request->input('deskripsi'),
+            'deskripsiproduk' => $request->input('deskripsiproduk'),
             'stok' => $request->input('stok'),
             'harga_pb' => $request->input('harga'),
             'gambar' => $awal,
+            'ukuran' => $request->input('ukuran'),
+            'warna' => $request->input('warna'),
+            'brand' => $request->input('brand'),
+            'material' => $request->input('material'),
+            'kondisi' => $request->input('kondisi'),
+            'detailtambahan' => $request->input('detailtambahan'),
+            'catatan' => $request->input('catatan'),
             // Add other fields as needed
         ]);
         

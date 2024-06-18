@@ -63,11 +63,27 @@
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
                     <!-- <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{$item->id}} -->
-                    <td class="px-6 py-4 " width="20%">
+                    <td class="px-6 py-4 " width="15%">
                         <a href="{{ asset('images/PA/'. $item->gambar) }}"><img src="{{ asset('images/PA/'. $item->gambar) }}" class="" alt=""></a>
                     </td>
                     <td class="px-6 py-4 text-center">{{$item->nama_produk_pa}}</td>
-                    <td class="px-6 py-4">{{$item->deskripsi_pa}}</td>
+                    <td class="px-6 py-4">
+                        <ul class="list-disc list-inside">
+                            <li>Ukuran: {{ $item->ukuran }}</li>
+                            <li>Warna: {{ $item->warna }}</li>
+                            <li>Brand: {{ $item->brand }}</li>
+                            <li>Material: {{ $item->material }}</li>
+                            <li>Kondisi: {{ $item->kondisi }}</li>
+                            <li>Detail Tambahan: {{ $item->detailtambahan }}</li>
+                        </ul>
+                        
+                        <p class="mt-2">Deskripsi Produk:</p>
+                        <p>{{ $item->deskripsiproduk }}</p>
+                        
+                        <p class="mt-2">Catatan:</p>
+                        <p>{{ $item->catatan }}</p>
+                    </td>
+
                     <td class="px-6 py-4 text-center">{{$item->stok}}</td>
                     <td class="px-6 py-4 text-center">{{$item->harga_pa}}</td>
                     <td class="px-6 py-24 justify-center items-center text-center flex space-x-4">
@@ -92,6 +108,4 @@
         </div>
 
     </div>
-</div>
-
-@endsection
+    @endsection

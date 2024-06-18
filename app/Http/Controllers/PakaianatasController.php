@@ -46,11 +46,18 @@ class PakaianatasController extends Controller
         $nm->move(public_path(). '/images/PA', $namaFile);
 
         PA::create([
-            'nama_produk_pa' => $request->nama_produk,
-            'gambar' => $namaFile,
-            'deskripsi_pa' => $request->deskripsi,
+            'gambar' => $filename,
+            'nama_produk_pa' => $request->nama_produk_pa,
             'stok' => $request->stok,
-            'harga_pa' => $request->harga,
+            'harga_pa' => $request->harga_pa,
+            'ukuran' => $request->ukuran,
+            'warna' => $request->warna,
+            'brand' => $request->brand,
+            'material' => $request->material,
+            'kondisi' => $request->kondisi,
+            'detailtambahan' => $request->detailtambahan,
+            'deskripsiproduk' => $request->deskripsiproduk,
+            'catatan' => $request->catatan,
         ]);
             // $dtUpload = new PA;
             // $dtUpload->nama_produk_pa = $request->nama;
@@ -117,10 +124,17 @@ class PakaianatasController extends Controller
         // Update the database record
         $ubah->update([
             'nama_produk_pa' => $request->input('nama_produk'),
-            'deskripsi_pa' => $request->input('deskripsi'),
+            'deskripsiproduk' => $request->input('deskripsiproduk'),
             'stok' => $request->input('stok'),
             'harga_pa' => $request->input('harga'),
             'gambar' => $awal,
+            'ukuran' => $request ->input('ukuran'),
+            'warna' => $request ->input('warna'),
+            'brand' => $request ->input('brand'),
+            'material' => $request ->input('material'),
+            'kondisi' => $request ->input('kondisi'),
+            'detailtambahan' => $request ->input('detailtambahan'),
+            'catatan' => $request ->input('catatan'),
             // Add other fields as needed
         ]);
 

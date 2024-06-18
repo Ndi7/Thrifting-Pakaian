@@ -15,17 +15,19 @@
         <p class="">Tetaplah cerdas dengan pilihan Thrift mu</p>
 
         <!--Carousel dan details-->
-        <div class="flex max-h-96" method="POST">
+        <div class="flex h-fit" method="POST">
         {{ csrf_field() }}
             <!--Carousel-->
-            <div class="flex-wrap w-2/5 justify-between overflow-visible items-center">
+            <div class="flex-wrap w-2/5 justify-between items-center">
                 <div class="main-pic container h-full mx-auto overflow-hidden">
-                    <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <div id="controls-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
                         <div class="h-full">
                             <!-- Item 1 -->
                             <div class="blok duration-700 ease-in-out" data-carousel-item>
-                                <a href="{{ asset('images/PA/'. $dtPA->gambar) }}"><img src="{{ asset('images/PA/'. $dtPA->gambar) }}" value="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."></a>
+                                <a href="{{ asset('images/PA/'. $dtPA->gambar) }}">
+                                    <img src="{{ asset('images/PA/'. $dtPA->gambar) }}" class="w-full" alt="Product Image">
+                                </a>
                             </div>
                             <!-- Item 2
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
@@ -70,19 +72,38 @@
             
             <!--Carousel-->
             <!--Detail-->
-            <div class="w-2/3 bg-slate-100/80 ml-2 h-full">
+            <div class="w-2/3 bg-slate-100/80 ml-2 h-fit">
                 <div class="m-5 grid gap-4 mb-4 grid-cols-4">
-                    <div class="col-span-4 pt-2 font-bold">
+                    <div class="col-span-4 pt-10 font-bold">
                             <h1 class="text-2xl mb-3" value="">{{ $dtPA->nama_produk_pa }}</h1>
                     </div>
                     <div class="col-span-4 pt-2">
                             <h1 class="text-4xl mb-3" value="">Rp. {{ $dtPA->harga_pa }}</h1>
                     </div>
                     <div class="col-span-1 pt-4 font-bold">
-                            <h1 class="text-md mb-3" value="">Deskripsi</h1>
+                            <h1 class="text-md mb-3" value="">Detail Produk</h1>
                     </div>
                     <div class="col-span-3 pt-2 text-wrap">
-                        <p class="h-24 text-md mb-3 p-2 w-full bg-white/50" value="">{{ $dtPA->deskripsi_pa }}</p>
+                        <div class="h-fit text-md mb-3 p-2 w-full bg-white/80" value="">
+                        <td class="px-6 py-4">
+                            <ul class="list-disc list-inside grid gap-1">
+                                <p class="">- Ukuran: {{ $dtPA->ukuran }}</p>
+                                <p class="">- Warna: {{ $dtPA->warna }}</p>
+                                <p class="">- Brand: {{ $dtPA->brand }}</p>
+                                <p class="">- Material: {{ $dtPA->material }}</p>
+                                <p class="">- Kondisi: {{ $dtPA->kondisi }}</p>
+                                <p class="">- Detail Tambahan: {{ $dtPA->detailtambahan }}</p>
+                            </ul>
+                        </td>
+                    </div>
+                    <hr>
+                    </div>
+                    <div class="col-span-4">
+                    <p class="mt-10 font-bold">Deskripsi Produk:</p>
+                    <p class="border-2 border-white p-2 rounded-md">{{ $dtPA->deskripsiproduk }}</p>
+                    <hr class="my-10">
+                    <p class="mt-10 font-bold">Catatan:</p>
+                    <p class="border-2 border-white p-2 rounded-md">{{ $dtPA->catatan }}</p>
                     </div>
                 </div><br><br>
 
