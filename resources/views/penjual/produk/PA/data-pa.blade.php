@@ -9,17 +9,12 @@
 @section('content')
 <div class="bg-slate-100 p-2 pt-10 sm:ml-64">
    <div id="" class="bg-white m-4 h-full p-4 mt-14 overflow-auto">
-   <h1 class="text-xl font-bold mb-5">Katalog produk</h1><br>
+   <h1 class="text-2xl font-semibold mb-5">Katalog Produk - Pakaian Atas</h1><br>
    @include('sweetalert::alert')
     <div class="flex items-center p-3 md:p-2 mb-3 border-b rounded-t dark:border-gray-600">
         <div>
-            <h5 class="text-md text-gray-900 dark:text-white">
-            Pakaian Atas
-            </h5> 
-        </div>
-        <div>
         <a href="{{ route('create-pakaianatas') }}">
-            <button class="bg-lawngreen hover:bg-lime-500 text-Black font-bold py-2 px-4 rounded-lg inline-flex items-center mx-2">
+            <button class="bg-lawngreen hover:bg-lime-500 text-sm font-bold py-2 px-4 rounded inline-flex items-center mx-2">
                 Tambah Produk
                 <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
                     <!-- Font Awesome SVG Icon -->
@@ -32,8 +27,8 @@
     </div>
     <!-- KATEGORI PAKAIAN ATAS -->
     <div id="pakaianatas" class="kategori ml-2 relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
-    <table class="w-fit text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-center text-gray-700 uppercase bg-lawngreen dark:bg-gray-700 dark:text-gray-400">
+    <table class="w-fit text-sm text-left rtl:text-right">
+            <thead class="text-md text-center bg-lawngreen">
                 <tr>
                     <!-- <th scope="col" class="px-6 py-3">
                         ID produk

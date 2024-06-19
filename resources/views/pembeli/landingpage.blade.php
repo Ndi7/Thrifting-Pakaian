@@ -16,12 +16,12 @@
 </head>
 <body class="">
     <div class="max-w-7xl mx-auto p-5 text-center">
-        <div class="bg-center py-24 text-white italic font-bold" style="background-image: url('{{ asset('images/bkg2.jpg') }}'); background-size: cover; height: 500px;">
+        <div class="bg-center py-24 text-white italic font-bold" style="background-image: url('{{ asset('images/bgcontainer1.jpg') }}'); background-size: cover; height: 500px;">
         </div>
         <div>
             <a href="../katalog" class="inline-block mt-6 px-6 py-3 bg-orange-500 text-white rounded-lg text-lg transition duration-300 hover:bg-orange-700">Mulai Belanja</a>
         </div>
-        <h2 class="text-2xl font-semibold mt-10">Popular Brands</h2>
+        <h2 class="text-2xl font-semibold mt-10">Brand Populer</h2>
         <div class="flex justify-between mt-10">
             <div class="flex-1 text-center p-5 bg-white rounded shadow">
                 <img src="{{ asset('images/brand1.jpg') }}" class="w-full h-auto mx-auto max-w-xs">

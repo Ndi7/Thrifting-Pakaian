@@ -11,5 +11,18 @@ class PB extends Model
         protected $table = "pakaianbawah";
     	protected $primarykey = "id";
     	protected $fillable = [
-            'id', 'gambar', 'nama_produk_pb', 'deskripsi_pb', 'stok', 'harga_pb'];
+            'id',
+            'gambar',
+            'nama_produk_pb',
+            'deskripsiproduk',
+            'stok',
+            'harga_pb',
+            'ukuran',
+            'warna',
+            'brand',
+            'material',
+            'kondisi',
+            'detailtambahan',
+            'catatan'
+        ];
 }

@@ -46,17 +46,17 @@ class PakaianatasController extends Controller
         $nm->move(public_path(). '/images/PA', $namaFile);
 
         PA::create([
-            'gambar' => $filename,
-            'nama_produk_pa' => $request->nama_produk_pa,
+            'gambar' => $namaFile,
+            'nama_produk_pa' => $request->nama_produk,
             'stok' => $request->stok,
-            'harga_pa' => $request->harga_pa,
+            'harga_pa' => $request->harga,
             'ukuran' => $request->ukuran,
             'warna' => $request->warna,
             'brand' => $request->brand,
             'material' => $request->material,
             'kondisi' => $request->kondisi,
             'detailtambahan' => $request->detailtambahan,
-            'deskripsiproduk' => $request->deskripsiproduk,
+            'deskripsiproduk' => $request->deskripsi,
             'catatan' => $request->catatan,
         ]);
             // $dtUpload = new PA;

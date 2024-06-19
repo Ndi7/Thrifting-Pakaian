@@ -10,7 +10,7 @@
 <div class="bg-slate-100 p-2 pt-10 sm:ml-64">
    <div id="" class="bg-white m-4 h-fit p-4 mt-14">
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-        <h1 class="text-lg font-semibold text-gray-900 dark:text-white">
+        <h1 class="text-xl font-semibold text-gray-900 dark:text-white">
             Tambah Produk baru
         </h1>
         </div>
@@ -42,7 +42,7 @@
                         <label for="harga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga</label>
                         <input type="number" name="harga" id="harga" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Rp 10000" required="">
                     </div>    
-                    <div class="col-span-3">
+                    <div class="mt-5 col-span-3">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Detail produk</label>
                         <div class="mx-10 grid gap-2 grid-cols-3">
                             <div class="grid gap-2 grid-cols-2 mr-20">
@@ -69,7 +69,7 @@
                         <div class="mx-10 mt-2">
                             <div class="grid gap-2 grid-cols-1 mr-20 w-2/3">
                             <label for="detailtambahan" class=" flex flex-wrap block mb-2 text-sm text-gray-900 dark:text-white">Detail tambahan:</label>
-                            <input type="text" name="detailtambahan" class="mr-28 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <input type="text" name="detailtambahan" class="mr-28 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lawngreen focus:border-lawngreen block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Masukkan detail tambahan">
                             </div>                  
                             <div class="grid gap-2 grid-cols-1 mr-20 mt-2 w-2/3">
                                 <label for="deskripsi" class="block mb-2 text-sm text-gray-900 dark:text-white">Deskripsi produk:</label>
@@ -79,12 +79,12 @@
                             <label for="ukuran" class=" flex flex-wrap block mb-2 text-sm text-gray-900 dark:text-white">Catatan:</label>
                             <textarea id="catatan" name="catatan" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-lawngreen focus:border-lawngreen dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-y" placeholder="Masukkan catatan" required></textarea>
                             </div>                                       
+                            <div class="mt-10 col-span-3 sm:col-span-1">    
+                                <input type="file" name="gambar" id="gambar" multiple>
+                            </div>
+                            <hr>    
                         </div>
                     </div>
-                    <div class="col-span-3 sm:col-span-1">
-                        
-                        <input type="file" name="gambar" id="gambar" multiple>
-                    </div>    
                     <!-- <div class="col-span-3">
                         <label for="images" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tambahkan Gambar</label>
                         <table id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
@@ -93,11 +93,14 @@
                         <div id="preview"></div>
                     </div> -->
                 </div>
-                <button type="" class="inline-flex items-center bg-lawngreen hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lawngreen font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                Tambah
-            </button>
-                
+                <div class="flex justify-end mt-4">
+                    <button type="" class="inline-flex items-center bg-lawngreen hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lawngreen font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Tambah
+                        <svg class="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
             </form>
         </div>
     </div>

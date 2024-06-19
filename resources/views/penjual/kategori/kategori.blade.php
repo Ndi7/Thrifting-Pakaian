@@ -14,13 +14,13 @@
         <div>
             <a href="{{ route('create-kategori') }}">
             <button  class="mb-2 bg-lawngreen hover:bg-lime-600 ml-2 text-black focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-            <span class="">Tambah Kategori +</span>
+            <span class="text-md">Tambah Kategori +</span>
             </button>
             </a>
 
         <div class="ml-2 overflow-x-auto shadow-md sm:rounded-lg mb-5">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <tr class="text-xs text-gray-700 uppercase bg-lawngreen dark:bg-gray-700 dark:text-gray-400">
+                <table class="w-full text-sm text-left rtl:text-right">
+                        <tr class="text-md bg-lawngreen ">
                             <th scope="col" class="px-6 py-3">ID kategori</th>
                             <th scope="col" class="px-6 py-3">Nama kategori</th>
                             <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>

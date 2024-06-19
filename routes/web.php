@@ -26,6 +26,7 @@ use App\Http\Controllers\KategoriController;
 
 // CLASS ROUTE SELLER
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\keranjangController;
 use App\Http\Controllers\PenjualanController;
 use Illuminate\Routing\Controllers\Middleware;
@@ -35,9 +36,9 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\PakaianbawahController;
 use App\Http\Controllers\SepatusandalController;
 use App\Http\Controllers\ProfilepenjualController;
+use App\Http\Controllers\riwayatpesananController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use App\Http\Controllers\orderController as ControllersOrderController;
-use App\Http\Controllers\riwayatpesananController;
 
 
 /*
@@ -78,7 +79,7 @@ Route::post('/penjualregister/create', [registerPenjual::class, 'create'])->name
 Route::group(['middleware' => ['auth','level:penjual']], function(){
 
     // ROUTE DASHBOARD
-    Route::get('/dashboard', [dashboard::class, 'index']);
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     // ROUTE KATEGORI
     Route::get('/data-kategori',[KategoriController::class, 'index'])->name('data-kategori');
