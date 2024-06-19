@@ -39,6 +39,9 @@ use App\Http\Controllers\ProfilepenjualController;
 use App\Http\Controllers\riwayatpesananController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use App\Http\Controllers\orderController as ControllersOrderController;
+use App\Http\Controllers\ProfilPembeliController;
+use App\Http\Controllers\ProfilPenjualController;
+use App\Http\Controllers\riwayatpesananController;
 
 
 /*
@@ -154,9 +157,10 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/detail-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'detailproduk'])->name('detail-produk-pakaianbawah');
     Route::get('/checkout-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'checkoutproduk'])->name('checkout-produk-pakaianbawah');
 
-
-    Route::get('/userprofile', function () {
-        return view('user');});
+    //Route profile
+    Route::get('/editprofilpembeli/{id}', [ProfilPembeliController::class, 'editForm'])->name('edit.profilpembeli.form');
+    Route::post('/updateprofilpembeli/{id}', [ProfilPembeliController::class, 'update'])->name('edit.profilpembeli.update');
+    Route::get('/profilpembeli', [ProfilPembeliController::class, 'show'])->name('pembeli.profilpembeli');
 
     // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
     Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');
