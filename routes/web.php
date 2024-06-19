@@ -35,13 +35,11 @@ use App\Http\Controllers\PakaianatasController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\PakaianbawahController;
 use App\Http\Controllers\SepatusandalController;
-use App\Http\Controllers\ProfilepenjualController;
 use App\Http\Controllers\riwayatpesananController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use App\Http\Controllers\orderController as ControllersOrderController;
 use App\Http\Controllers\ProfilPembeliController;
 use App\Http\Controllers\ProfilPenjualController;
-use App\Http\Controllers\riwayatpesananController;
 
 
 /*
@@ -126,15 +124,10 @@ Route::group(['middleware' => ['auth','level:penjual']], function(){
     Route::get('/download-invoice/{id}', [PenjualanController::class,'downloadInvoice'])->name('downloadInvoice');
     Route::get('/download-Allinvoice/{id}', [PenjualanController::class,'downloadAllInvoice'])->name('download-Allinvoice');
 
-
-
-    // ROUTE PROFILE PENJUAL
-    Route::get('/data-profile',[ProfilepenjualController::class, 'index'])->name('data-profile');
-    Route::get('/create-profile',[ProfilepenjualController::class, 'create'])->name('create-profile');
-    Route::post('/simpan-profile',[ProfilepenjualController::class, 'store'])->name('simpan-profile');
-    Route::get('/edit-profile/{id}',[ProfilepenjualController::class, 'edit'])->name('edit-profile');
-    Route::post('/update-profile/{id}',[ProfilepenjualController::class, 'update'])->name('update-profile');
-    Route::get('/delete-profile/{id}',[ProfilepenjualController::class, 'destroy'])->name('delete-profile');
+    //ROUTE PROFILE PENJUAL
+    Route::get('/profil', [ProfilPenjualController::class, 'index'])->name('penjual.profilpenjual');
+    Route::get('/editprofilpenjual/{id}', [ProfilPenjualController::class, 'edit'])->name('edit.profilpenjual.form');
+    Route::post('/updateprofilpenjual/{id}', [ProfilPenjualController::class, 'update'])->name('edit.profilpenjual.update');
 
 
 });
@@ -157,10 +150,10 @@ Route::group(['middleware' => ['auth','level:pembeli']], function(){
     Route::get('/detail-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'detailproduk'])->name('detail-produk-pakaianbawah');
     Route::get('/checkout-produk-pakaianbawah/{id}',[PakaianbawahController::class, 'checkoutproduk'])->name('checkout-produk-pakaianbawah');
 
-    //Route profile
-    Route::get('/editprofilpembeli/{id}', [ProfilPembeliController::class, 'editForm'])->name('edit.profilpembeli.form');
+    //ROUTE PROFILE PEMBELI
+    Route::get('/profilpembeli', [ProfilPembeliController::class, 'index'])->name('pembeli.profilpembeli');
+    Route::get('/editprofilpembeli/{id}', [ProfilPembeliController::class, 'edit'])->name('edit.profilpembeli.form');
     Route::post('/updateprofilpembeli/{id}', [ProfilPembeliController::class, 'update'])->name('edit.profilpembeli.update');
-    Route::get('/profilpembeli', [ProfilPembeliController::class, 'show'])->name('pembeli.profilpembeli');
 
     // ROUTE KATALOG (GABUNGAN CONTROLLER PAKAIAN ATAS DAN PAKAIAN BAWAH)
     Route::get('/katalog',[katalogController::class, 'index'])->name('katalog');

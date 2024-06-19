@@ -19,7 +19,7 @@
         <div class="-mt-20 flex flex-col items-center">
           {{-- Check if $profil->photo exists --}}
           @if($profil->photo)
-            <img src="{{ $profil->photo }}" class="w-40 rounded-full border-4 border-white" />
+            <img src="{{ asset('images/profile/Buyer/'. $profil->photo) }}" class="w-40 h-40 rounded-full border-4 border-white" />
           @else
             <img src="https://cc64k.aktivin.id/assets/avatar-placeholder-63430c6b.png" class="w-40 rounded-full border-4 border-white" />
           @endif
@@ -49,25 +49,30 @@
             <h4 class="text-xl font-bold text-gray-900">Personal Info</h4>
             <ul class="mt-2 text-gray-700">
               <li class="flex border-y py-2">
-                <span class="w-24 font-bold">Full name:</span>
+                <span class="w-24 font-bold">Nama</span>
+                <span class=" mx-2 font-bold">:</span>
                 <span class="text-gray-700">{{ $profil->name }}</span>
               </li>
 
               <li class="flex border-b py-2">
-                <span class="w-24 font-bold">Joined:</span>
+                <span class="w-24 font-bold">Bergabung</span>
+                <span class=" mx-2 font-bold">:</span>
                 <span class="text-gray-700">{{ $profil->created_at }}</span>
               </li>
 
               <li class="flex border-b py-2">
-                <span class="w-24 font-bold">Location:</span>
+                <span class="w-24 font-bold">Lokasi</span>
+                <span class=" mx-2 font-bold">:</span>
                 <span class="text-gray-700">{{ $profil->address }}</span>
               </li>
               <li class="flex border-b py-2">
-                <span class="w-24 font-bold">No HP:</span>
+                <span class="w-24 font-bold">No Telepon</span>
+                <span class=" mx-2 font-bold">:</span>
                 <span class="text-gray-700">{{ $profil->phone }}</span>
               </li>
               <li class="flex border-b py-2">
-                <span class="w-24 font-bold">Level:</span>
+                <span class="w-24 font-bold">Status</span>
+                <span class=" mx-2 font-bold">:</span>
                 <span class="text-gray-700">{{ $profil->level }}</span>
               </li>
             </ul>
