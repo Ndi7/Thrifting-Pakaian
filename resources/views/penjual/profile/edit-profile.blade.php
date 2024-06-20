@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
-    <link rel="stylesheet" href="{{ asset('styles/output.css') }}">
-    <link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
-</head>
-<body>
-    <form name="form" action="{{ route('edit.profilpenjual.update', $profil->id) }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded-lg p-8">
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+<script src="{{ asset('js/sidebardashboard.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
+<script src="{{ asset('js/flowbite.min.js') }}"></script>
+@extends('layout.dashboardnavbar')
+
+@section('title', 'Kategori')
+@section('content')
+<div class="bg-slate-100 p-2 pt-10 sm:ml-64">
+   <div id="" class="bg-white m-4 h-full p-4 mt-14 overflow-auto">
+   <body>
+    <form name="form" action="{{ route('edit.profilpenjual.update', $profil->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="space-y-12">
@@ -28,7 +30,7 @@
                         <label for="photo" class="mt-2 inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-500 active:bg-lawngreen focus:outline-none focus:border-lawngreen focus:ring focus:ring-indigo-200 disabled:opacity-25 transition cursor-pointer">Ubah</label>
                         <input type="file" name="photo" id="photo" class="hidden">
                         <p id="photoError" class="text-sm text-red-500 mt-1"></p>
-                        <img id="photoPreview" src="{{ asset('images/profile/Seller/' . $profil->photo) }}" alt="Current Photo" class="w-40 h-40 mt-2 rounded-full border-4 border-white">
+                        <img id="photoPreview" src="{{ asset('images/profile/Seller/' . $profil->photo) }}" alt="Current Photo" class="w-40 h-40 mt-2 rounded-full border-2 border-gray-300">
                     </div>
                 </div>
             </div>
@@ -73,4 +75,8 @@
         });
     </script>
 </body>
-</html>
+
+   </div>
+@endsection
+</div>
+    

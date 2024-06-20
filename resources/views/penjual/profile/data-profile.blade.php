@@ -1,18 +1,15 @@
-@extends('layout.navbar')
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+<script src="{{ asset('js/sidebardashboard.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
+<script src="{{ asset('js/flowbite.min.js') }}"></script>
+@extends('layout.dashboardnavbar')
 
-@section ('title', 'profilpenjual')
+@section('title', 'Kategori')
 @section('content')
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div class="h-full bg-gray-200 p-8">
-      <div class="rounded-lg bg-white pb-8 shadow-xl">
+<div class="bg-slate-100 p-2 pt-10 sm:ml-64">
+   <div id="" class="bg-white m-4 h-full p-4 mt-14 overflow-auto">
+   <div class="rounded-lg bg-white pb-8 shadow-xl">
         <div class="h-[250px] w-full">
           <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" class="h-full w-full rounded-tl-lg rounded-tr-lg" />
         </div>
@@ -79,7 +76,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+   </div>
 @endsection
+</div>
+    
