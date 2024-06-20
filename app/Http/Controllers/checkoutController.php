@@ -46,8 +46,17 @@ class checkoutController extends Controller
         'pb_product_id' => $request->pb_product_id,
         ]);
 
+        if ($request->pa_product_id) {
+            $paProduct = PA::find($request->pa_product_id);
+            $paProduct->stok -= 1;
+            $paProduct->save();
+        }
 
-
+        if ($request->pb_product_id) {
+            $pbProduct = PB::find($request->pb_product_id);
+            $pbProduct->stok -= 1;
+            $pbProduct->save();
+        }
         return redirect()->route('checkoutberhasil', $checkout->id)->with('success', 'Checkout berhasil!');
     }
 
