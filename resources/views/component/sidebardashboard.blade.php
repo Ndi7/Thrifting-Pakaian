@@ -64,7 +64,7 @@
             </div>
             </div>
          </li>
-         <li>
+         <!-- <li>
             <a href="{{ route('data-kategori')}}" id=kategori class="sidebar-link block flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
@@ -72,7 +72,7 @@
                <span class="flex-1 ms-3 whitespace-nowrap">Kategori</span>
             </a>
          </li>
-         <li>
+         <li> -->
             <a href="{{ route('data-penjualan')}}" class="sidebar-link block flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                   <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
@@ -81,14 +81,14 @@
                <!-- <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span> -->
             </a>
          </li>
-         <li>
+         <!-- <li>
             <a href="/laporan" class="sidebar-link block flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                   <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
                </svg>
                <span class="flex-1 ms-3 whitespace-nowrap">Laporan</span>
             </a>
-         </li>
+         </li> -->
          <li>
             <a href="#pengaturan" class="sidebar-link block flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 122.88 101.878" enable-background="new 0 0 122.88 101.878" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M64.406,12.143c-2.672-1.042-5.431-1.586-8.276-1.586 c-4.279,0-7.798,1.369-10.557,4.084L21.765,38.427l2.477,2.499l-9.037,9.101L0,34.799l9.036-9.037l2.802,2.737L35.515,4.844 C38.773,1.608,42.271,0,46.007,0C52.285,0,58.411,4.041,64.406,12.143L64.406,12.143z M100.535,5.408 c2.588,0,5.072,0.441,7.384,1.25l-5.874,6.358c-13.345,14.437,1.715,22.79,14.986,12.879l5.119-3.822 c0.475,1.813,0.729,3.717,0.729,5.679c0,12.341-10.003,22.345-22.345,22.345c-4.026,0-7.804-1.065-11.066-2.929L78.616,58.689 c10.214,9.778,20.431,19.554,30.646,29.33l-13.858,13.858C85.74,91.8,76.08,81.718,66.422,71.635L47.394,91.833 c-1.445,2.471-4.126,4.132-7.194,4.132c-4.599,0-8.329-3.729-8.329-8.329c0-1.988,0.699-3.815,1.862-5.247l-0.012-0.012 l0.073-0.063c0.601-0.723,1.322-1.342,2.132-1.828L57.327,62.14L30.941,34.504L41.89,23.556 c10.157,9.756,18.402,17.582,28.572,27.324l11.864-10.172c-2.604-3.654-4.136-8.125-4.136-12.955 C78.19,15.411,88.193,5.408,100.535,5.408L100.535,5.408z M28.63,10.362L17.747,21.245l-2.086-2.085L26.544,8.276L28.63,10.362 L28.63,10.362z"/></g></svg>

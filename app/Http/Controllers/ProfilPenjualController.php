@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class ProfilPenjualController extends Controller
 {
     public function index() {
-        $profilpnjl = auth()->user();
+        $profil = auth()->user();
         return view('penjual.profile.data-profile', compact('profil'));
     }
 
     public function edit() {
-        $profilpnjl = auth()->user();
+        $profil = auth()->user();
         return view('penjual.profile.edit-profile', compact('profil'));
     }
 

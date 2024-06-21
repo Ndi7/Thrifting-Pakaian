@@ -108,7 +108,7 @@
                     <h3 class="text-sm my-1">Rp. {{$produk->harga_pa}}</h3>
                     <div class=" flex flex-wrap w-full">
                         <span class="bg-gray-300 text-gray-700 text-center w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold disabled">
-                            Habis stok
+                            Terjual
                         </span>
                     </div>
                 </div>
@@ -144,8 +144,8 @@
         <div class="pakaianbawah grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
         @foreach ($dtPB as $produk)
         @if ($produk->stok > 0)
-            <div class="card rounded-none w-48 h-fit bg-slate-100 shadow-md" id="card">
-                <img class="w-full h-52" src="{{ asset('images/PB/'. $produk->gambar) }}" alt="">
+            <div class="rounded-none w-48 h-fit bg-slate-100 shadow-md" id="card">
+                <img class="w-full h-52" src="{{ asset('images/PB/'. $produk->gambar) }}">
                 <div class="m-1 flex-wrap gap-2">
                     <h2 class="text-xs font-bold">{{$produk->nama_produk_pb}}</h2>
                     <h3 class="text-sm my-1">Rp. {{$produk->harga_pb}}</h3>
@@ -176,7 +176,7 @@
                     <h3 class="text-sm my-1">Rp. {{$produk->harga_pb}}</h3>
                     <div class=" flex flex-wrap w-full">
                         <span class="bg-gray-300 text-gray-700 text-center w-20 flex-grow py-1 mr-1 rounded-md text-xs font-semibold disabled">
-                            Habis stok
+                            Terjual
                         </span>
                     </div>
                 </div>

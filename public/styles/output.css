@@ -7146,10 +7146,6 @@ details.collapse summary::-webkit-details-marker {
   width: 100%;
 }
 
-.w-14 {
-  width: 3.5rem;
-}
-
 .min-w-0 {
   min-width: 0px;
 }
@@ -7967,6 +7963,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-yellow-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 246 178 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 128 128 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
