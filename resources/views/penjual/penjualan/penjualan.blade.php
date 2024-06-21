@@ -85,7 +85,7 @@
                                                 </td>
                                                 <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                                     <div class="flex items-center gap-x-2">
-                                                        <img class="object-cover w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                                                        <img class="object-cover w-8 h-8 rounded-full" src="{{ isset($checkout->user) && $checkout->user->photo ? asset('images/profile/Buyer/' . $checkout->user->photo) : asset('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80') }}" alt="">
                                                         <div>
                                                             <h2 class="text-sm font-medium text-gray-800 dark:text-white ">{{$checkout->name}}</h2>
                                                             <p class="text-xs font-normal text-gray-600 dark:text-gray-400">{{$checkout->email}}</p>
@@ -124,7 +124,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    
+
                                 </div>
                                 <div class="text-right mt-2">
                                     <a href="{{ route('download-Allinvoice', ['id' => $checkout->id]) }}" target="_blank" class="inline-block">
