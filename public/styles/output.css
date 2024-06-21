@@ -7965,9 +7965,9 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(253 246 178 / var(--tw-bg-opacity));
 }
 
-.bg-red-400 {
+.bg-red-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 128 128 / var(--tw-bg-opacity));
+  background-color: rgb(251 213 213 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {

@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="{{ asset('styles/output.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/crsl.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/flowbite.min.css') }}">
+<script src="{{ asset('js/flowbite.min.js') }}"></script>
 @extends('layout.navbar')
 
 @section ('title', 'profilpembeli')
@@ -11,7 +15,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="h-full bg-gray-200 p-8">
+    <div class="h-fit bg-gray-200 p-8">
       <div class="rounded-lg bg-white pb-8 shadow-xl">
         <div class="h-[250px] w-full">
           <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" class="h-full w-full rounded-tl-lg rounded-tr-lg" />
