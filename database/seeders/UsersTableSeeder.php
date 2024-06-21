@@ -63,7 +63,7 @@ class UsersTableSeeder extends Seeder
             'level' => 'penjual', // Pastikan kolom ini ada dalam tabel users
             'address' => 'Pulau Second',
             'phone' => '6287712330000',
-            'photo' => 'PRFL062024_635.png',
+            'photo' => '',
         ]);
 
         // Tambahkan data lain sesuai kebutuhan
