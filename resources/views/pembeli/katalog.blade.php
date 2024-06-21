@@ -73,11 +73,11 @@
         @if(isset($dtPA))
             <p class="font-bold my-0">Pakaian Atas</p>
         </div>
-        <div class="bg-red--200 pakaianatas grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
+        <div class="pakaianatas grid grid-cols-5 md:grid-cols-5 container md:justify-center gap-y-3 gap-x-48 md:gap-x-1 text-left m-auto" id="">
 
             @foreach ($dtPA as $produk)
             @if ($produk->stok > 0)
-                <div class="card rounded-none w-48 h-fit bg-slate-100 shadow-md" id="card">
+                <div class="rounded-none w-48 h-fit bg-slate-100 shadow-md" id="card">
                     <img class="w-full h-52 " src="{{ asset('images/PA/'. $produk->gambar) }}" alt="">
 
                     <div class="m-1 flex-wrap gap-2">
@@ -100,7 +100,7 @@
             @endforeach
             @foreach ( $dtPA as $produk )
             @if ($produk->stok <= 0)
-            <div class="card rounded-none w-48 h-fit bg-slate-100 shadow-md relative" id="card">
+            <div class="rounded-none w-48 h-fit bg-slate-100 shadow-md relative" id="card">
                 <img class="w-full h-52" src="{{ asset('images/PA/'. $produk->gambar) }}" alt="Gambar Produk">
                 <img class="absolute top-0 left-0 w-full h-52" src="{{ asset('images/soldout.png') }}" alt="Sold Out">
                 <div class="m-1 flex-wrap gap-2">
@@ -168,7 +168,7 @@
             @foreach ($dtPB as $produk)
             @if ($produk->stok <= 0)
 
-            <div class="card rounded-none w-48 h-fit bg-slate-100 shadow-md relative" id="card">
+            <div class="rounded-none w-48 h-fit bg-slate-100 shadow-md relative" id="card">
                 <img class="w-full h-52" src="{{ asset('images/PB/'. $produk->gambar) }}" alt="Gambar Produk">
                 <img class="absolute top-0 left-0 w-full h-52" src="{{ asset('images/soldout.png') }}" alt="Sold Out">
                 <div class="m-1 flex-wrap gap-2">
