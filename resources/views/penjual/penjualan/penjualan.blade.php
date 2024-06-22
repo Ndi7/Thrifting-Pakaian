@@ -29,7 +29,7 @@
                                                 <th scope="col" class="py-3.5 px-4 text-sm font-bold text-left rtl:text-right text-black dark:text-gray-400">
                                                     <div class="flex items-center gap-x-3">
                                                         <button class="flex items-center gap-x-2">
-                                                            <span>Invoice</span>
+                                                            <span>No Pesanan</span>
                                                         </button>
                                                     </div>
                                                 </th>

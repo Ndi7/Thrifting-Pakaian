@@ -98,19 +98,25 @@
                     </div>
                     <hr>
                     </div>
-                    <div class="col-span-4">
-                    <p class="mt-10 font-bold">Deskripsi Produk:</p>
-                    <p class="border-2 border-white p-2 rounded-md">{{ $dtPB->deskripsiproduk }}</p>
-                    <hr class="my-10">
-                    <p class="mt-10 font-bold">Catatan:</p>
-                    <p class="border-2 border-white p-2 rounded-md">{{ $dtPB->catatan }}</p>
+                    <div class="col-span-1 pt-4 font-bold">
+                            <h1 class="text-md mb-3" value="">Deskripsi Produk:</h1>
                     </div>
-                </div><br><br>
+                    <div class="col-span-3 pt-2 text-wrap">
+                        <div class="h-fit text-md mb-3 p-2 w-full bg-white/80" value="">
+                        <p class="border-2 border-white rounded-md">{{ $dtPB->deskripsiproduk }}</p>
+                    </div>
+                    <hr>
+                    </div>
 
-                    <div class="flex flex-wrap justify-center gap-8 w-full ">
-                    <!-- <div class="justify-center w-72">
-                        <button class="bg-lawngreen rounded-md w-full font-semibold">Keep</button>
-                    </div> -->
+                    <div class="col-span-1 pt-4 font-bold">
+                            <h1 class="text-md mb-3" value="">Catatan:</h1>
+                    </div>
+                    <div class="col-span-3 pt-2 text-wrap">
+                        <div class="h-fit text-md mb-3 p-2 w-full bg-white/80" value="">
+                        <p class="border-2 border-white rounded-md">{{ $dtPB->catatan }}</p>
+                    </div>
+                    </div>
+                    </div>
                     <div class="justify-center mb-4 mx-2 w-full">
                         <a href="{{ url('checkout-produk',$dtPB->id) }}">
                         <button class="bg-lawngreen rounded-md py-1 w-full font-semibold">Beli</button>
